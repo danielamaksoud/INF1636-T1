@@ -17,6 +17,7 @@ Nome | Descrição
 
 ### Referências ###
 - **[Programação Orientada a Objetos (Notas de Aula)](http://www.inf.puc-rio.br/~ivan/INF1337/INF1636.html/)**
+- **Use a Cabeça! Java** — Kathy Sierra
 
 ### Licença ###
 O trabalho é licenciado sob a **[Licença Pública Geral GNU Versão 3](http://www.gnu.org/licenses/gpl-3.0.html)**.
