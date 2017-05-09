@@ -15,7 +15,7 @@ O primeiro trabalho de **Programação Orientada a Objetos (INF1636)** é um jog
 
 Nome | Descrição
 ------------ | -------------
-**[LICENSE](https://github.com/danielamaksoud/INF1636-T1/blob/master/LICENSE)** | Licença do trabalho
+**[LICENSE](https://github.com/danielamaksoud/INF1636-T1/blob/master/Documenta%C3%A7%C3%A3o/LICENSE)** | Licença do trabalho
 **[README.md](https://github.com/danielamaksoud/INF1636-T1/blob/master/README.md)** | Informação geral sobre o trabalho
 
 ### Referências ###
