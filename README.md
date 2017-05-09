@@ -8,6 +8,9 @@
 - **Professor**: Ivan Mathias Filho
 - **Instituição**: Pontifícia Universidade Católica do Rio de Janeiro
 
+### Descrição ###
+O primeiro trabalho de **Programação Orientada a Objetos (INF1636)** é um jogo de detetive desenvolvido em linguagem Java orientada a objetos.
+
 ### Arquivos ###
 
 Nome | Descrição
