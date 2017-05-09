@@ -11,7 +11,7 @@
 ### Descrição ###
 O primeiro trabalho de **Programação Orientada a Objetos (INF1636)** é um jogo de detetive desenvolvido em linguagem Java orientada a objetos.
 
-### Calendário de Iterações ###
+### Prazos para Desenvolvimento de Iterações ###
 
 Iteração | Data de Início | Data de Fim
 ------------ | ------------- | -------------
