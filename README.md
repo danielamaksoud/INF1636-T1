@@ -26,6 +26,10 @@ Nome | Descrição
 **[README.md](https://github.com/danielamaksoud/INF1636-T1/blob/master/README.md)** | Informação geral sobre o trabalho
 **[DIARIO.md](https://github.com/danielamaksoud/INF1636-T1/blob/master/Documenta%C3%A7%C3%A3o/DIARIO.md)** | Diário do processo de desenvolvimento do trabalho
 
+### Construído com ###
+- **[Eclipse](https://www.eclipse.org/downloads/)** (ambiente de desenvolvimento integrado utilizado)
+- **[Java](https://www.java.com/pt_BR/)** (linguagem de programação utilizada)
+
 ### Referências ###
 - **[Programação Orientada a Objetos (Notas de Aula)](http://www.inf.puc-rio.br/~ivan/INF1337/INF1636.html/)**
 - **Use a Cabeça! Java** — Kathy Sierra
