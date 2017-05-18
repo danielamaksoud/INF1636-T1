@@ -7,7 +7,6 @@ public class exemplo {
 		layout l = new layout("Detetive");
 		Insets ins=l.getInsets();
 		l.setSize(600+ins.left+ins.right,400+ins.top+ins.bottom);
-		personagens p = new personagens("Suspeitos");
 		l.setVisible(true);
 	}
 

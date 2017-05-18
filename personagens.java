@@ -27,7 +27,7 @@ public class personagens extends JFrame {
 		c.add(cb4);
 		c.add(cb5);
 		c.add(cb6);
-		setSize(410,300);
+		setSize(600,400);
 		setVisible(true);
 		}
 	}

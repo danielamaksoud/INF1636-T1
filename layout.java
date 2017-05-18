@@ -1,11 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
+
 
 
 public class layout extends JFrame {
 	
-	public static final int TXT_X=350;
-	public static final int TXT_Y=50;
 	
 	public layout(String s) {
 		super(s);
@@ -16,6 +16,7 @@ public class layout extends JFrame {
 		getContentPane().add(p);
 		p.setLayout(null);
 		b1=new JButton("Novo Jogo");
+		b1.addActionListener(new startpage(this));
 		p.add(b1);
 		b2=new JButton("Carregar Jogo Salvo");
 		p.add(b2);
@@ -28,4 +29,5 @@ public class layout extends JFrame {
 		b2.setToolTipText("Reabrindo um caso antigo?");
 		j.pack();
 		}
+	
 	}
