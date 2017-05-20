@@ -15,6 +15,6 @@ public class newgame implements ActionListener {
 	{
 		c.setVisible(false);
 		((Window) c).dispose();
-		charselect p = new charselect("Suspeitos");
+		new charselect("Suspeitos");
 	}
 }
