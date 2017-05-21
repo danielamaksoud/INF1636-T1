@@ -11,15 +11,15 @@ public class board extends JFrame {
 	}
 	
 	class imagem extends JPanel {
-		public static final int TXT_X = 700;
-		public static final int TXT_Y = 703;
+		public static final int TXT_X = 1400;
+		public static final int TXT_Y = 700;
 		
 		public void paintComponent(Graphics g) {
 			super.paintComponent(g);
 			ImageIcon i = new ImageIcon("Tabuleiro-Original.JPG");
 			Image i3 = i.getImage();
-			Image i2 = getScaledImage(i3, TXT_X, TXT_Y);
-			g.drawImage(i2, 0, 0, this);
+			Image i2 = getScaledImage(i3,TXT_X,TXT_Y);
+			g.drawImage(i2,0,0, this);
 		}
 	}
 	

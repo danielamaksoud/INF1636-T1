@@ -3,16 +3,23 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class board extends JFrame {
+	
+	backgroundimage tela;
 
 	public board(String nome) {
 		super(nome);
-		getContentPane().add(new imagem());
+		/* getContentPane().add(new imagem()); */
 		setVisible(true);
+
+		/* IMAGEM DE FUNDO */ 
+		setLayout(new GridLayout(1,1));
+		tela = new backgroundimage("Tabuleiro-Original.JPG");
+		getContentPane().add(tela);
 	}
 	
-	class imagem extends JPanel {
-		public static final int TXT_X = 700;
-		public static final int TXT_Y = 703;
+	/* class imagem extends JPanel {
+		public static final int TXT_X = 1400;
+		public static final int TXT_Y = 700;
 		
 		public void paintComponent(Graphics g) {
 			super.paintComponent(g);
@@ -21,9 +28,9 @@ public class board extends JFrame {
 			Image i2 = getScaledImage(i3, TXT_X, TXT_Y);
 			g.drawImage(i2, 0, 0, this);
 		}
-	}
+	} */
 	
-	private Image getScaledImage(Image srcImg, int w, int h){
+	/* private Image getScaledImage(Image srcImg, int w, int h){
 	    BufferedImage resizedImg = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
 	    Graphics2D g2 = resizedImg.createGraphics();
 	
@@ -32,6 +39,6 @@ public class board extends JFrame {
 	    g2.dispose();
 	
 	    return resizedImg;
-	}
+	} */
 	
 }

@@ -3,6 +3,8 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class board extends JFrame {
+	
+	backgroundimage tela;
 
 	public board(String nome) {
 		super(nome);
@@ -11,8 +13,8 @@ public class board extends JFrame {
 	}
 	
 	class imagem extends JPanel {
-		public static final int TXT_X = 700;
-		public static final int TXT_Y = 703;
+		public static final int TXT_X = 1400;
+		public static final int TXT_Y = 700;
 		
 		public void paintComponent(Graphics g) {
 			super.paintComponent(g);

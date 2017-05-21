@@ -7,6 +7,7 @@ public class board extends JFrame {
 	public board(String nome) {
 		super(nome);
 		getContentPane().add(new imagem());
+		setPreferedSize(new Dimension(300,300));
 		setVisible(true);
 	}
 	

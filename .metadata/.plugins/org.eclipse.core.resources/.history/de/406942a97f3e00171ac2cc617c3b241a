@@ -14,6 +14,8 @@ public class board extends JFrame {
 		public static final int TXT_X = 700;
 		public static final int TXT_Y = 703;
 		
+		setPreferredSize(new Dimension(300,300));
+		
 		public void paintComponent(Graphics g) {
 			super.paintComponent(g);
 			ImageIcon i = new ImageIcon("Tabuleiro-Original.JPG");

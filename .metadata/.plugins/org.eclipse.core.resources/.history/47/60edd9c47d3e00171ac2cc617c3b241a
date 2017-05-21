@@ -3,6 +3,8 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class board extends JFrame {
+	
+	this.setSize(700, 703);
 
 	public board(String nome) {
 		super(nome);

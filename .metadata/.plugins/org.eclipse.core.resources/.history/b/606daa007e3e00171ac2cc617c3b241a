@@ -8,6 +8,7 @@ public class board extends JFrame {
 		super(nome);
 		getContentPane().add(new imagem());
 		setVisible(true);
+		setSize(600, 400);
 	}
 	
 	class imagem extends JPanel {

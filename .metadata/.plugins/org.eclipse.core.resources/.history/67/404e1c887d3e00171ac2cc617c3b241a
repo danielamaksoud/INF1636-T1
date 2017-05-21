@@ -8,12 +8,13 @@ public class board extends JFrame {
 		super(nome);
 		getContentPane().add(new imagem());
 		setVisible(true);
+		this.setSize(700, 703);
 	}
 	
 	class imagem extends JPanel {
 		public static final int TXT_X = 700;
 		public static final int TXT_Y = 703;
-		
+
 		public void paintComponent(Graphics g) {
 			super.paintComponent(g);
 			ImageIcon i = new ImageIcon("Tabuleiro-Original.JPG");

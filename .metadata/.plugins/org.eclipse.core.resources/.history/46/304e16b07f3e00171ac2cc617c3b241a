@@ -20,6 +20,7 @@ public class board extends JFrame {
 			Image i3 = i.getImage();
 			Image i2 = getScaledImage(i3, TXT_X, TXT_Y);
 			g.drawImage(i2, 0, 0, this);
+			setPreferredSize(new Dimension(300,300));
 		}
 	}
 	
