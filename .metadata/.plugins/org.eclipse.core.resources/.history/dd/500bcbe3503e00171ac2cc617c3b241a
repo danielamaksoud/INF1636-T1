@@ -1,0 +1,23 @@
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+
+public class FundoBg extends JFrame {  
+	
+	public FundoBg(String nome) {
+		super(nome);
+		getContentPane().add(new imagem());
+		setVisible(true);
+	}
+	
+    private BufferedImage img = null;    
+    private int x = 0;  
+    private int y = 0;  
+    public void paintComponent(Graphics g) {  
+        super.paintComponent(g);        
+        Graphics gr = (Graphics2D)g.create();  
+        gr.drawImage(img, x, y,this.getWidth(),this.getHeight(),this);  
+        gr.dispose();     
+    }  
+}

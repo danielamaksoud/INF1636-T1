@@ -1,0 +1,48 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class firstframe extends JFrame {
+	
+	FundoBg tela;
+	
+	public firstframe(String s) {
+		super(s);
+		Dimension size;
+		JButton b1, b2; /* Botoes */
+		JFrame j = new JFrame(); /* Janela */
+		
+		setLayout(new GridLayout(10,10));
+		tela = new FundoBg("firstframe.png");
+		getContentPane().add(tela);
+		
+		/* setContentPane(new JLabel(new ImageIcon("firstframe.png"))); */
+
+		
+		JPanel p = new JPanel(); /* Painel */
+		getContentPane().add(p);
+		p.setLayout(null);
+		
+		Insets in = p.getInsets();
+		
+		/* BOTAO NOVO JOGO */
+		
+		b1 = new JButton("Novo Jogo");
+		b1.addActionListener(new newgame(this));
+		p.add(b1);
+		size = b1.getPreferredSize();
+		b1.setBounds(220 + in.left, 144 + in.top, size.width + 50, size.height + 10);
+		b1.setToolTipText("Voce acha que consegue descobrir o assassino?");
+		
+		/* BOTAO CARREGAR JOGO SALVO */
+		b2 = new JButton("Carregar Jogo Salvo");
+		b2.addActionListener(new choosefile(this));
+		p.add(b2);
+		size = b2.getPreferredSize();
+		b2.setBounds(191 + in.left, 195 + in.top, size.width + 50, size.height + 10);
+		b2.setToolTipText("Reabrindo um caso antigo?");
+		
+		j.pack();
+	}
+
+}

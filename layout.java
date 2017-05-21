@@ -2,11 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-
-
 public class layout extends JFrame {
-	
-	
 	public layout(String s) {
 		super(s);
 		Dimension size;
@@ -23,11 +19,10 @@ public class layout extends JFrame {
 		Insets in=p.getInsets();
 		size=b1.getPreferredSize();
 		b1.setBounds(240+in.left, 140+in.top,size.width+50,size.height+10);
-		b1.setToolTipText("Você acha que consegue descobrir o assassino?");
+		b1.setToolTipText("Vocï¿½ acha que consegue descobrir o assassino?");
 		size=b2.getPreferredSize();
 		b2.setBounds(210+in.left,190+in.top,size.width+50,size.height+10);
 		b2.setToolTipText("Reabrindo um caso antigo?");
 		j.pack();
-		}
-	
-	}
+	}	
+}

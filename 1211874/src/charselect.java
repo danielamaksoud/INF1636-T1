@@ -2,7 +2,6 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
-
 public class charselect extends JFrame {
 	
 	JCheckBox cb1;
@@ -17,27 +16,31 @@ public class charselect extends JFrame {
 		super(nome);
 		Dimension size;
 		JButton b1;
-		int i;
 		setLayout(null);
-		JLabel l=new JLabel();
-		Container c=getContentPane();
-		b1=new JButton("Começar Jogo");
+		JLabel l = new JLabel();
+		Container c = getContentPane();
+		
+		JCheckBox cb1 = new JCheckBox("Rev. Green", false);
+		JCheckBox cb2 = new JCheckBox("Coronel Mustard", false);
+		JCheckBox cb3 = new JCheckBox("Sra. Peacock", false);
+		JCheckBox cb4 = new JCheckBox("Professor Plum", false);
+		JCheckBox cb5 = new JCheckBox("Srta. Scarlet", false);
+		JCheckBox cb6 = new JCheckBox("Sra. White", false);
+		
+		Insets in = l.getInsets();
+		
+		b1 = new JButton("Comecar Jogo");
 		b1.addActionListener(new startmatchT(this));
-		JCheckBox cb1=new JCheckBox("Rev. Green",false);
-		JCheckBox cb2=new JCheckBox("Coronel Mustard",false);
-		JCheckBox cb3=new JCheckBox("Sra. Peacock",false);
-		JCheckBox cb4=new JCheckBox("Professor Plum",false);
-		JCheckBox cb5=new JCheckBox("Srta. Scarlet",false);
-		JCheckBox cb6=new JCheckBox("Sra. White",false);
-		Insets in=l.getInsets();
 		size = b1.getPreferredSize();
-		b1.setBounds(300+in.left, 250+in.top,size.width+50,size.height+10);
-		cb1.setBounds(50,50,200,30);
-		cb2.setBounds(50,80,200,30);
-		cb3.setBounds(50,110,200,30);
-		cb4.setBounds(50,140,200,30);
-		cb5.setBounds(50,170,200,30);
-		cb6.setBounds(50,200,200,30);
+		
+		cb1.setBounds(50, 50, 200, 30);
+		cb2.setBounds(50, 80, 200, 30);
+		cb3.setBounds(50, 110, 200, 30);
+		cb4.setBounds(50, 140, 200, 30);
+		cb5.setBounds(50, 170, 200, 30);
+		cb6.setBounds(50, 200, 200, 30);
+		b1.setBounds(209 + in.left, 280 + in.top, size.width + 50, size.height + 10);
+		
 		c.add(l);
 		c.add(cb1);
 		c.add(cb2);
@@ -46,22 +49,24 @@ public class charselect extends JFrame {
 		c.add(cb5);
 		c.add(cb6);
 		c.add(b1);
+		
 		setSize(600,400);
 		setVisible(true);
 		
-		}
+	}
+	
 	public int getchecks()
 	{
 		int i = 0;
 		i++;
 		return i;
 	}
-	}
+	
+}
 
 class startmatchT implements ActionListener {
 
 	Component c;
-	
 	
 	public startmatchT(Component x)
 	{
@@ -73,20 +78,19 @@ class startmatchT implements ActionListener {
 		c.setVisible(false);
 		((Window) c).dispose();
 		board l = new board("Tabuleiro");
-		Insets ins=l.getInsets();
-		l.setSize(2000+ins.left+ins.right,3000+ins.top+ins.bottom);
+		Insets ins = l.getInsets();
+		l.setSize(2000 + ins.left + ins.right, 3000 + ins.top + ins.bottom);
 		l.setVisible(true);
 	}
 }
 
 class startmatchF implements ActionListener {
-
-	Component c;
 	
+	Component c;
 	
 	public startmatchF(Component x)
 	{
-		c=x;
+		c = x;
 	}
 	public void actionPerformed(ActionEvent e)
 	{
@@ -94,4 +98,3 @@ class startmatchF implements ActionListener {
 		
 	}
 }
-

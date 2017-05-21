@@ -1,0 +1,23 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class choosefile implements ActionListener {
+
+	Component c;
+	
+	public choosefile(Component x)
+	{
+		c = x;
+	}
+	public void actionPerformed(ActionEvent e)
+	{
+		c.setVisible(false);
+		JFileChooser fileChooser = new JFileChooser();
+	    if (chooser.showSaveDialog(this) != JFileChooser.APPROVE_OPTION) {
+	        return;
+	    }
+	    lastSavedFile = fileChooser.getSelectedFile();
+	    salvar(lastSavedFile);
+	}
+}

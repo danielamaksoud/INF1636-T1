@@ -3,10 +3,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-
-
-
-
 public class board extends JFrame {
 
 	public board(String nome) {

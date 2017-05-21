@@ -1,0 +1,9 @@
+import java.awt.*;
+import javax.swing.*;
+
+public class exemplo {
+	public static void main(String[] args) {
+		layout l = new layout("Jogo de Detetive");
+			l.setVisible(true);
+	}
+}

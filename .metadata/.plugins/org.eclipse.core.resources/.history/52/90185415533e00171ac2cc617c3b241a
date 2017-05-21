@@ -1,0 +1,12 @@
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+
+public class FundoBg extends JDesktopPane {  
+	private Image imagem;
+	
+	public FundoBg(){
+		
+	}
+}

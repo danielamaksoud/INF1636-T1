@@ -2,19 +2,18 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-
 public class newgame implements ActionListener {
 
 	Component c;
 	
 	public newgame(Component x)
 	{
-		c=x;
+		c = x;
 	}
 	public void actionPerformed(ActionEvent e)
 	{
 		c.setVisible(false);
 		((Window) c).dispose();
-		new charselect("Suspeitos");
+		new charselect("Lista de Suspeitos");
 	}
 }
