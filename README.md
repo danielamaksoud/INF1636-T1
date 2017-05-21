@@ -25,7 +25,14 @@ Nome | Descrição
 **[LICENSE](https://github.com/danielamaksoud/INF1636-T1/blob/master/Documenta%C3%A7%C3%A3o/LICENSE)** | Licença do trabalho
 **[README.md](https://github.com/danielamaksoud/INF1636-T1/blob/master/README.md)** | Informação geral sobre o trabalho
 **[DIARIO.md](https://github.com/danielamaksoud/INF1636-T1/blob/master/Documenta%C3%A7%C3%A3o/DIARIO.md)** | Diário do processo de desenvolvimento do trabalho
-
+**[backgroundimage.java]()** | Exibe a imagem de fundo das telas do jogo
+**[board.java]()** | Exibe o tabuleiro do jogo
+**[charselect.java]()** | Permite ao jogador selecionar os suspeitos do jogo
+**[choosefile.java]()** | Permite ao jogador escolher o arquivo que contém um jogo salvo
+**[firstframe.java]()** | Exibe a tela inicial do jogo
+**[newgame.java]()** | Redireciona o jogador para a lista de suspeitos
+**[startgame.java]()** | Inicia o jogo
+ 
 ### Construído com ###
 - **[Eclipse](https://www.eclipse.org/downloads/)** (ambiente de desenvolvimento integrado utilizado)
 - **[Java](https://www.java.com/pt_BR/)** (linguagem de programação utilizada)
