@@ -70,7 +70,7 @@ class startmatchT implements ActionListener {
 	
 	public startmatchT(Component x)
 	{
-		c = x;
+		c=x;
 	}
 	public void actionPerformed(ActionEvent e)
 	{
@@ -92,7 +92,6 @@ class startmatchF implements ActionListener {
 	{
 		c = x;
 	}
-	
 	public void actionPerformed(ActionEvent e)
 	{
 		

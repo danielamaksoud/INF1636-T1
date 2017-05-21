@@ -10,11 +10,9 @@ public class choosefile implements ActionListener {
 	{
 		c = x;
 	}
-	
 	public void actionPerformed(ActionEvent e)
 	{
 	    JFileChooser abrir = new JFileChooser();  
 	    abrir.showOpenDialog(null); 
 	}
-	
 }

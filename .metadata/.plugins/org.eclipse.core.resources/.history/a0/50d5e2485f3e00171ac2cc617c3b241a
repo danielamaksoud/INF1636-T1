@@ -92,7 +92,6 @@ class startmatchF implements ActionListener {
 	{
 		c = x;
 	}
-	
 	public void actionPerformed(ActionEvent e)
 	{
 		
