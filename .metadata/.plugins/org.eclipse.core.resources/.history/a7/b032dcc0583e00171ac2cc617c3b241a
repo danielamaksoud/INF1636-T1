@@ -15,7 +15,7 @@ public class firstframe extends JFrame {
 		/* IMAGEM DE FUNDO */ 
 		
 		setLayout(new GridLayout(1,1));
-		tela = new FundoBg("Fundo1.png");
+		tela = new FundoBg("firstframe.png");
 		getContentPane().add(tela);
 		
 		/* BOTAO NOVO JOGO */
