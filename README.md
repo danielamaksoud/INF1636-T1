@@ -24,7 +24,6 @@ Nome | Descrição
 ------------ | -------------
 **[LICENSE](https://github.com/danielamaksoud/INF1636-T1/blob/master/Documenta%C3%A7%C3%A3o/LICENSE)** | Licença do trabalho
 **[README.md](https://github.com/danielamaksoud/INF1636-T1/blob/master/README.md)** | Informação geral sobre o trabalho
-**[DIARIO.md](https://github.com/danielamaksoud/INF1636-T1/blob/master/Documenta%C3%A7%C3%A3o/DIARIO.md)** | Diário do processo de desenvolvimento do trabalho
 **[backgroundimage.java](https://github.com/danielamaksoud/INF1636-T1/blob/master/1211874/src/backgroundimage.java)** | Exibe a imagem de fundo das telas do jogo
 **[board.java](https://github.com/danielamaksoud/INF1636-T1/blob/master/1211874/src/board.java)** | Exibe o tabuleiro do jogo
 **[charselect.java](https://github.com/danielamaksoud/INF1636-T1/blob/master/1211874/src/charselect.java)** | Permite ao jogador selecionar os suspeitos do jogo
