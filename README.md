@@ -29,6 +29,8 @@ Nome | Descrição
 ### Construído com ###
 - **[Eclipse](https://www.eclipse.org/downloads/)** (ambiente de desenvolvimento integrado utilizado)
 - **[Java](https://www.java.com/pt_BR/)** (linguagem de programação utilizada)
+- **[Wood floor by gnrbishop](http://gnrbishop.deviantart.com/art/Wood-floor-86913934)** (imagem de piso de madeira utilizada como fundo de tela)
+
 
 ### Referências ###
 - **[Java Orientado a Objetos - Aula 13 - Colocando imagem de fundo](https://www.youtube.com/watch?v=6ExqClNp6hQ)**
