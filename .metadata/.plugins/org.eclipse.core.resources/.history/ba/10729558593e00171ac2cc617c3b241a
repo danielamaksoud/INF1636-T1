@@ -4,7 +4,7 @@ import java.awt.event.*;
 
 public class firstframe extends JFrame {
 	
-	backgroundimage tela;
+	FundoBg tela;
 	
 	public firstframe(String s) {
 		super(s);
@@ -15,7 +15,7 @@ public class firstframe extends JFrame {
 		/* IMAGEM DE FUNDO */ 
 		
 		setLayout(new GridLayout(1,1));
-		tela = new backgroundimage("Fundo1.png");
+		tela = new FundoBg("Fundo1.png");
 		getContentPane().add(tela);
 		
 		/* BOTAO NOVO JOGO */
