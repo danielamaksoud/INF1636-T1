@@ -31,6 +31,8 @@ Nome | Descrição
 - **[Java](https://www.java.com/pt_BR/)** (linguagem de programação utilizada)
 
 ### Referências ###
+- **[Java Orientado a Objetos - Aula 13 - Colocando imagem de fundo](https://www.youtube.com/watch?v=6ExqClNp6hQ)**
+- **[Java Orientado a Objetos - Aula 14 - Imagem responsiva no fundo](https://www.youtube.com/watch?v=qZ4CwM_JOso)**
 - **[Programação Orientada a Objetos (Notas de Aula)](http://www.inf.puc-rio.br/~ivan/INF1337/INF1636.html/)**
 - **Use a Cabeça! Java** — Kathy Sierra
 
