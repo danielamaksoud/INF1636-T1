@@ -29,7 +29,7 @@ public class firstframe extends JFrame {
 		b1.addActionListener(new newgame(this));
 		tela.add(b1);
 		size = b1.getPreferredSize();
-		b1.setBounds(191, 144, size.width + 109, size.height + 10);
+		b1.setBounds(220, 144, size.width + 100, size.height + 10);
 		b1.setToolTipText("Voce acha que consegue descobrir o assassino?");
 		
 		/* BOTAO CARREGAR JOGO SALVO */
@@ -37,7 +37,7 @@ public class firstframe extends JFrame {
 		b2.addActionListener(new choosefile(this));
 		tela.add(b2);
 		size = b2.getPreferredSize();
-		b2.setBounds(191, 195, size.width + 52, size.height + 10);
+		b2.setBounds(191, 195, size.width + 50, size.height + 10);
 		b2.setToolTipText("Reabrindo um caso antigo?");
 		
 		j.pack();

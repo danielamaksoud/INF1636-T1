@@ -37,7 +37,7 @@ public class firstframe extends JFrame {
 		b2.addActionListener(new choosefile(this));
 		tela.add(b2);
 		size = b2.getPreferredSize();
-		b2.setBounds(191, 195, size.width + 52, size.height + 10);
+		b2.setBounds(191, 197, size.width + 50, size.height + 10);
 		b2.setToolTipText("Reabrindo um caso antigo?");
 		
 		j.pack();
