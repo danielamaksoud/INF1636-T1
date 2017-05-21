@@ -28,9 +28,9 @@ public class charselect extends JFrame {
 		getContentPane().add(tela);
 		
 		JCheckBox cb1 = new JCheckBox("Rev. Green", false);
-		JCheckBox cb2 = new JCheckBox("Cel. Mustard", false);
+		JCheckBox cb2 = new JCheckBox("Coronel Mustard", false);
 		JCheckBox cb3 = new JCheckBox("Sra. Peacock", false);
-		JCheckBox cb4 = new JCheckBox("Prof. Plum", false);
+		JCheckBox cb4 = new JCheckBox("Professor Plum", false);
 		JCheckBox cb5 = new JCheckBox("Srta. Scarlet", false);
 		JCheckBox cb6 = new JCheckBox("Sra. White", false);
 		

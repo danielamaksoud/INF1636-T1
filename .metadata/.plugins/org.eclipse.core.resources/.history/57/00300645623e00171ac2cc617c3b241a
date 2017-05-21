@@ -17,20 +17,19 @@ public class charselect extends JFrame {
 	public charselect(String nome) {
 		super(nome);
 		Dimension size;
-		JButton b1; /* Botao */
-		
-		/* Bloqueia redimensionamento da janela */
-		this.setResizable(false);
+		JButton b1;
+		setLayout(null);
+		Container c = getContentPane();
 		
 		/* IMAGEM DE FUNDO */ 
 		setLayout(new GridLayout(1,1));
-		tela = new backgroundimage("Fundo2.png");
+		tela = new backgroundimage("Fundo1.png");
 		getContentPane().add(tela);
 		
 		JCheckBox cb1 = new JCheckBox("Rev. Green", false);
-		JCheckBox cb2 = new JCheckBox("Cel. Mustard", false);
+		JCheckBox cb2 = new JCheckBox("Coronel Mustard", false);
 		JCheckBox cb3 = new JCheckBox("Sra. Peacock", false);
-		JCheckBox cb4 = new JCheckBox("Prof. Plum", false);
+		JCheckBox cb4 = new JCheckBox("Professor Plum", false);
 		JCheckBox cb5 = new JCheckBox("Srta. Scarlet", false);
 		JCheckBox cb6 = new JCheckBox("Sra. White", false);
 		
@@ -46,13 +45,13 @@ public class charselect extends JFrame {
 		cb6.setBounds(50, 200, 200, 30);
 		b1.setBounds(209, 280, size.width + 50, size.height + 10);
 		
-		tela.add(cb1);
-		tela.add(cb2);
-		tela.add(cb3);
-		tela.add(cb4);
-		tela.add(cb5);
-		tela.add(cb6);
-		tela.add(b1);
+		c.add(cb1);
+		c.add(cb2);
+		c.add(cb3);
+		c.add(cb4);
+		c.add(cb5);
+		c.add(cb6);
+		c.add(b1);
 		
 		setSize(600, 400);
 		setVisible(true);
