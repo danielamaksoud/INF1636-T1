@@ -38,12 +38,12 @@ public class charselect extends JFrame {
 		b1.addActionListener(new startmatchT(this));
 		size = b1.getPreferredSize();
 		
-		cb1.setBounds(34, 52, 200, 30);
-		cb2.setBounds(34, 82, 200, 30);
-		cb3.setBounds(34, 112, 200, 30);
-		cb4.setBounds(34, 142, 200, 30);
-		cb5.setBounds(34, 172, 200, 30);
-		cb6.setBounds(34, 202, 200, 30);
+		cb1.setBounds(34, 50, 200, 30);
+		cb2.setBounds(34, 80, 200, 30);
+		cb3.setBounds(34, 110, 200, 30);
+		cb4.setBounds(34, 140, 200, 30);
+		cb5.setBounds(34, 170, 200, 30);
+		cb6.setBounds(34, 200, 200, 30);
 		b1.setBounds(209, 280, size.width + 50, size.height + 10);
 		
 		tela.add(cb1);
