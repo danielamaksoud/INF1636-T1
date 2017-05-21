@@ -20,11 +20,13 @@ public class firstframe extends JFrame {
 		this.setResizable(false);
 		
 		/* IMAGEM DE FUNDO */ 
+		
 		setLayout(new GridLayout(1,1));
 		tela = new backgroundimage("Fundo1.png");
 		getContentPane().add(tela);
 		
 		/* BOTAO NOVO JOGO */
+		
 		b1 = new JButton("Novo Jogo");
 		b1.addActionListener(new newgame(this));
 		tela.add(b1);
@@ -33,6 +35,7 @@ public class firstframe extends JFrame {
 		b1.setToolTipText("Voce acha que consegue descobrir o assassino?");
 		
 		/* BOTAO CARREGAR JOGO SALVO */
+		
 		b2 = new JButton("Carregar Jogo Salvo");
 		b2.addActionListener(new choosefile(this));
 		tela.add(b2);

@@ -1,30 +1,25 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
 public class firstframe extends JFrame {
 	
 	backgroundimage tela;
 	
 	public firstframe(String s) {
-		
 		super(s);
 		Dimension size;
-		
-		/* Botoes */
-		JButton b1, b2;
-		
-		/* Janela */
-		JFrame j = new JFrame();
-		
-		/* Bloqueia redimensionamento da janela */
-		this.setResizable(false);
+		JButton b1, b2; /* Botoes */
+		JFrame j = new JFrame(); /* Janela */
 		
 		/* IMAGEM DE FUNDO */ 
+		
 		setLayout(new GridLayout(1,1));
 		tela = new backgroundimage("Fundo1.png");
 		getContentPane().add(tela);
 		
 		/* BOTAO NOVO JOGO */
+		
 		b1 = new JButton("Novo Jogo");
 		b1.addActionListener(new newgame(this));
 		tela.add(b1);
@@ -33,6 +28,7 @@ public class firstframe extends JFrame {
 		b1.setToolTipText("Voce acha que consegue descobrir o assassino?");
 		
 		/* BOTAO CARREGAR JOGO SALVO */
+		
 		b2 = new JButton("Carregar Jogo Salvo");
 		b2.addActionListener(new choosefile(this));
 		tela.add(b2);
@@ -42,5 +38,5 @@ public class firstframe extends JFrame {
 		
 		j.pack();
 	}
-	
+
 }
