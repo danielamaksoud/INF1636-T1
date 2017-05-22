@@ -34,7 +34,7 @@ Nome | Descrição
 ### Telas ###
 ![Tela 1](https://github.com/danielamaksoud/INF1636-T1/blob/master/Telas/Tela1.png?raw=true)
 ![Tela 2](https://github.com/danielamaksoud/INF1636-T1/blob/master/Telas/Tela2.png?raw=true)
-![Tabuleiro](http://sempregatas.com.br/imagens/Logo.png)
+![Tela 3](https://github.com/danielamaksoud/INF1636-T1/blob/master/Telas/Tela3.png?raw=true)
 
 ### Construído com ###
 - **[Eclipse](https://www.eclipse.org/downloads/)** (ambiente de desenvolvimento integrado utilizado)
