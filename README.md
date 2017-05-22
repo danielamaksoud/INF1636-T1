@@ -16,6 +16,9 @@ O primeiro trabalho de **Programação Orientada a Objetos (INF1636)** é um jog
 Iteração | Data de Início | Data de Fim
 ------------ | ------------- | -------------
 **[Primeira Iteração](https://github.com/danielamaksoud/INF1636-T1/blob/master/Documenta%C3%A7%C3%A3o/Itera%C3%A7%C3%B5es/Iteracao1.jpg)** | 08/05/2017 | 21/05/2017
+**[Segunda Iteração](https://github.com/danielamaksoud/INF1636-T1/blob/master/Documenta%C3%A7%C3%A3o/Itera%C3%A7%C3%B5es/Iteracao1.jpg)** | 08/05/2017 | 04/06/2017
+**[Terceira Iteração](https://github.com/danielamaksoud/INF1636-T1/blob/master/Documenta%C3%A7%C3%A3o/Itera%C3%A7%C3%B5es/Iteracao1.jpg)** | 08/05/2017 | 18/06/2017
+**[Quarta Iteração](https://github.com/danielamaksoud/INF1636-T1/blob/master/Documenta%C3%A7%C3%A3o/Itera%C3%A7%C3%B5es/Iteracao1.jpg)** | 08/05/2017 | 02/07/2017
 
 ### Arquivos ###
 
