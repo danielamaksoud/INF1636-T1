@@ -17,7 +17,6 @@ Iteração | Data de Início | Data de Fim
 ------------ | ------------- | -------------
 **[Primeira Iteração](https://github.com/danielamaksoud/INF1636-T1/blob/master/Documenta%C3%A7%C3%A3o/Itera%C3%A7%C3%B5es/Iteracao1.jpg)** | 08/05/2017 | 21/05/2017
 
-
 ### Arquivos ###
 
 Nome | Descrição
@@ -32,11 +31,15 @@ Nome | Descrição
 **[newgame.java](https://github.com/danielamaksoud/INF1636-T1/blob/master/1211874/src/newgame.java)** | Redireciona o jogador para a lista de suspeitos
 **[startgame.java](https://github.com/danielamaksoud/INF1636-T1/blob/master/1211874/src/startgame.java)** | Inicia o jogo
  
+### Telas ###
+![Tela 1](https://github.com/danielamaksoud/INF1636-T1/blob/master/Telas/Tela1.png?raw=true)
+![Tela 2](https://github.com/danielamaksoud/INF1636-T1/blob/master/Telas/Tela2.png?raw=true)
+![Tabuleiro](http://sempregatas.com.br/imagens/Logo.png)
+
 ### Construído com ###
 - **[Eclipse](https://www.eclipse.org/downloads/)** (ambiente de desenvolvimento integrado utilizado)
 - **[Java](https://www.java.com/pt_BR/)** (linguagem de programação utilizada)
 - **[Wood floor by gnrbishop](http://gnrbishop.deviantart.com/art/Wood-floor-86913934)** (imagem de piso de madeira utilizada como fundo de tela)
-
 
 ### Referências ###
 - **[Java Orientado a Objetos - Aula 13 - Colocando imagem de fundo](https://www.youtube.com/watch?v=6ExqClNp6hQ)**
