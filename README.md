@@ -42,7 +42,7 @@ Nome | Descrição
 ### Construído com ###
 - **[Eclipse](https://www.eclipse.org/downloads/)** (ambiente de desenvolvimento integrado utilizado)
 - **[Java](https://www.java.com/pt_BR/)** (linguagem de programação utilizada)
-- **[Wood floor by gnrbishop](http://gnrbishop.deviantart.com/art/Wood-floor-86913934)** (imagem de piso de madeira utilizada como fundo de tela)
+- **[Wood floor by gnrbishop](http://gnrbishop.deviantart.com/art/Wood-floor-86913934)** (imagem de piso de madeira utilizada nos fundos de tela)
 - **[Splatter Brushes for Photoshop](http://qbrushes.net/splatterism/)** (brushes utilizados nos fundos de tela)
 
 ### Referências ###
