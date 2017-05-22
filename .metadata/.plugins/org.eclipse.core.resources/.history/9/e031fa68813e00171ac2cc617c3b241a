@@ -83,7 +83,7 @@ class startmatchT implements ActionListener {
 		((Window) c).dispose();
 		board l = new board("Tabuleiro");
 		Insets ins = l.getInsets();
-		l.setSize(700 + ins.left + ins.right, 703 + ins.top + ins.bottom);
+		l.setSize(2000 + ins.left + ins.right, 3000 + ins.top + ins.bottom);
 		l.setVisible(true);
 	}
 }
