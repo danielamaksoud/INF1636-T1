@@ -1,6 +1,8 @@
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
+import java.util.ArrayList;
+import java.awt.ActiveEvent;
 
 public class charselect extends JFrame {
 	
@@ -10,14 +12,15 @@ public class charselect extends JFrame {
 	JCheckBox cb4;
 	JCheckBox cb5;
 	JCheckBox cb6;
-	JButton b1;
+	final ArrayList<JCheckBox> checkBoxes = new ArrayList<>();
+	final JButton b1 = new JButton("Comecar Jogo");
+	int count = 0;
 	
 	backgroundimage tela;
 	
 	public charselect(String nome) {
 		super(nome);
-		Dimension size;
-		JButton b1; /* Botao */
+		Dimension size; /* Botao */
 		
 		/* Bloqueia redimensionamento da janela */
 		this.setResizable(false);
@@ -34,8 +37,8 @@ public class charselect extends JFrame {
 		JCheckBox cb5 = new JCheckBox("Srta. Scarlet", false);
 		JCheckBox cb6 = new JCheckBox("Sra. White", false);
 		
-		b1 = new JButton("Comecar Jogo");
 		b1.addActionListener(new startmatchT(this));
+		b1.setEnabled(false);
 		size = b1.getPreferredSize();
 		
 		cb1.setBounds(34, 52, 200, 30);
@@ -44,6 +47,19 @@ public class charselect extends JFrame {
 		cb4.setBounds(34, 142, 200, 30);
 		cb5.setBounds(34, 172, 200, 30);
 		cb6.setBounds(34, 202, 200, 30);
+		cb1.addActionListener(actionListener);
+		cb2.addActionListener(actionListener);
+		cb3.addActionListener(actionListener);
+		cb4.addActionListener(actionListener);
+		cb5.addActionListener(actionListener);
+		cb6.addActionListener(actionListener);
+		checkBoxes.add(cb1);
+		checkBoxes.add(cb2);
+		checkBoxes.add(cb3);
+		checkBoxes.add(cb4);
+		checkBoxes.add(cb5);
+		checkBoxes.add(cb6);
+		
 		b1.setBounds(209, 280, size.width + 50, size.height + 10);
 		
 		tela.add(cb1);
@@ -53,18 +69,37 @@ public class charselect extends JFrame {
 		tela.add(cb5);
 		tela.add(cb6);
 		tela.add(b1);
-		
 		setSize(600, 400);
 		setVisible(true);
 		
 	}
 	
-	public int getchecks()
-	{
-		int i = 0;
-		i++;
-		return i;
-	}
+	
+	ActionListener actionListener = new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent event) {
+            JCheckBox checkbox = (JCheckBox) event.getSource();
+            int index = checkBoxes.indexOf(checkbox) + 1;
+            System.out.println("Checkbox #" + index + " is clicked");
+            if(checkbox.isSelected()==true)
+            {
+            	count = count+1;
+            }
+            else
+            {
+            	count = count-1;
+            }
+            if(count>=3)
+            {
+            	b1.setEnabled(true);
+            }
+            else
+            {
+            	b1.setEnabled(false);
+            }
+        }
+    };
+   
 	
 }
 
@@ -88,18 +123,3 @@ class startmatchT implements ActionListener {
 	}
 }
 
-class startmatchF implements ActionListener {
-	
-	Component c;
-	
-	public startmatchF(Component x)
-	{
-		c = x;
-	}
-	
-	public void actionPerformed(ActionEvent e)
-	{
-		
-		
-	}
-}
