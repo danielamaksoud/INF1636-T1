@@ -31,12 +31,34 @@ public class board extends JFrame {
 		
 		
 		Dimension size;
+		//pinos dos jogadores
 		JButton b2 = new JButton("");
+		JButton b3 = new JButton("");
+		JButton b4 = new JButton("");
+		JButton b5 = new JButton("");
+		JButton b6 = new JButton("");
+		JButton b7 = new JButton("");
 		b1.addActionListener(new RollDice(this));
 		size = b1.getPreferredSize();
 		b1.setBounds(0, 650, size.width + 50, size.height + 10);
 		size = b2.getPreferredSize();
-		b2.setBounds(45, 215, 25, 25);
+		b2.setBounds(397, 42, 25, 23); //está na posição inicial
+		b2.setBackground(Color.GREEN);
+		size = b3.getPreferredSize();
+		b3.setBounds(73, 215, 25, 23);
+		b3.setBackground(Color.WHITE);
+		size = b4.getPreferredSize();
+		b4.setBounds(73, 215, 25, 23);
+		b4.setBackground(Color.MAGENTA);
+		size = b5.getPreferredSize();
+		b5.setBounds(73, 215, 25, 23);
+		b5.setBackground(Color.BLUE);
+		size = b6.getPreferredSize();
+		b6.setBounds(73, 215, 25, 23);
+		b6.setBackground(Color.YELLOW);
+		size = b7.getPreferredSize();
+		b7.setBounds(73, 215, 25, 23);
+		b7.setBackground(Color.RED);
 		tabuleiro.add(b1);
 		tabuleiro.add(b2);
 		
