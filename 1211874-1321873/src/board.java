@@ -1,13 +1,64 @@
 import javax.swing.*;
+import java.awt.geom.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import javax.imageio.ImageIO;
 
+@SuppressWarnings("serial")
 public class board extends JFrame {
-
+	
+	backgroundimage tabuleiro;
+	double cx=5.0;
+	double cy=300.0;
+	double radius = 10;
+	final JButton b1 = new JButton("Jogar Dados");
+	
+	
 	public board(String nome) {
 		super(nome);
-		getContentPane().add(new imagem());
+	
+		setLayout(new GridLayout(1,1));
+		tabuleiro = new backgroundimage("Tabuleiro-Original.JPG");
+		getContentPane().add(tabuleiro);
+		
+		
+		this.setResizable(false);
+		
+		
+		Dimension size;
+		JButton b2 = new JButton("");
+		b1.addActionListener(new RollDice(this));
+		size = b1.getPreferredSize();
+		b1.setBounds(0, 650, size.width + 50, size.height + 10);
+		size = b2.getPreferredSize();
+		b2.setBounds(45, 215, 25, 25);
+		tabuleiro.add(b1);
+		tabuleiro.add(b2);
+		
+		
 		setVisible(true);
+	}
+	
+	class pawns extends JPanel
+	{
+		@Override
+		public void paintComponent(Graphics g)
+		{
+			
+			super.paintComponent(g);
+			Graphics2D g2d =  (Graphics2D) g;
+			Ellipse2D c = new Ellipse2D.Double();
+			c.setFrameFromCenter(cx,cy,cx+radius, cy+radius);
+			g2d.setPaint(Color.YELLOW);
+			g2d.fill(c);
+			g2d.draw(c);
+			
+		}
 	}
 	
 	class imagem extends JPanel {
@@ -20,7 +71,6 @@ public class board extends JFrame {
 			Image i3 = i.getImage();
 			Image i2 = getScaledImage(i3, TXT_X, TXT_Y);
 			g.drawImage(i2, 0, 0, this);
-		}
 	}
 	
 	private Image getScaledImage(Image srcImg, int w, int h){
@@ -33,5 +83,76 @@ public class board extends JFrame {
 	
 	    return resizedImg;
 	}
+	
+}
+
+
+class RollDice implements ActionListener {
+
+	Component c;
+	
+	public RollDice(Component x)
+	{
+		c = x;
+	}
+	public void actionPerformed(ActionEvent e)
+	{
+		Dices l = new Dices("Dados");
+		Insets ins = l.getInsets();
+		l.setSize(450 + ins.left + ins.right, 400 + ins.top + ins.bottom);
+		l.setVisible(true);
+		
+	}
+}
+}
+
+class Dices extends JFrame{
+	
+	public Dices(String nome)
+	{
+		super(nome);
+		JPanel p = new JPanel();
+		getContentPane().add(p);
+		JButton b2 = new JButton("2");
+		JButton b3 = new JButton("3");
+		JButton b4 = new JButton("4");
+		JButton b5 = new JButton("5");
+		JButton b6 = new JButton("6");
+		JButton b7 = new JButton("7");
+		JButton b8 = new JButton("8");
+		JButton b9 = new JButton("9");
+		JButton b10 = new JButton("10");
+		JButton b11 = new JButton("11");
+		JButton b12 = new JButton("12");
+		setLayout(new GridLayout(0,2));
+		URL url;
+		try {
+			url = new URL("file:///C:/Users/lipin/POO/1211874-1321873/dice.gif");
+		} catch (MalformedURLException e) {
+			url = null;
+			e.printStackTrace();
+		}
+		if(url==null)
+		{
+			System.out.println("ERROR ON DICE GIF");
+		}
+        Icon icon = new ImageIcon(url);
+        JLabel label = new JLabel(icon);	
+        p.add(label);
+        p.add(b2);
+        p.add(b3);
+        p.add(b4);
+        p.add(b5);
+        p.add(b6);
+        p.add(b7);
+        p.add(b8);
+        p.add(b9);
+        p.add(b10);
+        p.add(b11);
+        p.add(b12);
+        pack();
+		
+	}
+	
 	
 }

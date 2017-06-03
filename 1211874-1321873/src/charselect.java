@@ -80,7 +80,6 @@ public class charselect extends JFrame {
         public void actionPerformed(ActionEvent event) {
             JCheckBox checkbox = (JCheckBox) event.getSource();
             int index = checkBoxes.indexOf(checkbox) + 1;
-            System.out.println("Checkbox #" + index + " is clicked");
             if(checkbox.isSelected()==true)
             {
             	count = count+1;
@@ -122,4 +121,5 @@ class startmatchT implements ActionListener {
 		l.setVisible(true);
 	}
 }
+
 
