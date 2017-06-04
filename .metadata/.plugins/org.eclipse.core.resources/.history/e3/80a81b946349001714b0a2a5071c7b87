@@ -120,8 +120,9 @@ class RollDice implements ActionListener {
 	{
 		Dices l = new Dices("Dados");
 		Insets ins = l.getInsets();
-		l.setSize(320 + ins.left + ins.right, 260 + ins.top + ins.bottom);
+		l.setSize(450 + ins.left + ins.right, 400 + ins.top + ins.bottom);
 		l.setVisible(true);
+		
 	}
 }
 }

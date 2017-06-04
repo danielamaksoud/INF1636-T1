@@ -88,7 +88,7 @@ public class charselect extends JFrame {
             {
             	count = count - 1;
             }
-            if (count >= 3) /* Se a partida possui o numero minimo de 3 jogadores */
+            if(count >= 3) /* Se a partida possui o numero minimo de 3 jogadores */
             {
             	b1.setEnabled(true);
             }
