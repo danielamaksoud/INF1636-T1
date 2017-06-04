@@ -6,12 +6,12 @@ import java.awt.ActiveEvent;
 
 public class charselect extends JFrame {
 	
-	JCheckBox cb1;
-	JCheckBox cb2;
-	JCheckBox cb3;
-	JCheckBox cb4;
-	JCheckBox cb5;
-	JCheckBox cb6;
+	final JCheckBox cb1 = new JCheckBox("Rev. Green", false);
+	final JCheckBox cb2 = new JCheckBox("Cel. Mustard", false);
+	final JCheckBox cb3 = new JCheckBox("Sra. Peacock", false);
+	final JCheckBox cb4 = new JCheckBox("Prof. Plum", false);
+	final JCheckBox cb5 = new JCheckBox("Srta. Scarlet", false);
+	final JCheckBox cb6 = new JCheckBox("Sra. White", false);
 	final ArrayList<JCheckBox> checkBoxes = new ArrayList<>();
 	final JButton b1 = new JButton("Comecar Jogo");
 	int count = 0;
@@ -30,12 +30,7 @@ public class charselect extends JFrame {
 		tela = new backgroundimage("Fundo2.png");
 		getContentPane().add(tela);
 		
-		JCheckBox cb1 = new JCheckBox("Rev. Green", false);
-		JCheckBox cb2 = new JCheckBox("Cel. Mustard", false);
-		JCheckBox cb3 = new JCheckBox("Sra. Peacock", false);
-		JCheckBox cb4 = new JCheckBox("Prof. Plum", false);
-		JCheckBox cb5 = new JCheckBox("Srta. Scarlet", false);
-		JCheckBox cb6 = new JCheckBox("Sra. White", false);
+		
 		
 		b1.addActionListener(new startmatchT(this));
 		b1.setEnabled(false);
@@ -100,7 +95,7 @@ public class charselect extends JFrame {
     };
    
 	
-}
+
 
 class startmatchT implements ActionListener {
 
@@ -112,14 +107,68 @@ class startmatchT implements ActionListener {
 	}
 	public void actionPerformed(ActionEvent e)
 	{
-		
+		boolean ic1 = cb1.isSelected();
+		boolean ic2 = cb2.isSelected();
+		boolean ic3 = cb3.isSelected();
+		boolean ic4 = cb4.isSelected();
+		boolean ic5 = cb5.isSelected();
+		boolean ic6 = cb6.isSelected();
+		int i1, i2, i3, i4, i5, i6;
+		if(ic1 == true)
+		{
+			i1 = 1;
+		}
+		else
+		{
+			i1 = 0;
+		}
+		if(ic2 == true)
+		{
+			i2 = 1;
+		}
+		else
+		{
+			i2 = 0;
+		}
+		if(ic3 == true)
+		{
+			i3 = 1;
+		}
+		else
+		{
+			i3 = 0;
+		}
+		if(ic4 == true)
+		{
+			i4 = 1;
+		}
+		else
+		{
+			i4 = 0;
+		}
+		if(ic5 == true)
+		{
+			i5 = 1;
+		}
+		else
+		{
+			i5 = 0;
+		}
+		if(ic6 == true)
+		{
+			i6 = 1;
+		}
+		else
+		{
+			i6 = 0;
+		}
 		c.setVisible(false);
 		((Window) c).dispose();
-		board l = new board("Tabuleiro");
+		board l = new board("Tabuleiro", i1, i2, i3, i4, i5, i6);
 		Insets ins = l.getInsets();
 		l.setSize(1000 + ins.left + ins.right, 686 + ins.top + ins.bottom);
 		l.setVisible(true);
 	}
 }
 
-
+}

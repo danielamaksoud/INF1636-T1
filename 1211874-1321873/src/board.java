@@ -19,7 +19,7 @@ public class board extends JFrame {
 	final JButton b1 = new JButton("Jogar Dados");
 	
 	
-	public board(String nome) {
+	public board(String nome, int i1, int i2, int i3, int i4, int i5, int i6) {
 		super(nome);
 	
 		setLayout(new GridLayout(0,1));
@@ -61,12 +61,30 @@ public class board extends JFrame {
 		b7.setBounds(225, 634, 25, 23);
 		b7.setBackground(Color.RED);
 		tabuleiro.add(b1);
-		tabuleiro.add(b2);
-		tabuleiro.add(b3);
-		tabuleiro.add(b4);
-		tabuleiro.add(b5);
-		tabuleiro.add(b6);
-		tabuleiro.add(b7);
+		if(i1 == 1)
+		{
+			tabuleiro.add(b2);
+		}
+		if(i2==1)
+		{
+			tabuleiro.add(b3);
+		}
+		if(i3==1)
+		{
+			tabuleiro.add(b4);
+		}
+		if(i4==1)
+		{
+			tabuleiro.add(b5);
+		}
+		if(i5==1)
+		{
+			tabuleiro.add(b6);
+		}
+		if(i6==1)
+		{
+			tabuleiro.add(b7);
+		}
 		//altura do quadrado 25
 		//largura do quadrado 25
 		setVisible(true);
