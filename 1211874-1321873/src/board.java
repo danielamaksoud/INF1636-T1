@@ -13,8 +13,8 @@ import javax.imageio.ImageIO;
 public class board extends JFrame {
 	
 	backgroundimage tabuleiro;
-	double cx=5.0;
-	double cy=300.0;
+	double cx = 5.0;
+	double cy = 300.0;
 	double radius = 10;
 	final JButton b1 = new JButton("Jogar Dados");
 	
@@ -22,27 +22,28 @@ public class board extends JFrame {
 	public board(String nome) {
 		super(nome);
 	
-		setLayout(new GridLayout(1,1));
-		tabuleiro = new backgroundimage("Tabuleiro-Original.JPG");
-		getContentPane().add(tabuleiro);
+		setLayout(new GridLayout(0,1));
 		
+		tabuleiro = new backgroundimage("Tabuleiro-Original.JPG");
+		
+		getContentPane().add(tabuleiro);
 		
 		this.setResizable(false);
 		
-		
 		Dimension size;
-		//pinos dos jogadores
+		// Pinos dos jogadores
 		JButton b2 = new JButton("");
 		JButton b3 = new JButton("");
 		JButton b4 = new JButton("");
 		JButton b5 = new JButton("");
 		JButton b6 = new JButton("");
 		JButton b7 = new JButton("");
+		
 		b1.addActionListener(new RollDice(this));
 		size = b1.getPreferredSize();
-		b1.setBounds(0, 650, size.width + 50, size.height + 10);
+		b1.setBounds(758, 119, size.width + 50, size.height + 10);
 		size = b2.getPreferredSize();
-		b2.setBounds(397, 42, 25, 23); //está na posição inicial
+		b2.setBounds(397, 42, 25, 23); // Esta na posicao inicial
 		b2.setBackground(Color.GREEN);
 		size = b3.getPreferredSize();
 		b3.setBounds(73, 215, 25, 23);
@@ -61,7 +62,6 @@ public class board extends JFrame {
 		b7.setBackground(Color.RED);
 		tabuleiro.add(b1);
 		tabuleiro.add(b2);
-		
 		
 		setVisible(true);
 	}
@@ -108,7 +108,6 @@ public class board extends JFrame {
 	
 }
 
-
 class RollDice implements ActionListener {
 
 	Component c;
@@ -154,7 +153,7 @@ class Dices extends JFrame{
 			url = null;
 			e.printStackTrace();
 		}
-		if(url==null)
+		if(url == null)
 		{
 			System.out.println("ERROR ON DICE GIF");
 		}
@@ -175,6 +174,5 @@ class Dices extends JFrame{
         pack();
 		
 	}
-	
-	
+		
 }

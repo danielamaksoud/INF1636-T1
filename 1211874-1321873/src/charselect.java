@@ -80,15 +80,15 @@ public class charselect extends JFrame {
         public void actionPerformed(ActionEvent event) {
             JCheckBox checkbox = (JCheckBox) event.getSource();
             int index = checkBoxes.indexOf(checkbox) + 1;
-            if(checkbox.isSelected()==true)
+            if(checkbox.isSelected() == true)
             {
-            	count = count+1;
+            	count = count + 1;
             }
             else
             {
-            	count = count-1;
+            	count = count - 1;
             }
-            if(count>=3)
+            if(count >= 3) /* Se a partida possui o numero minimo de 3 jogadores */
             {
             	b1.setEnabled(true);
             }
@@ -117,7 +117,7 @@ class startmatchT implements ActionListener {
 		((Window) c).dispose();
 		board l = new board("Tabuleiro");
 		Insets ins = l.getInsets();
-		l.setSize(700 + ins.left + ins.right, 703 + ins.top + ins.bottom);
+		l.setSize(1000 + ins.left + ins.right, 686 + ins.top + ins.bottom);
 		l.setVisible(true);
 	}
 }
