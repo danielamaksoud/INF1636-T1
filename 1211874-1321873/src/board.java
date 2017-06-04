@@ -19,7 +19,7 @@ public class board extends JFrame {
 	final JButton b1 = new JButton("Jogar Dados");
 	
 	
-	public board(String nome) {
+	public board(String nome, int i1, int i2, int i3, int i4, int i5, int i6) {
 		super(nome);
 	
 		setLayout(new GridLayout(0,1));
@@ -41,28 +41,57 @@ public class board extends JFrame {
 		
 		b1.addActionListener(new RollDice(this));
 		size = b1.getPreferredSize();
-		b1.setBounds(766, 119, size.width + 50, size.height + 10);
+		b1.setBounds(758, 119, size.width + 50, size.height + 10);
 		size = b2.getPreferredSize();
-		b2.setBounds(397, 42, 25, 23); // Esta na posicao inicial
+		b2.setBounds(400, 36, 25, 23); // Esta na posicao inicial
 		b2.setBackground(Color.GREEN);
 		size = b3.getPreferredSize();
-		b3.setBounds(73, 215, 25, 23);
+		b3.setBounds(275, 36, 25, 23);
 		b3.setBackground(Color.WHITE);
 		size = b4.getPreferredSize();
-		b4.setBounds(73, 215, 25, 23);
+		b4.setBounds(625, 511, 25, 23);
 		b4.setBackground(Color.MAGENTA);
 		size = b5.getPreferredSize();
-		b5.setBounds(73, 215, 25, 23);
+		b5.setBounds(625, 186, 25, 23);
 		b5.setBackground(Color.BLUE);
 		size = b6.getPreferredSize();
-		b6.setBounds(73, 215, 25, 23);
+		b6.setBounds(50, 459, 25, 23);
 		b6.setBackground(Color.YELLOW);
 		size = b7.getPreferredSize();
-		b7.setBounds(73, 215, 25, 23);
+		b7.setBounds(225, 634, 25, 23);
 		b7.setBackground(Color.RED);
 		tabuleiro.add(b1);
+<<<<<<< HEAD
 		// tabuleiro.add(b2);
 		
+=======
+		if(i1 == 1)
+		{
+			tabuleiro.add(b2);
+		}
+		if(i2==1)
+		{
+			tabuleiro.add(b3);
+		}
+		if(i3==1)
+		{
+			tabuleiro.add(b4);
+		}
+		if(i4==1)
+		{
+			tabuleiro.add(b5);
+		}
+		if(i5==1)
+		{
+			tabuleiro.add(b6);
+		}
+		if(i6==1)
+		{
+			tabuleiro.add(b7);
+		}
+		//altura do quadrado 25
+		//largura do quadrado 25
+>>>>>>> origin/master
 		setVisible(true);
 	}
 	
