@@ -41,7 +41,7 @@ public class board extends JFrame {
 		
 		b1.addActionListener(new RollDice(this));
 		size = b1.getPreferredSize();
-		b1.setBounds(766, 119, size.width + 50, size.height + 10);
+		b1.setBounds(758, 119, size.width + 50, size.height + 10);
 		size = b2.getPreferredSize();
 		b2.setBounds(397, 42, 25, 23); // Esta na posicao inicial
 		b2.setBackground(Color.GREEN);
