@@ -1,0 +1,15 @@
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class showdice {
+	
+}
+public class showdice extends JFrame {
+
+	image1 = new ImageIcon(getClass().getResource("dado2.jpg"));
+	label1 = new JLabel(image1);
+
+	this.setResizable(false);
+	
+}

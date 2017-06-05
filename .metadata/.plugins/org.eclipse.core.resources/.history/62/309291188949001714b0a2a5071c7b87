@@ -1,0 +1,28 @@
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class showdice extends JFrame{
+
+	backgroundimage tela;
+	
+	public showdice(String nome) {
+		super(nome);
+		ShowImage();
+		this.setResizable(false);
+	}
+	
+	void ShowImage (){
+		setLayout(new GridLayout(1,1));
+		
+		tela = new backgroundimage("dado2.jpg");
+		getContentPane().add(tela);
+
+	}
+	
+}
+
+

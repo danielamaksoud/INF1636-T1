@@ -1,0 +1,21 @@
+import java.awt.Component;
+import java.awt.Window;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class press2 implements ActionListener {
+
+	Component c;
+	
+	public press2(Component x)
+	{
+		c = x;
+	}
+	
+	public void actionPerformed(ActionEvent e)
+	{
+		c.setVisible(true);
+		System.out.println("hi");
+	}
+	
+}

@@ -1,0 +1,17 @@
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class showdice extends JFrame{
+	
+private ImageIcon image1;
+private JLabel label1;
+
+ShowImage {
+	setLayout(new FlowLayout());
+	
+}
+	
+}
+
+

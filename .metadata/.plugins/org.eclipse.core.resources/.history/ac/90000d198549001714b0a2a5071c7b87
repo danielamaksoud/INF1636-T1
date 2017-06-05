@@ -1,0 +1,30 @@
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class showdice extends JFrame{
+	
+	private ImageIcon image1;
+	private JLabel label1;
+	backgroundimage tela;
+	
+	public showdice(String nome) {
+		super(nome);
+
+		this.setResizable(false);
+	}
+	
+	void ShowImage (){
+		setLayout(new GridLayout(1,1));
+		
+		tela = new backgroundimage("Fundo2.png");
+		getContentPane().add(tela);
+
+	}
+	
+}
+
+

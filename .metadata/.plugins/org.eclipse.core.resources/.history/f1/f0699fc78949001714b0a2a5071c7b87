@@ -1,0 +1,30 @@
+import java.awt.GridLayout;
+import javax.swing.JFrame;
+
+public class showdice extends JFrame{
+
+	backgroundimage tela;
+	
+	public showdice(String nome, int n) {
+		super(nome);
+		ShowImage();
+		this.setResizable(false);
+	}
+	
+	void ShowImage (){
+		setLayout(new GridLayout(1,1));
+		
+		if (n == 2) {
+			tela = new backgroundimage("dado2.jpg");
+		}
+		if (n == 3) {
+			tela = new backgroundimage("dado3.jpg");
+		}
+		
+		getContentPane().add(tela);
+
+	}
+	
+}
+
+

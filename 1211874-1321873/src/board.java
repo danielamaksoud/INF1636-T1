@@ -41,7 +41,7 @@ public class board extends JFrame {
 		
 		b1.addActionListener(new RollDice(this));
 		size = b1.getPreferredSize();
-		b1.setBounds(758, 119, size.width + 50, size.height + 10);
+		b1.setBounds(765, 119, size.width + 50, size.height + 10);
 		size = b2.getPreferredSize();
 		b2.setBounds(400, 36, 25, 23); // Esta na posicao inicial
 		b2.setBackground(Color.GREEN);
@@ -61,19 +61,16 @@ public class board extends JFrame {
 		b7.setBounds(225, 634, 25, 23);
 		b7.setBackground(Color.RED);
 		tabuleiro.add(b1);
-<<<<<<< HEAD
-		// tabuleiro.add(b2);
-		
-=======
+
 		if(i1 == 1)
 		{
 			tabuleiro.add(b2);
 		}
-		if(i2==1)
+		if(i2 == 1)
 		{
 			tabuleiro.add(b3);
 		}
-		if(i3==1)
+		if(i3 == 1)
 		{
 			tabuleiro.add(b4);
 		}
@@ -81,17 +78,18 @@ public class board extends JFrame {
 		{
 			tabuleiro.add(b5);
 		}
-		if(i5==1)
+		if(i5 == 1)
 		{
 			tabuleiro.add(b6);
 		}
-		if(i6==1)
+		if(i6 == 1)
 		{
 			tabuleiro.add(b7);
 		}
+		
 		//altura do quadrado 25
 		//largura do quadrado 25
->>>>>>> origin/master
+
 		setVisible(true);
 	}
 	
@@ -162,17 +160,40 @@ class Dices extends JFrame{
 		super(nome);
 		JPanel p = new JPanel();
 		getContentPane().add(p);
+		
 		JButton b2 = new JButton("2");
+		b2.addActionListener(new pressdice(this, 2));
+		
 		JButton b3 = new JButton("3");
+		b3.addActionListener(new pressdice(this, 3));
+		
 		JButton b4 = new JButton("4");
+		b4.addActionListener(new pressdice(this, 4));
+		
 		JButton b5 = new JButton("5");
+		b5.addActionListener(new pressdice(this, 5));
+		
 		JButton b6 = new JButton("6");
+		b6.addActionListener(new pressdice(this, 6));
+		
 		JButton b7 = new JButton("7");
+		b7.addActionListener(new pressdice(this, 7));
+		
 		JButton b8 = new JButton("8");
+		b8.addActionListener(new pressdice(this, 8));
+		
 		JButton b9 = new JButton("9");
+		b9.addActionListener(new pressdice(this, 9));
+		
 		JButton b10 = new JButton("10");
+		b10.addActionListener(new pressdice(this, 10));
+		
 		JButton b11 = new JButton("11");
+		b11.addActionListener(new pressdice(this, 11));
+		
 		JButton b12 = new JButton("12");
+		b12.addActionListener(new pressdice(this, 12));
+		
 		setLayout(new GridLayout(0,2));
 		URL url;
 		try {
@@ -204,3 +225,5 @@ class Dices extends JFrame{
 	}
 		
 }
+
+
