@@ -119,12 +119,10 @@ public class board extends JFrame {
 			JButton up = new JButton("cima");
 			JButton down = new JButton("baixo");
 			JButton right = new JButton("direita");
-			
 			left.setBounds(posx-25, posy+0,  50,  10);
 			right.setBounds(posx+25, posy+0,  50,  10);
 			up.setBounds(posx-0, posy-25,  50,  10);
 			down.setBounds(posx-0, posy+25,  50,  10);
-			
 			tabuleiro.add(left);
 			tabuleiro.add(up);
 			tabuleiro.add(down);

@@ -124,7 +124,6 @@ public class board extends JFrame {
 			right.setBounds(posx+25, posy+0,  50,  10);
 			up.setBounds(posx-0, posy-25,  50,  10);
 			down.setBounds(posx-0, posy+25,  50,  10);
-			
 			tabuleiro.add(left);
 			tabuleiro.add(up);
 			tabuleiro.add(down);
