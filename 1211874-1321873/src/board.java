@@ -13,10 +13,17 @@ import javax.imageio.ImageIO;
 public class board extends JFrame {
 	
 	backgroundimage tabuleiro;
-	double cx = 5.0;
-	double cy = 300.0;
-	double radius = 10;
+
 	final JButton b1 = new JButton("Jogar Dados");
+	final JButton fimt = new JButton("Finalizar Turno");
+	final JButton b2 = new JButton("");
+	final JButton b3 = new JButton("");
+	final JButton b4 = new JButton("");
+	final JButton b5 = new JButton("");
+	final JButton b6 = new JButton("");
+	final JButton b7 = new JButton("");
+	int numplayers = 0;
+	int placeturn = 0;
 	
 	
 	public board(String nome, int i1, int i2, int i3, int i4, int i5, int i6) {
@@ -32,16 +39,13 @@ public class board extends JFrame {
 		
 		Dimension size;
 		// Pinos dos jogadores
-		JButton b2 = new JButton("");
-		JButton b3 = new JButton("");
-		JButton b4 = new JButton("");
-		JButton b5 = new JButton("");
-		JButton b6 = new JButton("");
-		JButton b7 = new JButton("");
+		
 		
 		b1.addActionListener(new RollDice(this));
 		size = b1.getPreferredSize();
-		b1.setBounds(765, 119, size.width + 50, size.height + 10);
+		b1.setBounds(758, 119, size.width + 50, size.height + 10);
+		fimt.setBounds(758,159, size.width+50, size.height + 10 );
+		
 		size = b2.getPreferredSize();
 		b2.setBounds(400, 36, 25, 23); // Esta na posicao inicial
 		b2.setBackground(Color.GREEN);
@@ -61,54 +65,93 @@ public class board extends JFrame {
 		b7.setBounds(225, 634, 25, 23);
 		b7.setBackground(Color.RED);
 		tabuleiro.add(b1);
-
+		tabuleiro.add(fimt);
 		if(i1 == 1)
 		{
 			tabuleiro.add(b2);
+			b2.setEnabled(false);
+			numplayers ++;
 		}
-		if(i2 == 1)
+		if(i2==1)
 		{
 			tabuleiro.add(b3);
+			b3.setEnabled(false);
+			numplayers ++;
 		}
-		if(i3 == 1)
+		if(i3==1)
 		{
 			tabuleiro.add(b4);
+			b4.setEnabled(false);
+			numplayers ++;
 		}
 		if(i4==1)
 		{
 			tabuleiro.add(b5);
+			b5.setEnabled(false);
+			numplayers ++;
 		}
-		if(i5 == 1)
+		if(i5==1)
 		{
 			tabuleiro.add(b6);
+			b6.setEnabled(false);
+			numplayers ++;
 		}
-		if(i6 == 1)
+		if(i6==1)
 		{
 			tabuleiro.add(b7);
+			b7.setEnabled(false);
+			numplayers ++;
 		}
-		
 		//altura do quadrado 25
 		//largura do quadrado 25
-
+		
+		
+		
 		setVisible(true);
 	}
 	
-	class pawns extends JPanel
+	class turn
 	{
-		@Override
-		public void paintComponent(Graphics g)
+		void turn(JButton b, int posx, int posy, int dicenum)
 		{
-			
-			super.paintComponent(g);
-			Graphics2D g2d =  (Graphics2D) g;
-			Ellipse2D c = new Ellipse2D.Double();
-			c.setFrameFromCenter(cx,cy,cx+radius, cy+radius);
-			g2d.setPaint(Color.YELLOW);
-			g2d.fill(c);
-			g2d.draw(c);
+			JButton left = new JButton("esquerda");
+			JButton up = new JButton("cima");
+			JButton down = new JButton("baixo");
+			JButton right = new JButton("direita");
+			left.setBounds(posx-25, posy+0,  50,  10);
+			right.setBounds(posx+25, posy+0,  50,  10);
+			up.setBounds(posx-0, posy-25,  50,  10);
+			down.setBounds(posx-0, posy+25,  50,  10);
+			tabuleiro.add(left);
+			tabuleiro.add(up);
+			tabuleiro.add(down);
+			tabuleiro.add(right);
 			
 		}
 	}
+	class mleft implements ActionListener {
+
+		Component c;
+		JButton b;
+		int posx;
+		int posy;
+		
+		public mleft(Component x, JButton p, int px, int py)
+		{
+			c = x;
+			b = p;
+			posx = px;
+			posy = py;
+		}
+		public void actionPerformed(ActionEvent e)
+		{
+			b.setBounds(posx-25, posy, 25, 23);
+			tabuleiro.remove(b);
+			tabuleiro.add(b);
+			
+		}
+	}
+	
 	
 	class imagem extends JPanel {
 		public static final int TXT_X = 700;
