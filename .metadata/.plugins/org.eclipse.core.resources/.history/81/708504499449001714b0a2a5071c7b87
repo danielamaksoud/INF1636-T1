@@ -16,12 +16,12 @@ public class board extends JFrame {
 
 	final JButton b1 = new JButton("Jogar Dados");
 	final JButton fimt = new JButton("Finalizar Turno");
-	final JButton b2 = new JButton("a");
-	final JButton b3 = new JButton("b");
-	final JButton b4 = new JButton("c");
-	final JButton b5 = new JButton("d");
-	final JButton b6 = new JButton("e");
-	final JButton b7 = new JButton("f");
+	final JButton b2 = new JButton("");
+	final JButton b3 = new JButton("");
+	final JButton b4 = new JButton("");
+	final JButton b5 = new JButton("");
+	final JButton b6 = new JButton("");
+	final JButton b7 = new JButton("");
 	int numplayers = 0;
 	int placeturn = 0;
 	
