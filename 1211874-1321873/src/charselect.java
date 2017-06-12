@@ -113,10 +113,12 @@ class startmatchT implements ActionListener {
 		boolean ic4 = cb4.isSelected();
 		boolean ic5 = cb5.isSelected();
 		boolean ic6 = cb6.isSelected();
-		int i1, i2, i3, i4, i5, i6;
+		int i1, i2, i3, i4, i5, i6, contador;
+		contador = 0;
 		if(ic1 == true)
 		{
 			i1 = 1;
+			contador+=1;
 		}
 		else
 		{
@@ -125,6 +127,7 @@ class startmatchT implements ActionListener {
 		if(ic2 == true)
 		{
 			i2 = 1;
+			contador+=1;
 		}
 		else
 		{
@@ -133,6 +136,7 @@ class startmatchT implements ActionListener {
 		if(ic3 == true)
 		{
 			i3 = 1;
+			contador+=1;
 		}
 		else
 		{
@@ -141,6 +145,7 @@ class startmatchT implements ActionListener {
 		if(ic4 == true)
 		{
 			i4 = 1;
+			contador+=1;
 		}
 		else
 		{
@@ -149,6 +154,7 @@ class startmatchT implements ActionListener {
 		if(ic5 == true)
 		{
 			i5 = 1;
+			contador+=1;
 		}
 		else
 		{
@@ -157,6 +163,7 @@ class startmatchT implements ActionListener {
 		if(ic6 == true)
 		{
 			i6 = 1;
+			contador+=1;
 		}
 		else
 		{
@@ -164,7 +171,7 @@ class startmatchT implements ActionListener {
 		}
 		c.setVisible(false);
 		((Window) c).dispose();
-		board l = new board("Tabuleiro", i1, i2, i3, i4, i5, i6);
+		board l = new board("Tabuleiro", i1, i2, i3, i4, i5, i6, contador);
 		Insets ins = l.getInsets();
 		l.setSize(1000 + ins.left + ins.right, 686 + ins.top + ins.bottom);
 		l.setVisible(true);
