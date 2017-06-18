@@ -64,7 +64,7 @@ public class board extends JFrame {
 			b2.setBackground(Color.GREEN);
 			tabuleiro.add(b2);
 			b2.setEnabled(false);
-			players[ord] = new Player(400, 36, b2);
+			players[ord] = new Player(400, 36, b2, Color.GREEN);
 			ord+=1;
 		}
 		if(i2 == 1)
@@ -74,7 +74,7 @@ public class board extends JFrame {
 			b3.setBackground(Color.WHITE);
 			tabuleiro.add(b3);
 			b3.setEnabled(false);
-			players[ord] = new Player(275, 36, b3);
+			players[ord] = new Player(275, 36, b3, Color.WHITE);
 			ord+=1;
 		}
 		if(i3 == 1)
@@ -84,7 +84,7 @@ public class board extends JFrame {
 			b4.setBackground(Color.MAGENTA);
 			tabuleiro.add(b4);
 			b4.setEnabled(false);
-			players[ord] = new Player(625, 511, b3);
+			players[ord] = new Player(625, 511, b3, Color.MAGENTA);
 			ord+=1;
 		}
 		if(i4 == 1)
@@ -94,7 +94,7 @@ public class board extends JFrame {
 			b5.setBackground(Color.BLUE);
 			tabuleiro.add(b5);
 			b5.setEnabled(false);
-			players[ord] = new Player(625, 186, b3);
+			players[ord] = new Player(625, 186, b3, Color.BLUE);
 			ord+=1;
 		}
 		if(i5 == 1)
@@ -104,7 +104,7 @@ public class board extends JFrame {
 			b6.setBackground(Color.YELLOW);
 			tabuleiro.add(b6);
 			b6.setEnabled(false);
-			players[ord] = new Player(50, 459, b3);
+			players[ord] = new Player(50, 459, b3, Color.YELLOW);
 			ord+=1;
 		}
 		if(i6 == 1)
@@ -114,7 +114,7 @@ public class board extends JFrame {
 			b7.setBackground(Color.RED);
 			tabuleiro.add(b7);
 			b7.setEnabled(false);
-			players[ord] = new Player(225, 634, b3);
+			players[ord] = new Player(225, 634, b3, Color.RED);
 			ord+=1;
 		}
 		
@@ -139,15 +139,19 @@ public class board extends JFrame {
 			down = new JButton("baixo");
 			right = new JButton("direita");
 			
-			left.setBounds(act.posx-25, act.posy+0,  50,  25);
-			right.setBounds(act.posx+25, act.posy+0,  50,  25);
-			up.setBounds(act.posx-0, act.posy-25,  50,  25);
-			down.setBounds(act.posx-0, act.posy+25,  50,  25);
+			left.setBounds(act.posx-100, act.posy+50,  50,  25);
+			right.setBounds(act.posx+100, act.posy+50,  50,  25);
+			up.setBounds(act.posx-0, act.posy-50,  50,  25);
+			down.setBounds(act.posx-0, act.posy+50,  50,  25);
 			
 			left.addActionListener(new mleft(act));
 			right.addActionListener(new mright(act));
 			up.addActionListener(new mup(act));
 			down.addActionListener(new mdown(act));
+			left.addActionListener(new adjustbb());
+			right.addActionListener(new adjustbb());
+			up.addActionListener(new adjustbb());
+			down.addActionListener(new adjustbb());
 			
 			tabuleiro.add(left);
 			tabuleiro.add(up);
@@ -159,18 +163,57 @@ public class board extends JFrame {
 		{
 			
 		}
+		class adjustbb implements ActionListener
+		{
+			
+			
+			public adjustbb()
+			{
+			}
+			public void actionPerformed(ActionEvent e)
+			{
+				
+			}
+		}
 	   
+	}
+	class PassTurn implements ActionListener{
+		
+			Component c;
+		
+		public PassTurn(Component x)
+		{
+			c = x;
+		}
+		public void actionPerformed(ActionEvent e)
+		{
+			
+			if(placeturn==numbplayers)
+			{
+				placeturn = 0;
+			}
+			else
+			{
+				placeturn +=1;
+			}
+			System.out.println("passou a vez");
+			
+					
+			new turn(players[placeturn]);
+		}
 	}
 	class Player{
 		public int posx;
 		public int posy;
 		public JButton bb;
+		public Color collo;
 		
-		public Player(int startx, int starty, JButton ba)
+		public Player(int startx, int starty, JButton ba, Color col)
 		{
 			posx = startx;
 			posy = starty;
 			bb = ba;
+			collo = col;
 		}
 		
 	}
@@ -187,8 +230,11 @@ public class board extends JFrame {
 		{
 			JButton n = new JButton();
 			n = p.bb;
+			
 			n.setBounds(p.posx-25, p.posy, 25, 23);
+			n.setBackground(p.collo);
 			tabuleiro.remove(p.bb);
+			
 			tabuleiro.add(n);
 			p.bb = n;
 			
@@ -209,8 +255,9 @@ public class board extends JFrame {
 			JButton n = new JButton();
 			n = p.bb;
 			n.setBounds(p.posx, p.posy-25, 25, 23);
+			n.setBackground(p.collo);
 			tabuleiro.remove(p.bb);
-			tabuleiro.add(n);
+			tabuleiro.add(n);			
 			p.bb = n;
 			
 		}
@@ -229,6 +276,7 @@ public class board extends JFrame {
 			JButton n = new JButton();
 			n = p.bb;
 			n.setBounds(p.posx, p.posy+25, 25, 23);
+			n.setBackground(p.collo);
 			tabuleiro.remove(p.bb);
 			tabuleiro.add(n);
 			p.bb = n;
@@ -249,6 +297,7 @@ public class board extends JFrame {
 			JButton n = new JButton();
 			n = p.bb;
 			n.setBounds(p.posx+25, p.posy, 25, 23);
+			n.setBackground(p.collo);
 			tabuleiro.remove(p.bb);
 			tabuleiro.add(n);
 			p.bb = n;
@@ -282,31 +331,7 @@ public class board extends JFrame {
 	
 }
 	
-	class PassTurn implements ActionListener{
-		
-		Component c;
-		
-		public PassTurn(Component x)
-		{
-			c = x;
-		}
-		public void actionPerformed(ActionEvent e)
-		{
-			
-			if(placeturn==numbplayers)
-			{
-				placeturn = 0;
-			}
-			else
-			{
-				placeturn +=1;
-			}
-			System.out.println("passou a vez");
-			
-					
-			new turn(players[placeturn]);
-		}
-	}
+	
 
 class RollDice implements ActionListener {
 
