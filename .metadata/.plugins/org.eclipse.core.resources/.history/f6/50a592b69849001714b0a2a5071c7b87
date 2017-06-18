@@ -49,8 +49,6 @@ public class showdice extends JFrame{
 		}
 		
 		getContentPane().add(tela);
-		
-		
 
 	}
 	
