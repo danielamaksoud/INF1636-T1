@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.math.*;
 import java.awt.geom.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -7,6 +8,8 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+
 import javax.imageio.ImageIO;
 
 @SuppressWarnings("serial")
@@ -17,6 +20,7 @@ public class board extends JFrame {
 	
 	final JButton b1 = new JButton("Jogar Dados");
 	final JButton fimt = new JButton("Finalizar Turno");
+	final JButton mm = new JButton("Mostrar mão");
 	final JButton b2 = new JButton("");
 	final JButton b3 = new JButton("");
 	final JButton b4 = new JButton("");
@@ -49,13 +53,15 @@ public class board extends JFrame {
 		size = b1.getPreferredSize();
 		b1.setBounds(758, 119, size.width + 50, size.height + 10);
 		fimt.setBounds(758,159, size.width+50, size.height + 10 );
+		mm.setBounds(758,199, size.width+50, size.height + 10 );
 		
 		fimt.addActionListener(new PassTurn(this));
 		
 		
-		
+		int j;
 		tabuleiro.add(b1);
 		tabuleiro.add(fimt);
+		tabuleiro.add(mm);
 		
 		if(i1 == 1)
 		{
@@ -64,7 +70,8 @@ public class board extends JFrame {
 			b2.setBackground(Color.GREEN);
 			tabuleiro.add(b2);
 			b2.setEnabled(false);
-			players[ord] = new Player(400, 36, b2, Color.GREEN);
+			ArrayList<String> l1 = new ArrayList<String>();
+			players[ord] = new Player(400, 36, b2, Color.GREEN, l1);
 			ord+=1;
 		}
 		if(i2 == 1)
@@ -74,7 +81,8 @@ public class board extends JFrame {
 			b3.setBackground(Color.WHITE);
 			tabuleiro.add(b3);
 			b3.setEnabled(false);
-			players[ord] = new Player(275, 36, b3, Color.WHITE);
+			ArrayList<String> l2 = new ArrayList<String>();
+			players[ord] = new Player(275, 36, b3, Color.WHITE, l2);
 			ord+=1;
 		}
 		if(i3 == 1)
@@ -84,7 +92,8 @@ public class board extends JFrame {
 			b4.setBackground(Color.MAGENTA);
 			tabuleiro.add(b4);
 			b4.setEnabled(false);
-			players[ord] = new Player(625, 511, b3, Color.MAGENTA);
+			ArrayList<String> l3 = new ArrayList<String>();
+			players[ord] = new Player(625, 511, b3, Color.MAGENTA, l3);
 			ord+=1;
 		}
 		if(i4 == 1)
@@ -94,7 +103,8 @@ public class board extends JFrame {
 			b5.setBackground(Color.BLUE);
 			tabuleiro.add(b5);
 			b5.setEnabled(false);
-			players[ord] = new Player(625, 186, b3, Color.BLUE);
+			ArrayList<String> l4 = new ArrayList<String>();
+			players[ord] = new Player(625, 186, b3, Color.BLUE, l4);
 			ord+=1;
 		}
 		if(i5 == 1)
@@ -104,7 +114,8 @@ public class board extends JFrame {
 			b6.setBackground(Color.YELLOW);
 			tabuleiro.add(b6);
 			b6.setEnabled(false);
-			players[ord] = new Player(50, 459, b3, Color.YELLOW);
+			ArrayList<String> l5 = new ArrayList<String>();
+			players[ord] = new Player(50, 459, b3, Color.YELLOW, l5);
 			ord+=1;
 		}
 		if(i6 == 1)
@@ -114,7 +125,8 @@ public class board extends JFrame {
 			b7.setBackground(Color.RED);
 			tabuleiro.add(b7);
 			b7.setEnabled(false);
-			players[ord] = new Player(225, 634, b3, Color.RED);
+			ArrayList<String> l6 = new ArrayList<String>();
+			players[ord] = new Player(225, 634, b3, Color.RED, l6);
 			ord+=1;
 		}
 		
@@ -207,14 +219,17 @@ public class board extends JFrame {
 		public int posy;
 		public JButton bb;
 		public Color collo;
+		public ArrayList<String> mao;
 		
-		public Player(int startx, int starty, JButton ba, Color col)
+		public Player(int startx, int starty, JButton ba, Color col, ArrayList<String> m)
 		{
 			posx = startx;
 			posy = starty;
 			bb = ba;
 			collo = col;
+			mao = m;
 		}
+		
 		
 	}
 	class mleft implements ActionListener {
