@@ -55,7 +55,7 @@ public class board extends JFrame {
 		fimt.setBounds(758,159, size.width+50, size.height + 10 );
 		mm.setBounds(758,199, size.width+50, size.height + 10 );
 		
-		/* mm.addActionListener(new hand(this, players[placeturn].mao)); */
+		mm.addActionListener(new hand(this, players[placeturn].mao));
 		fimt.addActionListener(new PassTurn(this));
 		
 
@@ -132,7 +132,8 @@ public class board extends JFrame {
 		
 		//altura do quadrado 25
 		//largura do quadrado 25
-		/* ArrayList<String> m1 = new ArrayList<String>();
+		
+		ArrayList<String> m1 = new ArrayList<String>();
 		ArrayList<String> m2 = new ArrayList<String>();
 		ArrayList<String> m3 = new ArrayList<String>();
 		ArrayList<String> m4 = new ArrayList<String>();
@@ -494,7 +495,7 @@ public class board extends JFrame {
 			}
 			
 			new assassin(6, m1, m2, m3, m4, m5, m6);
-		} */
+		}
 		
 		setVisible(true);
 	}
