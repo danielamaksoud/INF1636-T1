@@ -19,12 +19,3 @@
 /pressdice.class
 /board$mleft.class
 /board$turn.class
-/board$PassTurn.class
-/board$Player.class
-/board$mdown.class
-/board$mright.class
-/board$mup.class
-/board$turn$adjustbb.class
-/assassin.class
-/hand.class
-/hands.class

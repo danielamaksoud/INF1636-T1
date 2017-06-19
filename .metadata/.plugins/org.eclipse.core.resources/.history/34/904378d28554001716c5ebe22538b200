@@ -20,7 +20,7 @@ public class board extends JFrame {
 	
 	final JButton b1 = new JButton("Jogar Dados");
 	final JButton fimt = new JButton("Finalizar Turno");
-	final JButton mm = new JButton("Mostrar mao");
+	final JButton mm = new JButton("Mostrar mão");
 	final JButton b2 = new JButton("");
 	final JButton b3 = new JButton("");
 	final JButton b4 = new JButton("");
@@ -55,7 +55,6 @@ public class board extends JFrame {
 		fimt.setBounds(758,159, size.width+50, size.height + 10 );
 		mm.setBounds(758,199, size.width+50, size.height + 10 );
 		
-		mm.addActionListener(new hand(this));
 		fimt.addActionListener(new PassTurn(this));
 		
 		
