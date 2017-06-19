@@ -9,7 +9,7 @@ public class hand implements ActionListener {
 	
 	Component c;
 	
-	public hand(Component x, ArrayList<String> mao)
+	public hand(Component x)
 	{
 		c = x;	
 	}

@@ -1,4 +1,7 @@
 import javax.swing.*;
+
+import board.Player;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,7 +12,7 @@ public class hand implements ActionListener {
 	
 	Component c;
 	
-	public hand(Component x, ArrayList<String> mao)
+	public hand(Component x, Player p)
 	{
 		c = x;	
 	}

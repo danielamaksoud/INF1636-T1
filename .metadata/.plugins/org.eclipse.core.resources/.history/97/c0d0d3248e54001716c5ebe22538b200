@@ -55,7 +55,7 @@ public class board extends JFrame {
 		fimt.setBounds(758,159, size.width+50, size.height + 10 );
 		mm.setBounds(758,199, size.width+50, size.height + 10 );
 		
-		mm.addActionListener(new hand(this, players[ord].mao));
+		mm.addActionListener(new hand(this, 2));
 		fimt.addActionListener(new PassTurn(this));
 		
 		
