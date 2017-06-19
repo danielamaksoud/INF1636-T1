@@ -16,12 +16,13 @@ public class hand implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		c.setVisible(true);	
 		
-		showHand l = new showHand("Mao do Jogador");
+		showHand l = new showHand("Mao do Jogador", n1);
 		Insets ins = l.getInsets();
 		l.setSize(95 + ins.left + ins.right, 106 + ins.top + ins.bottom);
 		l.setVisible(true);
+		
+		c.setVisible(true);	
 	}
 
 }
