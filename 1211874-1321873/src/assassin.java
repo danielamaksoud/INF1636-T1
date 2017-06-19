@@ -5,7 +5,7 @@ import java.util.Collections;
 
 public class assassin {
 	
-	void assassin(int numplayers, ArrayList l1, ArrayList l2, ArrayList l3)
+	assassin(int numplayers, ArrayList<String> l1, ArrayList<String> l2, ArrayList<String> l3)
 	{
 		ArrayList<String> cartas = new ArrayList<String>();
 		ArrayList<String> Assassino = new ArrayList<String>();
@@ -57,7 +57,7 @@ public class assassin {
 		}
 	}
 		
-		void assassin(int numplayers, ArrayList l1, ArrayList l2, ArrayList l3, ArrayList l4)
+		assassin(int numplayers, ArrayList<String> l1, ArrayList<String> l2, ArrayList<String> l3, ArrayList<String> l4)
 		{
 			ArrayList<String> cartas = new ArrayList<String>();
 			ArrayList<String> Assassino = new ArrayList<String>();
@@ -113,7 +113,7 @@ public class assassin {
 			
 	}
 		
-		void assassin(int numplayers, ArrayList l1, ArrayList l2, ArrayList l3, ArrayList l4, ArrayList l5)
+		assassin(int numplayers, ArrayList<String> l1, ArrayList<String> l2, ArrayList<String> l3, ArrayList<String> l4, ArrayList<String> l5)
 		{
 			ArrayList<String> cartas = new ArrayList<String>();
 			ArrayList<String> Assassino = new ArrayList<String>();
@@ -172,7 +172,7 @@ public class assassin {
 		}
 		
 		
-		void assassin(int numplayers, ArrayList l1, ArrayList l2, ArrayList l3, ArrayList l4, ArrayList l5, ArrayList l6)
+		assassin(int numplayers, ArrayList<String> l1, ArrayList<String> l2, ArrayList<String> l3, ArrayList<String> l4, ArrayList<String> l5, ArrayList<String> l6)
 		{
 			ArrayList<String> cartas = new ArrayList<String>();
 			ArrayList<String> Assassino = new ArrayList<String>();

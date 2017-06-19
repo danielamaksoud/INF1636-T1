@@ -58,8 +58,7 @@ public class board extends JFrame {
 		mm.addActionListener(new hand(this, players[ord].mao));
 		fimt.addActionListener(new PassTurn(this));
 		
-		
-		int j;
+
 		tabuleiro.add(b1);
 		tabuleiro.add(fimt);
 		tabuleiro.add(mm);
@@ -134,7 +133,369 @@ public class board extends JFrame {
 		//altura do quadrado 25
 		//largura do quadrado 25
 		
+		ArrayList<String> m1 = new ArrayList<String>();
+		ArrayList<String> m2 = new ArrayList<String>();
+		ArrayList<String> m3 = new ArrayList<String>();
+		ArrayList<String> m4 = new ArrayList<String>();
+		ArrayList<String> m5 = new ArrayList<String>();
+		ArrayList<String> m6 = new ArrayList<String>();
 		
+		if(numplayers == 3)
+		{
+			while (m1 == null){
+				if (i1 == 1)
+				{
+					m1 = players[0].mao;
+				}
+				else if (i2 == 1)
+				{
+					m1 = players[1].mao;
+				}
+				else if (i3 == 1)
+				{
+					m1 = players[2].mao;
+				}
+				else if (i4 == 1)
+				{
+					m1 = players[3].mao;
+				}
+				else if (i5 == 1)
+				{
+					m1 = players[4].mao;
+				}
+				else if (i6 == 1)
+				{
+					m1 = players[5].mao;
+				}
+			}
+			while (m2 == null){
+				if (i2 == 1)
+				{
+					m2 = players[1].mao;
+				}
+				else if (i3 == 1)
+				{
+					m2 = players[2].mao;
+				}
+				else if (i4 == 1)
+				{
+					m2 = players[3].mao;
+				}
+				else if (i5 == 1)
+				{
+					m2 = players[4].mao;
+				}
+				else if (i6 == 1)
+				{
+					m2 = players[5].mao;
+				}
+			}
+			while (m3 == null){
+				if (i3 == 1)
+				{
+					m3 = players[2].mao;
+				}
+				else if (i4 == 1)
+				{
+					m3 = players[3].mao;
+				}
+				else if (i5 == 1)
+				{
+					m3 = players[4].mao;
+				}
+				else if (i6 == 1)
+				{
+					m3 = players[5].mao;
+				}
+			}
+			
+			new assassin(3, m1, m2, m3);
+		}
+		else if(numplayers == 4)
+		{
+			while (m1 == null){
+				if (i1 == 1)
+				{
+					m1 = players[0].mao;
+				}
+				else if (i2 == 1)
+				{
+					m1 = players[1].mao;
+				}
+				else if (i3 == 1)
+				{
+					m1 = players[2].mao;
+				}
+				else if (i4 == 1)
+				{
+					m1 = players[3].mao;
+				}
+				else if (i5 == 1)
+				{
+					m1 = players[4].mao;
+				}
+				else if (i6 == 1)
+				{
+					m1 = players[5].mao;
+				}
+			}
+			while (m2 == null){
+				if (i2 == 1)
+				{
+					m2 = players[1].mao;
+				}
+				else if (i3 == 1)
+				{
+					m2 = players[2].mao;
+				}
+				else if (i4 == 1)
+				{
+					m2 = players[3].mao;
+				}
+				else if (i5 == 1)
+				{
+					m2 = players[4].mao;
+				}
+				else if (i6 == 1)
+				{
+					m2 = players[5].mao;
+				}
+			}
+			while (m3 == null){
+				if (i3 == 1)
+				{
+					m3 = players[2].mao;
+				}
+				else if (i4 == 1)
+				{
+					m3 = players[3].mao;
+				}
+				else if (i5 == 1)
+				{
+					m3 = players[4].mao;
+				}
+				else if (i6 == 1)
+				{
+					m3 = players[5].mao;
+				}
+			}
+			while (m4 == null){
+				if (i4 == 1)
+				{
+					m4 = players[3].mao;
+				}
+				else if (i5 == 1)
+				{
+					m4 = players[4].mao;
+				}
+				else if (i6 == 1)
+				{
+					m4 = players[5].mao;
+				}
+			}
+			
+			new assassin(4, m1, m2, m3, m4);
+		}
+		else if(numplayers == 5)
+		{
+			while (m1 == null){
+				if (i1 == 1)
+				{
+					m1 = players[0].mao;
+				}
+				else if (i2 == 1)
+				{
+					m1 = players[1].mao;
+				}
+				else if (i3 == 1)
+				{
+					m1 = players[2].mao;
+				}
+				else if (i4 == 1)
+				{
+					m1 = players[3].mao;
+				}
+				else if (i5 == 1)
+				{
+					m1 = players[4].mao;
+				}
+				else if (i6 == 1)
+				{
+					m1 = players[5].mao;
+				}
+			}
+			while (m2 == null){
+				if (i2 == 1)
+				{
+					m2 = players[1].mao;
+				}
+				else if (i3 == 1)
+				{
+					m2 = players[2].mao;
+				}
+				else if (i4 == 1)
+				{
+					m2 = players[3].mao;
+				}
+				else if (i5 == 1)
+				{
+					m2 = players[4].mao;
+				}
+				else if (i6 == 1)
+				{
+					m2 = players[5].mao;
+				}
+			}
+			while (m3 == null){
+				if (i3 == 1)
+				{
+					m3 = players[2].mao;
+				}
+				else if (i4 == 1)
+				{
+					m3 = players[3].mao;
+				}
+				else if (i5 == 1)
+				{
+					m3 = players[4].mao;
+				}
+				else if (i6 == 1)
+				{
+					m3 = players[5].mao;
+				}
+			}
+			while (m4 == null){
+				if (i4 == 1)
+				{
+					m4 = players[3].mao;
+				}
+				else if (i5 == 1)
+				{
+					m4 = players[4].mao;
+				}
+				else if (i6 == 1)
+				{
+					m4 = players[5].mao;
+				}
+			}
+			while (m5 == null){
+				if (i5 == 1)
+				{
+					m4 = players[4].mao;
+				}
+				else if (i6 == 1)
+				{
+					m4 = players[5].mao;
+				}
+			}
+			
+			new assassin(5, m1, m2, m3, m4, m5);
+		}
+		else if(numplayers == 6)
+		{
+			while (m1 == null){
+				if (i1 == 1)
+				{
+					m1 = players[0].mao;
+				}
+				else if (i2 == 1)
+				{
+					m1 = players[1].mao;
+				}
+				else if (i3 == 1)
+				{
+					m1 = players[2].mao;
+				}
+				else if (i4 == 1)
+				{
+					m1 = players[3].mao;
+				}
+				else if (i5 == 1)
+				{
+					m1 = players[4].mao;
+				}
+				else if (i6 == 1)
+				{
+					m1 = players[5].mao;
+				}
+			}
+			while (m2 == null){
+				if (i2 == 1)
+				{
+					m2 = players[1].mao;
+				}
+				else if (i3 == 1)
+				{
+					m2 = players[2].mao;
+				}
+				else if (i4 == 1)
+				{
+					m2 = players[3].mao;
+				}
+				else if (i5 == 1)
+				{
+					m2 = players[4].mao;
+				}
+				else if (i6 == 1)
+				{
+					m2 = players[5].mao;
+				}
+			}
+			while (m3 == null){
+				if (i3 == 1)
+				{
+					m3 = players[2].mao;
+				}
+				else if (i4 == 1)
+				{
+					m3 = players[3].mao;
+				}
+				else if (i5 == 1)
+				{
+					m3 = players[4].mao;
+				}
+				else if (i6 == 1)
+				{
+					m3 = players[5].mao;
+				}
+			}
+			while (m4 == null){
+				if (i4 == 1)
+				{
+					m4 = players[3].mao;
+				}
+				else if (i5 == 1)
+				{
+					m4 = players[4].mao;
+				}
+				else if (i6 == 1)
+				{
+					m4 = players[5].mao;
+				}
+			}
+			while (m5 == null){
+				if (i5 == 1)
+				{
+					m4 = players[4].mao;
+				}
+				else if (i6 == 1)
+				{
+					m4 = players[5].mao;
+				}
+			}
+			while (m6 == null){
+				if (i5 == 1)
+				{
+					m6 = players[4].mao;
+				}
+				else if (i6 == 1)
+				{
+					m6 = players[5].mao;
+				}
+			}
+			
+			new assassin(6, m1, m2, m3, m4, m5, m6);
+		}
 		
 		setVisible(true);
 	}
