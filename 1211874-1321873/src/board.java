@@ -21,6 +21,10 @@ public class board extends JFrame {
 	final JButton b1 = new JButton("Jogar Dados");
 	final JButton fimt = new JButton("Finalizar Turno");
 	final JButton mm = new JButton("Mostrar mão");
+	final JButton bloco = new JButton("Bloco de Notas");
+	final JButton palp = new JButton("Dar Palpite");
+	final JButton JACUSE = new JButton("Acusar!");
+	final JButton RT = new JButton("Refazer Turno");
 	final JButton b2 = new JButton("");
 	final JButton b3 = new JButton("");
 	final JButton b4 = new JButton("");
@@ -28,6 +32,7 @@ public class board extends JFrame {
 	final JButton b6 = new JButton("");
 	final JButton b7 = new JButton("");
 	int placeturn = 0;
+	private JLabel texto;
 	int numbplayers;
 	Player[] players;
 	
@@ -54,14 +59,21 @@ public class board extends JFrame {
 		b1.setBounds(758, 119, size.width + 50, size.height + 10);
 		fimt.setBounds(758,159, size.width+50, size.height + 10 );
 		mm.setBounds(758,199, size.width+50, size.height + 10 );
+		bloco.setBounds(758,239, size.width+50, size.height + 10 );
+		RT.setBounds(758,359, size.width+50, size.height + 10 );
+		palp.setBounds(758,319, size.width+50, size.height + 10 );
+		JACUSE.setBounds(758,279, size.width+50, size.height + 10 );
 		
 		fimt.addActionListener(new PassTurn(this));
 		
 		
-		int j;
 		tabuleiro.add(b1);
 		tabuleiro.add(fimt);
 		tabuleiro.add(mm);
+		tabuleiro.add(bloco);
+		tabuleiro.add(RT);
+		tabuleiro.add(palp);
+		tabuleiro.add(JACUSE);
 		
 		if(i1 == 1)
 		{
@@ -75,7 +87,7 @@ public class board extends JFrame {
 			//tabuleiro.add(players[ord].bb);
 			ord+=1;
 		}
-		if(i2 == 1)
+		if(i6 == 1)
 		{
 			size = b3.getPreferredSize();
 			b3.setBounds(275, 36, 25, 23);
@@ -87,7 +99,7 @@ public class board extends JFrame {
 			//tabuleiro.add(players[ord].bb);
 			ord+=1;
 		}
-		if(i3 == 1)
+		if(i4 == 1)
 		{
 			size = b4.getPreferredSize();
 			b4.setBounds(625, 511, 25, 23);
@@ -99,7 +111,7 @@ public class board extends JFrame {
 			//tabuleiro.add(players[ord].bb);
 			ord+=1;
 		}
-		if(i4 == 1)
+		if(i3 == 1)
 		{
 			size = b5.getPreferredSize();
 			b5.setBounds(625, 186, 25, 23);
@@ -111,7 +123,7 @@ public class board extends JFrame {
 			//tabuleiro.add(players[ord].bb);
 			ord+=1;
 		}
-		if(i5 == 1)
+		if(i2 == 1)
 		{
 			size = b6.getPreferredSize();
 			b6.setBounds(50, 459, 25, 23);
@@ -123,7 +135,7 @@ public class board extends JFrame {
 			//tabuleiro.add(players[ord].bb);
 			ord+=1;
 		}
-		if(i6 == 1)
+		if(i5 == 1)
 		{
 			size = b7.getPreferredSize();
 			b7.setBounds(225, 634, 25, 23);
@@ -152,15 +164,15 @@ public class board extends JFrame {
 		public JButton right;
 		turn(Player act)
 		{
-			left = new JButton("esquerda");
-			up = new JButton("cima");
-			down = new JButton("baixo");
-			right = new JButton("direita");
+			left = new JButton("E");
+			up = new JButton("C");
+			down = new JButton("B");
+			right = new JButton("D");
 			
-			left.setBounds(act.posx-100, act.posy+50,  50,  25);
-			right.setBounds(act.posx+100, act.posy+50,  50,  25);
-			up.setBounds(act.posx-0, act.posy-50,  50,  25);
-			down.setBounds(act.posx-0, act.posy+50,  50,  25);
+			left.setBounds(758, 559,  50,  50);
+			right.setBounds(858, 559,  50,  50);
+			up.setBounds(808, 509,  50,  50);
+			down.setBounds(808, 559,  50,  50);
 			
 			left.addActionListener(new mleft(act, left, right, up, down));
 			right.addActionListener(new mright(act, left, right, up, down));
@@ -172,27 +184,16 @@ public class board extends JFrame {
 				right.setVisible(false);
 				up.setVisible(false);
 			}
+			//is_wall(act.posx, act.posy);		
 			tabuleiro.add(left);
 			tabuleiro.add(up);
 			tabuleiro.add(down);
 			tabuleiro.add(right);
 			
 		}
-		public void passed()
+		//public boolean is_wall(int posx, int posy)
 		{
 			
-		}
-		class adjustbb implements ActionListener
-		{
-			
-			
-			public adjustbb()
-			{
-			}
-			public void actionPerformed(ActionEvent e)
-			{
-				
-			}
 		}
 	   
 	}
@@ -206,7 +207,6 @@ public class board extends JFrame {
 		}
 		public void actionPerformed(ActionEvent e)
 		{
-			
 			if(placeturn==numbplayers-1)
 			{
 				placeturn = 0;
@@ -270,6 +270,10 @@ public class board extends JFrame {
 			tabuleiro.remove(r);
 			tabuleiro.remove(u);
 			tabuleiro.remove(d);
+		//	if(casas<5)
+			//{
+				//new turn(players[placeturn]);
+			//}
 			
 		}
 	}
