@@ -3,7 +3,6 @@ INDEX VERSION 1.130+/Users/claudiamaksoud/INF1636-T1/.metadata/.plugins/org.ecli
 1271342938.index
 2678521682.index
 3935624324.index
-216198271.index
 1793922395.index
 1710459378.index
 4236265088.index
