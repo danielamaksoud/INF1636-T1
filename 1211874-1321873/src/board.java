@@ -17,7 +17,7 @@ public class board extends JFrame {
 	
 	backgroundimage tabuleiro;
 
-	
+	int numpas = 0;
 	final JButton b1 = new JButton("Jogar Dados");
 	final JButton fimt = new JButton("Finalizar Turno");
 	final JButton mm = new JButton("Mostrar mão");
@@ -25,6 +25,7 @@ public class board extends JFrame {
 	final JButton palp = new JButton("Dar Palpite");
 	final JButton JACUSE = new JButton("Acusar!");
 	final JButton RT = new JButton("Refazer Turno");
+	final JButton numpassos = new JButton("Número de passos: " + numpas);
 	final JButton b2 = new JButton("");
 	final JButton b3 = new JButton("");
 	final JButton b4 = new JButton("");
@@ -63,6 +64,9 @@ public class board extends JFrame {
 		RT.setBounds(758,359, size.width+50, size.height + 10 );
 		palp.setBounds(758,319, size.width+50, size.height + 10 );
 		JACUSE.setBounds(758,279, size.width+50, size.height + 10 );
+		numpassos.setBounds(758, 409, size.width+50, size.height + 10 );
+		
+		numpassos.setEnabled(false);
 		
 		fimt.addActionListener(new PassTurn(this));
 		
@@ -74,6 +78,7 @@ public class board extends JFrame {
 		tabuleiro.add(RT);
 		tabuleiro.add(palp);
 		tabuleiro.add(JACUSE);
+		tabuleiro.add(numpassos);
 		
 		if(i1 == 1)
 		{
@@ -163,6 +168,7 @@ public class board extends JFrame {
 		public JButton up;
 		public JButton down;
 		public JButton right;
+		public int ncasas;
 		turn(Player act)
 		{
 			left = new JButton("E");
@@ -216,7 +222,8 @@ public class board extends JFrame {
 			{
 				placeturn +=1;
 			}			
-					
+			b1.setEnabled(true);
+			
 			new turn(players[placeturn]);
 		}
 	}
@@ -382,6 +389,7 @@ class RollDice implements ActionListener {
 		Insets ins = l.getInsets();
 		l.setSize(320 + ins.left + ins.right, 260 + ins.top + ins.bottom);
 		l.setVisible(true);
+		b1.setEnabled(false);
 	}
 }
 }
