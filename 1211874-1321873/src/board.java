@@ -147,6 +147,7 @@ public class board extends JFrame {
 			//tabuleiro.add(players[ord].bb);
 			ord+=1;
 		}
+		new turn(players[placeturn]);
 		
 		//altura do quadrado 25
 		//largura do quadrado 25
@@ -174,10 +175,10 @@ public class board extends JFrame {
 			up.setBounds(808, 509,  50,  50);
 			down.setBounds(808, 559,  50,  50);
 			
-			left.addActionListener(new mleft(act, left, right, up, down));
-			right.addActionListener(new mright(act, left, right, up, down));
-			up.addActionListener(new mup(act, left, right, up, down));
-			down.addActionListener(new mdown(act, left, right, up, down));
+			left.addActionListener(new mleft(act));
+			right.addActionListener(new mright(act));
+			up.addActionListener(new mup(act));
+			down.addActionListener(new mdown(act));
 			if(act.posx==400 && act.posy==36)
 			{
 				left.setVisible(false);
@@ -240,19 +241,11 @@ public class board extends JFrame {
 	class mleft implements ActionListener {
 
 		Player p;
-		JButton l;
-		JButton r;
-		JButton u;
-		JButton d;
 		
 		
-		public mleft( Player p1, JButton left, JButton right, JButton up, JButton down)
+		public mleft( Player p1)
 		{
 			p = p1;
-			l = left;
-			r = right;
-			u = up;
-			d = down;
 		}
 		public void actionPerformed(ActionEvent e)
 		{
@@ -266,10 +259,6 @@ public class board extends JFrame {
 			tabuleiro.remove(p.bb);
 			tabuleiro.add(p.bb);
 			//p.bb = n;
-			tabuleiro.remove(l);
-			tabuleiro.remove(r);
-			tabuleiro.remove(u);
-			tabuleiro.remove(d);
 		//	if(casas<5)
 			//{
 				//new turn(players[placeturn]);
@@ -281,18 +270,10 @@ public class board extends JFrame {
 	class mup implements ActionListener {
 
 		Player p;
-		JButton l;
-		JButton r;
-		JButton u;
-		JButton d;
 		
-		public mup(Player p1, JButton left, JButton right, JButton up, JButton down)
+		public mup(Player p1)
 		{
 			p = p1;
-			l = left;
-			r = right;
-			u = up;
-			d = down;
 		}
 		public void actionPerformed(ActionEvent e)
 		{
@@ -307,10 +288,6 @@ public class board extends JFrame {
 			tabuleiro.remove(p.bb);
 			tabuleiro.add(p.bb);
 			//p.bb = n;
-			tabuleiro.remove(l);
-			tabuleiro.remove(r);
-			tabuleiro.remove(u);
-			tabuleiro.remove(d);
 			
 		}
 	}
@@ -318,19 +295,10 @@ public class board extends JFrame {
 	class mdown implements ActionListener {
 
 		Player p;
-		JButton l;
-		JButton r;
-		JButton u;
-		JButton d;
 		
-		public mdown(Player p1, JButton left, JButton right, JButton up, JButton down)
+		public mdown(Player p1)
 		{
 			p = p1;
-			p = p1;
-			l = left;
-			r = right;
-			u = up;
-			d = down;
 		}
 		public void actionPerformed(ActionEvent e)
 		{
@@ -344,10 +312,6 @@ public class board extends JFrame {
 			tabuleiro.remove(p.bb);
 			tabuleiro.add(p.bb);
 			//p.bb = n;
-			tabuleiro.remove(l);
-			tabuleiro.remove(r);
-			tabuleiro.remove(u);
-			tabuleiro.remove(d);
 			
 		}
 	}
@@ -355,19 +319,10 @@ public class board extends JFrame {
 	class mright implements ActionListener {
 
 		Player p;
-		JButton l;
-		JButton r;
-		JButton u;
-		JButton d;
 		
-		public mright(Player p1, JButton left, JButton right, JButton up, JButton down)
+		public mright(Player p1)
 		{
 			p = p1;
-			p = p1;
-			l = left;
-			r = right;
-			u = up;
-			d = down;
 		}
 		public void actionPerformed(ActionEvent e)
 		{
@@ -381,10 +336,6 @@ public class board extends JFrame {
 			tabuleiro.remove(p.bb);
 			tabuleiro.add(p.bb);
 			//p.bb = n;
-			tabuleiro.remove(l);
-			tabuleiro.remove(r);
-			tabuleiro.remove(u);
-			tabuleiro.remove(d);
 			
 		}
 	}
