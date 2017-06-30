@@ -20,7 +20,7 @@ public class board extends JFrame {
 	
 	final JButton b1 = new JButton("Jogar Dados");
 	final JButton fimt = new JButton("Finalizar Turno");
-	final JButton mm = new JButton("Mostrar mao");
+	final JButton mm = new JButton("Mostrar mão");
 	final JButton b2 = new JButton("");
 	final JButton b3 = new JButton("");
 	final JButton b4 = new JButton("");
@@ -55,10 +55,10 @@ public class board extends JFrame {
 		fimt.setBounds(758,159, size.width+50, size.height + 10 );
 		mm.setBounds(758,199, size.width+50, size.height + 10 );
 		
-		/* mm.addActionListener(new hand(this, players[placeturn].mao)); */
 		fimt.addActionListener(new PassTurn(this));
 		
-
+		
+		int j;
 		tabuleiro.add(b1);
 		tabuleiro.add(fimt);
 		tabuleiro.add(mm);
@@ -72,6 +72,7 @@ public class board extends JFrame {
 			b2.setEnabled(false);
 			ArrayList<String> l1 = new ArrayList<String>();
 			players[ord] = new Player(400, 36, b2, Color.GREEN, l1);
+			//tabuleiro.add(players[ord].bb);
 			ord+=1;
 		}
 		if(i2 == 1)
@@ -83,6 +84,7 @@ public class board extends JFrame {
 			b3.setEnabled(false);
 			ArrayList<String> l2 = new ArrayList<String>();
 			players[ord] = new Player(275, 36, b3, Color.WHITE, l2);
+			//tabuleiro.add(players[ord].bb);
 			ord+=1;
 		}
 		if(i3 == 1)
@@ -93,7 +95,8 @@ public class board extends JFrame {
 			tabuleiro.add(b4);
 			b4.setEnabled(false);
 			ArrayList<String> l3 = new ArrayList<String>();
-			players[ord] = new Player(625, 511, b3, Color.MAGENTA, l3);
+			players[ord] = new Player(625, 511, b4, Color.MAGENTA, l3);
+			//tabuleiro.add(players[ord].bb);
 			ord+=1;
 		}
 		if(i4 == 1)
@@ -104,7 +107,8 @@ public class board extends JFrame {
 			tabuleiro.add(b5);
 			b5.setEnabled(false);
 			ArrayList<String> l4 = new ArrayList<String>();
-			players[ord] = new Player(625, 186, b3, Color.BLUE, l4);
+			players[ord] = new Player(625, 186, b5, Color.BLUE, l4);
+			//tabuleiro.add(players[ord].bb);
 			ord+=1;
 		}
 		if(i5 == 1)
@@ -115,7 +119,8 @@ public class board extends JFrame {
 			tabuleiro.add(b6);
 			b6.setEnabled(false);
 			ArrayList<String> l5 = new ArrayList<String>();
-			players[ord] = new Player(50, 459, b3, Color.YELLOW, l5);
+			players[ord] = new Player(50, 459, b6, Color.YELLOW, l5);
+			//tabuleiro.add(players[ord].bb);
 			ord+=1;
 		}
 		if(i6 == 1)
@@ -126,375 +131,15 @@ public class board extends JFrame {
 			tabuleiro.add(b7);
 			b7.setEnabled(false);
 			ArrayList<String> l6 = new ArrayList<String>();
-			players[ord] = new Player(225, 634, b3, Color.RED, l6);
+			players[ord] = new Player(225, 634, b7, Color.RED, l6);
+			//tabuleiro.add(players[ord].bb);
 			ord+=1;
 		}
 		
 		//altura do quadrado 25
 		//largura do quadrado 25
-		/* ArrayList<String> m1 = new ArrayList<String>();
-		ArrayList<String> m2 = new ArrayList<String>();
-		ArrayList<String> m3 = new ArrayList<String>();
-		ArrayList<String> m4 = new ArrayList<String>();
-		ArrayList<String> m5 = new ArrayList<String>();
-		ArrayList<String> m6 = new ArrayList<String>();
 		
-		if(numplayers == 3)
-		{
-			while (m1 == null){
-				if (i1 == 1)
-				{
-					m1 = players[0].mao;
-				}
-				else if (i2 == 1)
-				{
-					m1 = players[1].mao;
-				}
-				else if (i3 == 1)
-				{
-					m1 = players[2].mao;
-				}
-				else if (i4 == 1)
-				{
-					m1 = players[3].mao;
-				}
-				else if (i5 == 1)
-				{
-					m1 = players[4].mao;
-				}
-				else if (i6 == 1)
-				{
-					m1 = players[5].mao;
-				}
-			}
-			while (m2 == null){
-				if (i2 == 1)
-				{
-					m2 = players[1].mao;
-				}
-				else if (i3 == 1)
-				{
-					m2 = players[2].mao;
-				}
-				else if (i4 == 1)
-				{
-					m2 = players[3].mao;
-				}
-				else if (i5 == 1)
-				{
-					m2 = players[4].mao;
-				}
-				else if (i6 == 1)
-				{
-					m2 = players[5].mao;
-				}
-			}
-			while (m3 == null){
-				if (i3 == 1)
-				{
-					m3 = players[2].mao;
-				}
-				else if (i4 == 1)
-				{
-					m3 = players[3].mao;
-				}
-				else if (i5 == 1)
-				{
-					m3 = players[4].mao;
-				}
-				else if (i6 == 1)
-				{
-					m3 = players[5].mao;
-				}
-			}
-			
-			new assassin(3, m1, m2, m3);
-		}
-		else if(numplayers == 4)
-		{
-			while (m1 == null){
-				if (i1 == 1)
-				{
-					m1 = players[0].mao;
-				}
-				else if (i2 == 1)
-				{
-					m1 = players[1].mao;
-				}
-				else if (i3 == 1)
-				{
-					m1 = players[2].mao;
-				}
-				else if (i4 == 1)
-				{
-					m1 = players[3].mao;
-				}
-				else if (i5 == 1)
-				{
-					m1 = players[4].mao;
-				}
-				else if (i6 == 1)
-				{
-					m1 = players[5].mao;
-				}
-			}
-			while (m2 == null){
-				if (i2 == 1)
-				{
-					m2 = players[1].mao;
-				}
-				else if (i3 == 1)
-				{
-					m2 = players[2].mao;
-				}
-				else if (i4 == 1)
-				{
-					m2 = players[3].mao;
-				}
-				else if (i5 == 1)
-				{
-					m2 = players[4].mao;
-				}
-				else if (i6 == 1)
-				{
-					m2 = players[5].mao;
-				}
-			}
-			while (m3 == null){
-				if (i3 == 1)
-				{
-					m3 = players[2].mao;
-				}
-				else if (i4 == 1)
-				{
-					m3 = players[3].mao;
-				}
-				else if (i5 == 1)
-				{
-					m3 = players[4].mao;
-				}
-				else if (i6 == 1)
-				{
-					m3 = players[5].mao;
-				}
-			}
-			while (m4 == null){
-				if (i4 == 1)
-				{
-					m4 = players[3].mao;
-				}
-				else if (i5 == 1)
-				{
-					m4 = players[4].mao;
-				}
-				else if (i6 == 1)
-				{
-					m4 = players[5].mao;
-				}
-			}
-			
-			new assassin(4, m1, m2, m3, m4);
-		}
-		else if(numplayers == 5)
-		{
-			while (m1 == null){
-				if (i1 == 1)
-				{
-					m1 = players[0].mao;
-				}
-				else if (i2 == 1)
-				{
-					m1 = players[1].mao;
-				}
-				else if (i3 == 1)
-				{
-					m1 = players[2].mao;
-				}
-				else if (i4 == 1)
-				{
-					m1 = players[3].mao;
-				}
-				else if (i5 == 1)
-				{
-					m1 = players[4].mao;
-				}
-				else if (i6 == 1)
-				{
-					m1 = players[5].mao;
-				}
-			}
-			while (m2 == null){
-				if (i2 == 1)
-				{
-					m2 = players[1].mao;
-				}
-				else if (i3 == 1)
-				{
-					m2 = players[2].mao;
-				}
-				else if (i4 == 1)
-				{
-					m2 = players[3].mao;
-				}
-				else if (i5 == 1)
-				{
-					m2 = players[4].mao;
-				}
-				else if (i6 == 1)
-				{
-					m2 = players[5].mao;
-				}
-			}
-			while (m3 == null){
-				if (i3 == 1)
-				{
-					m3 = players[2].mao;
-				}
-				else if (i4 == 1)
-				{
-					m3 = players[3].mao;
-				}
-				else if (i5 == 1)
-				{
-					m3 = players[4].mao;
-				}
-				else if (i6 == 1)
-				{
-					m3 = players[5].mao;
-				}
-			}
-			while (m4 == null){
-				if (i4 == 1)
-				{
-					m4 = players[3].mao;
-				}
-				else if (i5 == 1)
-				{
-					m4 = players[4].mao;
-				}
-				else if (i6 == 1)
-				{
-					m4 = players[5].mao;
-				}
-			}
-			while (m5 == null){
-				if (i5 == 1)
-				{
-					m4 = players[4].mao;
-				}
-				else if (i6 == 1)
-				{
-					m4 = players[5].mao;
-				}
-			}
-			
-			new assassin(5, m1, m2, m3, m4, m5);
-		}
-		else if(numplayers == 6)
-		{
-			while (m1 == null){
-				if (i1 == 1)
-				{
-					m1 = players[0].mao;
-				}
-				else if (i2 == 1)
-				{
-					m1 = players[1].mao;
-				}
-				else if (i3 == 1)
-				{
-					m1 = players[2].mao;
-				}
-				else if (i4 == 1)
-				{
-					m1 = players[3].mao;
-				}
-				else if (i5 == 1)
-				{
-					m1 = players[4].mao;
-				}
-				else if (i6 == 1)
-				{
-					m1 = players[5].mao;
-				}
-			}
-			while (m2 == null){
-				if (i2 == 1)
-				{
-					m2 = players[1].mao;
-				}
-				else if (i3 == 1)
-				{
-					m2 = players[2].mao;
-				}
-				else if (i4 == 1)
-				{
-					m2 = players[3].mao;
-				}
-				else if (i5 == 1)
-				{
-					m2 = players[4].mao;
-				}
-				else if (i6 == 1)
-				{
-					m2 = players[5].mao;
-				}
-			}
-			while (m3 == null){
-				if (i3 == 1)
-				{
-					m3 = players[2].mao;
-				}
-				else if (i4 == 1)
-				{
-					m3 = players[3].mao;
-				}
-				else if (i5 == 1)
-				{
-					m3 = players[4].mao;
-				}
-				else if (i6 == 1)
-				{
-					m3 = players[5].mao;
-				}
-			}
-			while (m4 == null){
-				if (i4 == 1)
-				{
-					m4 = players[3].mao;
-				}
-				else if (i5 == 1)
-				{
-					m4 = players[4].mao;
-				}
-				else if (i6 == 1)
-				{
-					m4 = players[5].mao;
-				}
-			}
-			while (m5 == null){
-				if (i5 == 1)
-				{
-					m4 = players[4].mao;
-				}
-				else if (i6 == 1)
-				{
-					m4 = players[5].mao;
-				}
-			}
-			while (m6 == null){
-				if (i5 == 1)
-				{
-					m6 = players[4].mao;
-				}
-				else if (i6 == 1)
-				{
-					m6 = players[5].mao;
-				}
-			}
-			
-			new assassin(6, m1, m2, m3, m4, m5, m6);
-		} */
+		
 		
 		setVisible(true);
 	}
@@ -517,15 +162,16 @@ public class board extends JFrame {
 			up.setBounds(act.posx-0, act.posy-50,  50,  25);
 			down.setBounds(act.posx-0, act.posy+50,  50,  25);
 			
-			left.addActionListener(new mleft(act));
-			right.addActionListener(new mright(act));
-			up.addActionListener(new mup(act));
-			down.addActionListener(new mdown(act));
-			left.addActionListener(new adjustbb());
-			right.addActionListener(new adjustbb());
-			up.addActionListener(new adjustbb());
-			down.addActionListener(new adjustbb());
-			
+			left.addActionListener(new mleft(act, left, right, up, down));
+			right.addActionListener(new mright(act, left, right, up, down));
+			up.addActionListener(new mup(act, left, right, up, down));
+			down.addActionListener(new mdown(act, left, right, up, down));
+			if(act.posx==400 && act.posy==36)
+			{
+				left.setVisible(false);
+				right.setVisible(false);
+				up.setVisible(false);
+			}
 			tabuleiro.add(left);
 			tabuleiro.add(up);
 			tabuleiro.add(down);
@@ -561,16 +207,14 @@ public class board extends JFrame {
 		public void actionPerformed(ActionEvent e)
 		{
 			
-			if(placeturn==numbplayers)
+			if(placeturn==numbplayers-1)
 			{
 				placeturn = 0;
 			}
 			else
 			{
 				placeturn +=1;
-			}
-			System.out.println("passou a vez");
-			
+			}			
 					
 			new turn(players[placeturn]);
 		}
@@ -596,23 +240,36 @@ public class board extends JFrame {
 	class mleft implements ActionListener {
 
 		Player p;
+		JButton l;
+		JButton r;
+		JButton u;
+		JButton d;
 		
 		
-		public mleft( Player p1)
+		public mleft( Player p1, JButton left, JButton right, JButton up, JButton down)
 		{
 			p = p1;
+			l = left;
+			r = right;
+			u = up;
+			d = down;
 		}
 		public void actionPerformed(ActionEvent e)
 		{
 			JButton n = new JButton();
-			n = p.bb;
-			
-			n.setBounds(p.posx-25, p.posy, 25, 23);
-			n.setBackground(p.collo);
+			tabuleiro.revalidate();
+			tabuleiro.repaint();
+			//n = p.bb;
+			p.bb.setBounds(p.posx-25, p.posy, 25, 23);
+			p.posx = p.posx - 25;
+			p.bb.setBackground(p.collo);
 			tabuleiro.remove(p.bb);
-			
-			tabuleiro.add(n);
-			p.bb = n;
+			tabuleiro.add(p.bb);
+			//p.bb = n;
+			tabuleiro.remove(l);
+			tabuleiro.remove(r);
+			tabuleiro.remove(u);
+			tabuleiro.remove(d);
 			
 		}
 	}
@@ -620,21 +277,36 @@ public class board extends JFrame {
 	class mup implements ActionListener {
 
 		Player p;
+		JButton l;
+		JButton r;
+		JButton u;
+		JButton d;
 		
-		public mup(Player p1)
+		public mup(Player p1, JButton left, JButton right, JButton up, JButton down)
 		{
 			p = p1;
+			l = left;
+			r = right;
+			u = up;
+			d = down;
 		}
 		public void actionPerformed(ActionEvent e)
 		{
 			
 			JButton n = new JButton();
-			n = p.bb;
-			n.setBounds(p.posx, p.posy-25, 25, 23);
-			n.setBackground(p.collo);
+			//n = p.bb;
+			tabuleiro.revalidate();
+			tabuleiro.repaint();
+			p.bb.setBounds(p.posx, p.posy-25, 25, 23);
+			p.posy = p.posy-25;
+			p.bb.setBackground(p.collo);
 			tabuleiro.remove(p.bb);
-			tabuleiro.add(n);			
-			p.bb = n;
+			tabuleiro.add(p.bb);
+			//p.bb = n;
+			tabuleiro.remove(l);
+			tabuleiro.remove(r);
+			tabuleiro.remove(u);
+			tabuleiro.remove(d);
 			
 		}
 	}
@@ -642,20 +314,36 @@ public class board extends JFrame {
 	class mdown implements ActionListener {
 
 		Player p;
+		JButton l;
+		JButton r;
+		JButton u;
+		JButton d;
 		
-		public mdown(Player p1)
+		public mdown(Player p1, JButton left, JButton right, JButton up, JButton down)
 		{
 			p = p1;
+			p = p1;
+			l = left;
+			r = right;
+			u = up;
+			d = down;
 		}
 		public void actionPerformed(ActionEvent e)
 		{
 			JButton n = new JButton();
-			n = p.bb;
-			n.setBounds(p.posx, p.posy+25, 25, 23);
-			n.setBackground(p.collo);
+			tabuleiro.revalidate();
+			tabuleiro.repaint();
+			//n = p.bb;
+			p.bb.setBounds(p.posx, p.posy+25, 25, 23);
+			p.posy = p.posy+25;
+			p.bb.setBackground(p.collo);
 			tabuleiro.remove(p.bb);
-			tabuleiro.add(n);
-			p.bb = n;
+			tabuleiro.add(p.bb);
+			//p.bb = n;
+			tabuleiro.remove(l);
+			tabuleiro.remove(r);
+			tabuleiro.remove(u);
+			tabuleiro.remove(d);
 			
 		}
 	}
@@ -663,20 +351,36 @@ public class board extends JFrame {
 	class mright implements ActionListener {
 
 		Player p;
+		JButton l;
+		JButton r;
+		JButton u;
+		JButton d;
 		
-		public mright(Player p1)
+		public mright(Player p1, JButton left, JButton right, JButton up, JButton down)
 		{
 			p = p1;
+			p = p1;
+			l = left;
+			r = right;
+			u = up;
+			d = down;
 		}
 		public void actionPerformed(ActionEvent e)
 		{
 			JButton n = new JButton();
-			n = p.bb;
-			n.setBounds(p.posx+25, p.posy, 25, 23);
-			n.setBackground(p.collo);
+			tabuleiro.revalidate();
+			tabuleiro.repaint();
+			//n = p.bb;
+			p.bb.setBounds(p.posx+25, p.posy, 25, 23);
+			p.posx = p.posx +25;
+			p.bb.setBackground(p.collo);
 			tabuleiro.remove(p.bb);
-			tabuleiro.add(n);
-			p.bb = n;
+			tabuleiro.add(p.bb);
+			//p.bb = n;
+			tabuleiro.remove(l);
+			tabuleiro.remove(r);
+			tabuleiro.remove(u);
+			tabuleiro.remove(d);
 			
 		}
 	}
