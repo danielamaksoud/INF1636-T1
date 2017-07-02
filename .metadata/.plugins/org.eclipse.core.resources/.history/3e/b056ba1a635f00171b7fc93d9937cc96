@@ -350,10 +350,10 @@ public class board extends JFrame {
 		{
 			if(dados == 0)
 			{
-				JButton left = new JButton("←");
-				JButton up = new JButton("↑");
-				JButton down = new JButton("↓");
-				JButton right = new JButton("→");			
+				JButton left = new JButton("E");
+				JButton up = new JButton("C");
+				JButton down = new JButton("B");
+				JButton right = new JButton("D");			
 				
 				left.setBounds(758, 559,  50,  50);
 				right.setBounds(858, 559,  50,  50);
