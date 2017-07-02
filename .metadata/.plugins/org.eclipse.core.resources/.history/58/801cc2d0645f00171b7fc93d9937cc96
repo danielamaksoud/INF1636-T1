@@ -71,7 +71,7 @@ public class board extends JFrame {
 		palp.setBounds(764,319, size.width+50, size.height + 10 );
 		JACUSE.setBounds(764,279, size.width+50, size.height + 10 );
 		numpassos.setBounds(764, 400, size.width+50, size.height + 10);
-		salvarJogo.setBounds(764, 440, size.width+50, size.height + 10);
+		salvarJogo.setBounds(r);
 		
 		numpassos.setEnabled(false);
 		
@@ -87,7 +87,6 @@ public class board extends JFrame {
 		tabuleiro.add(palp);
 		tabuleiro.add(JACUSE);
 		tabuleiro.add(numpassos);
-		tabuleiro.add(salvarJogo);
 		
 		if(i1 == 1)
 		{

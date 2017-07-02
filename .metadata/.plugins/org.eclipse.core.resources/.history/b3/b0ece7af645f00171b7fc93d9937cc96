@@ -23,12 +23,12 @@ public class board extends JFrame {
 	final int numpas = 0;
 	final JButton b1 = new JButton("Jogar Dados");
 	final JButton fimt = new JButton("Finalizar Turno");
-	final JButton mm = new JButton("Mostrar mao");
+	final JButton mm = new JButton("Mostrar m�o");
 	final JButton bloco = new JButton("Bloco de Notas");
 	final JButton palp = new JButton("Dar Palpite");
 	final JButton JACUSE = new JButton("Acusar!");
 	final JButton RT = new JButton("Refazer Turno");
-	final JButton numpassos = new JButton("Numero de passos: " + numpas);
+	final JButton numpassos = new JButton("N�mero de passos: " + numpas);
 	final JButton salvarJogo = new JButton("Salvar Jogo");
 	final JButton b2 = new JButton("");
 	final JButton b3 = new JButton("");
@@ -70,8 +70,7 @@ public class board extends JFrame {
 		RT.setBounds(764,359, size.width+50, size.height + 10 );
 		palp.setBounds(764,319, size.width+50, size.height + 10 );
 		JACUSE.setBounds(764,279, size.width+50, size.height + 10 );
-		numpassos.setBounds(764, 400, size.width+50, size.height + 10);
-		salvarJogo.setBounds(764, 440, size.width+50, size.height + 10);
+		numpassos.setBounds(764, 400, size.width+50, size.height + 10 );
 		
 		numpassos.setEnabled(false);
 		
@@ -87,7 +86,6 @@ public class board extends JFrame {
 		tabuleiro.add(palp);
 		tabuleiro.add(JACUSE);
 		tabuleiro.add(numpassos);
-		tabuleiro.add(salvarJogo);
 		
 		if(i1 == 1)
 		{

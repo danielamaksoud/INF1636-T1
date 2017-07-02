@@ -23,13 +23,12 @@ public class board extends JFrame {
 	final int numpas = 0;
 	final JButton b1 = new JButton("Jogar Dados");
 	final JButton fimt = new JButton("Finalizar Turno");
-	final JButton mm = new JButton("Mostrar mao");
+	final JButton mm = new JButton("Mostrar m�o");
 	final JButton bloco = new JButton("Bloco de Notas");
 	final JButton palp = new JButton("Dar Palpite");
 	final JButton JACUSE = new JButton("Acusar!");
 	final JButton RT = new JButton("Refazer Turno");
-	final JButton numpassos = new JButton("Numero de passos: " + numpas);
-	final JButton salvarJogo = new JButton("Salvar Jogo");
+	final JButton numpassos = new JButton("N�mero de passos: " + numpas);
 	final JButton b2 = new JButton("");
 	final JButton b3 = new JButton("");
 	final JButton b4 = new JButton("");
@@ -63,15 +62,14 @@ public class board extends JFrame {
 		b1.addActionListener(new RollDice(dados));
 		System.out.println("dados no turn" + dados);
 		size = b1.getPreferredSize();
-		b1.setBounds(764, 119, size.width + 50, size.height + 10);
-		fimt.setBounds(764,159, size.width+50, size.height + 10 );
-		mm.setBounds(764,199, size.width+50, size.height + 10 );
-		bloco.setBounds(764,239, size.width+50, size.height + 10 );
-		RT.setBounds(764,359, size.width+50, size.height + 10 );
-		palp.setBounds(764,319, size.width+50, size.height + 10 );
-		JACUSE.setBounds(764,279, size.width+50, size.height + 10 );
-		numpassos.setBounds(764, 400, size.width+50, size.height + 10);
-		salvarJogo.setBounds(764, 440, size.width+50, size.height + 10);
+		b1.setBounds(758, 119, size.width + 50, size.height + 10);
+		fimt.setBounds(758,159, size.width+50, size.height + 10 );
+		mm.setBounds(758,199, size.width+50, size.height + 10 );
+		bloco.setBounds(758,239, size.width+50, size.height + 10 );
+		RT.setBounds(758,359, size.width+50, size.height + 10 );
+		palp.setBounds(758,319, size.width+50, size.height + 10 );
+		JACUSE.setBounds(758,279, size.width+50, size.height + 10 );
+		numpassos.setBounds(758, 409, size.width+50, size.height + 10 );
 		
 		numpassos.setEnabled(false);
 		
@@ -87,7 +85,6 @@ public class board extends JFrame {
 		tabuleiro.add(palp);
 		tabuleiro.add(JACUSE);
 		tabuleiro.add(numpassos);
-		tabuleiro.add(salvarJogo);
 		
 		if(i1 == 1)
 		{
@@ -195,10 +192,10 @@ public class board extends JFrame {
 			down = new JButton("↓");
 			right = new JButton("→");			
 			
-			left.setBounds(773, 559,  50,  50);
-			right.setBounds(873, 559,  50,  50);
-			up.setBounds(823, 509,  50,  50);
-			down.setBounds(823, 559,  50,  50);
+			left.setBounds(758, 559,  50,  50);
+			right.setBounds(858, 559,  50,  50);
+			up.setBounds(808, 509,  50,  50);
+			down.setBounds(808, 559,  50,  50);
 			
 			left.addActionListener(new move(act, dados, left, right, up, down, 1));
 			right.addActionListener(new move(act, dados, left, right, up, down, 2));

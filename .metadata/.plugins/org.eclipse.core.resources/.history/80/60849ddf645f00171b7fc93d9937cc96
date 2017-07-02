@@ -87,7 +87,6 @@ public class board extends JFrame {
 		tabuleiro.add(palp);
 		tabuleiro.add(JACUSE);
 		tabuleiro.add(numpassos);
-		tabuleiro.add(salvarJogo);
 		
 		if(i1 == 1)
 		{
