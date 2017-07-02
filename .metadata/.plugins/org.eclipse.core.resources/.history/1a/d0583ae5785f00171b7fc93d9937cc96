@@ -326,13 +326,13 @@ public class board extends JFrame {
 					up.setEnabled(false);
 				}
 				// Limite do lado esquerdo do tabuleiro
-				if (p.posx-25 < 50) {
+				if (p.posx-25 < 46) {
 					System.out.println("passou do limite2:");
 					left.setEnabled(false);
 				}
 				
 				// Limite do lado direito do tabuleiro
-				if (p.posx+25 > 625) {
+				if (p.posx+25 > 650) {
 					System.out.println("passou do limite:");
 					right.setEnabled(false);
 				}
@@ -378,7 +378,7 @@ public class board extends JFrame {
 					up.setEnabled(false);
 				}
 				// Limite do lado esquerdo do tabuleiro
-				if (p.posx-25 < 50) {
+				if (p.posx-25 < 46) {
 					System.out.println("passou do limite2:");
 					left.setEnabled(false);
 				}
@@ -423,10 +423,10 @@ public class board extends JFrame {
 				JButton down = new JButton("↓");
 				JButton right = new JButton("→");			
 				
-				left.setBounds(773, 559,  50,  50);
-				right.setBounds(873, 559,  50,  50);
-				up.setBounds(823, 509,  50,  50);
-				down.setBounds(823, 559,  50,  50);
+				left.setBounds(758, 559,  50,  50);
+				right.setBounds(858, 559,  50,  50);
+				up.setBounds(808, 509,  50,  50);
+				down.setBounds(808, 559,  50,  50);
 				
 				left.addActionListener(new move(players[placeturn], dados, left, right, up, down, 1));
 				right.addActionListener(new move(players[placeturn], dados, left, right, up, down, 2));
