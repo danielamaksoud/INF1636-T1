@@ -33,3 +33,11 @@
 /board$imagem.class
 /board$Reset.class
 /board$move.class
+/board$move$Reset.class
+/board$move$RollDice.class
+/board$move$imagem.class
+/board$move$Dices.class
+/board$move$showhand.class
+/board$showhand.class
+/teste.class
+/HandS.class

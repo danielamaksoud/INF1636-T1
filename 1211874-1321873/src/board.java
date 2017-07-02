@@ -36,13 +36,12 @@ public class board extends JFrame {
 	final JButton b5 = new JButton("");
 	final JButton b6 = new JButton("");
 	final JButton b7 = new JButton("");
-	public int dados_ini; // numero tirado nos dados, utilizado para refazer a jogada.
+	public int dados_ini; // Numero tirado nos dados, utilizado para refazer a jogada.
 	public int dados;
 	int placeturn = 0;
 	private JLabel texto;
 	int numbplayers;
 	Player[] players;
-	
 	
 	
 	public board(String nome, int i1, int i2, int i3, int i4, int i5, int i6, int numplayers) {
@@ -177,24 +176,8 @@ public class board extends JFrame {
 		//altura do quadrado 25
 		//largura do quadrado 25
 		
-		if(numbplayers==3)
-		{
-			assassin a = new assassin(numbplayers, players[0].mao, players[1].mao, players[2].mao);
-		}
-		if(numbplayers==4)
-		{
-			assassin a = new assassin(numbplayers, players[0].mao, players[1].mao, players[2].mao, players[3].mao);
-		}
-		if(numbplayers==5)
-		{
-			assassin a = new assassin(numbplayers, players[0].mao, players[1].mao, players[2].mao, players[3].mao, players[4].mao);
-		}
-		if(numbplayers==6)
-		{
-			assassin a = new assassin(numbplayers, players[0].mao, players[1].mao, players[2].mao, players[3].mao, players[4].mao, players[5].mao);
-		}
 		
-		System.out.println("primeira carta" + players[0].mao.get(0));
+		
 		setVisible(true);
 	}
 	
@@ -207,10 +190,10 @@ public class board extends JFrame {
 		public int ncasas = 6;
 		turn(Player act)
 		{
-			left = new JButton("e");
-			up = new JButton("c");
-			down = new JButton("b");
-			right = new JButton("d");			
+			left = new JButton("←");
+			up = new JButton("↑");
+			down = new JButton("↓");
+			right = new JButton("→");			
 			
 			left.setBounds(773, 559,  50,  50);
 			right.setBounds(873, 559,  50,  50);
@@ -222,11 +205,11 @@ public class board extends JFrame {
 			up.addActionListener(new move(act, dados, left, right, up, down, 3));
 			down.addActionListener(new move(act, dados, left, right, up, down, 4));			
 			
-			if(act.posx==400 && act.posy==36)
+			if(act.posx == 400 && act.posy == 36)
 			{
-				left.setVisible(false);
-				right.setVisible(false);
-				up.setVisible(false);
+				left.setEnabled(false);
+				right.setEnabled(false);
+				up.setEnabled(false);
 			}
 			//is_wall(act.posx, act.posy);		
 			tabuleiro.add(left);
@@ -300,7 +283,7 @@ public class board extends JFrame {
 		JButton down;
 		
 		
-		public move( Player p1, int ncasas, JButton l,JButton r, JButton u, JButton d, int flag)
+		public move(Player p1, int ncasas, JButton l,JButton r, JButton u, JButton d, int flag)
 		{
 			p = p1;
 			left = l;
@@ -308,53 +291,95 @@ public class board extends JFrame {
 			up = u;
 			down = d;
 			f = flag;
+			
+			p1.posx = p.posx;
+			p1.posy = p.posy;
+			
+			// Limite superior do tabuleiro
+			if (p.posy-25 < 36){
+				System.out.println("passou do limite3-2:");
+				up.setEnabled(false);
+			}
+						
+			// Limite do lado esquerdo do tabuleiro
+			if (p.posx-25 < 46) {
+				System.out.println("passou do limite2:");
+				left.setEnabled(false);
+			}
+						
+			// Limite do lado direito do tabuleiro
+			if (p.posx+25 > 640) {
+				System.out.println("passou do limite:");
+				right.setEnabled(false);
+			}
 		}
+		
 		public void actionPerformed(ActionEvent e)
 		{
 			System.out.println("Dado no move:" + dados);
 			tabuleiro.revalidate();
 			tabuleiro.repaint();
 			if(dados > 0){
-			if(f==1)
-			{
-				p.bb.setBounds(p.posx-25, p.posy, 25, 23);
-				p.posx = p.posx - 25;
-			}
-			if(f==2)
-			{
-				p.bb.setBounds(p.posx+25, p.posy, 25, 23);
-				p.posx = p.posx + 25;
+				// Limite superior do tabuleiro
+				if (p.posy-25 < 36){
+					System.out.println("passou do limite3-2:");
+					up.setEnabled(false);
+				}
+				// Limite do lado esquerdo do tabuleiro
+				if (p.posx-25 < 46) {
+					System.out.println("passou do limite2:");
+					left.setEnabled(false);
+				}
 				
-			}
-			if(f==3)
-			{
-				p.bb.setBounds(p.posx, p.posy-25, 25, 23);
-				p.posy = p.posy-25;
-			}
-			if(f==4)
-			{
-				p.bb.setBounds(p.posx, p.posy+25, 25, 23);
-				p.posy = p.posy+25;
-			}
-			RT.setEnabled(true);
-			p.bb.setBackground(p.collo);
-			tabuleiro.remove(p.bb);
-			dados -= 1;
-			numpassos.setText("Numero de passos: " + dados);
-			tabuleiro.add(p.bb);
-			tabuleiro.revalidate();
-			tabuleiro.repaint();
-			if(dados==0)
-			{
-				tabuleiro.remove(left);
-				tabuleiro.remove(up);
-				tabuleiro.remove(down);
-				tabuleiro.remove(right);
-				fimt.setEnabled(true);
+				// Limite do lado direito do tabuleiro
+				if (p.posx+25 > 650) {
+					System.out.println("passou do limite:");
+					right.setEnabled(false);
+				}
+				
+				if(f == 1)
+				{
+						left.setEnabled(true);
+						p.bb.setBounds(p.posx-25, p.posy, 25, 23);
+						p.posx = p.posx - 25;
+				}
+				if(f==2)
+				{
+						right.setEnabled(true);
+						p.bb.setBounds(p.posx+25, p.posy, 25, 23);
+						p.posx = p.posx + 25;
+				}
+				if(f==3)
+				{	
+					p.bb.setBounds(p.posx, p.posy-25, 25, 23);
+					p.posy = p.posy-25;
+				}
+				if(f==4)
+				{	
+					p.bb.setBounds(p.posx, p.posy+25, 25, 23);
+					p.posy = p.posy+25;
+				}
+				
+				RT.setEnabled(true);
+				p.bb.setBackground(p.collo);
+				tabuleiro.remove(p.bb);
+				dados -= 1;
+				numpassos.setText("Numero de passos: " + dados);
+				tabuleiro.add(p.bb);
 				tabuleiro.revalidate();
 				tabuleiro.repaint();
 				
-			}
+				if(dados==0)
+				{
+					tabuleiro.remove(left);
+					tabuleiro.remove(up);
+					tabuleiro.remove(down);
+					tabuleiro.remove(right);
+					fimt.setEnabled(true);
+					tabuleiro.revalidate();
+					tabuleiro.repaint();
+					
+				}
 			}
 			
 		}
@@ -370,10 +395,10 @@ public class board extends JFrame {
 		{
 			if(dados == 0)
 			{
-				JButton left = new JButton("l");
-				JButton up = new JButton("c");
-				JButton down = new JButton("b");
-				JButton right = new JButton("d");			
+				JButton left = new JButton("←");
+				JButton up = new JButton("↑");
+				JButton down = new JButton("↓");
+				JButton right = new JButton("→");			
 				
 				left.setBounds(758, 559,  50,  50);
 				right.setBounds(858, 559,  50,  50);
@@ -395,7 +420,7 @@ public class board extends JFrame {
 			players[placeturn].bb.setBounds(players[placeturn].posx, players[placeturn].posy, 25, 23);
 			players[placeturn].bb.setBackground(players[placeturn].collo);
 			tabuleiro.remove(players[placeturn].bb);
-			numpassos.setText("N�mero de passos: " + dados);
+			numpassos.setText("Numero de passos: " + dados);
 			tabuleiro.add(players[placeturn].bb);
 			tabuleiro.revalidate();
 			tabuleiro.repaint();
@@ -448,9 +473,9 @@ class RollDice implements ActionListener {
 		int total = d1+d2;
 		dados = total;
 		dados_ini = total;
-		numpassos.setText("N�mero de passos: " + dados);
+		numpassos.setText("Numero de passos: " + dados);
 		
-		//numpassos.setText("N�mero de passos: " + total);
+		//numpassos.setText("Numero de passos: " + total);
 		//showdice l = new showdice("Dado", d1);
 		//showdice l2 = new showdice("Dado2", d2);
 		//Insets ins = l.getInsets();
@@ -462,6 +487,7 @@ class RollDice implements ActionListener {
 		b1.setEnabled(false);
 	}
 }
+
 class showhand implements ActionListener {
 
 	int dices;
@@ -559,9 +585,6 @@ class Dices extends JFrame{
 	}
 		
 }
-
-
-
 
 
 
