@@ -23,12 +23,12 @@ public class board extends JFrame {
 	final int numpas = 0;
 	final JButton b1 = new JButton("Jogar Dados");
 	final JButton fimt = new JButton("Finalizar Turno");
-	final JButton mm = new JButton("Mostrar mï¿½o");
+	final JButton mm = new JButton("Mostrar mão");
 	final JButton bloco = new JButton("Bloco de Notas");
 	final JButton palp = new JButton("Dar Palpite");
 	final JButton JACUSE = new JButton("Acusar!");
 	final JButton RT = new JButton("Refazer Turno");
-	final JButton numpassos = new JButton("Nï¿½mero de passos: " + numpas);
+	final JButton numpassos = new JButton("Número de passos: " + numpas);
 	final JButton b2 = new JButton("");
 	final JButton b3 = new JButton("");
 	final JButton b4 = new JButton("");
@@ -91,7 +91,6 @@ public class board extends JFrame {
 			size = b2.getPreferredSize();
 			b2.setBounds(400, 36, 25, 23); // Esta na posicao inicial
 			b2.setBackground(Color.GREEN);
-			b2.setOpaque(true);
 			tabuleiro.add(b2);
 			b2.setEnabled(false);
 			ArrayList<String> l1 = new ArrayList<String>();
@@ -104,7 +103,6 @@ public class board extends JFrame {
 			size = b3.getPreferredSize();
 			b3.setBounds(275, 36, 25, 23);
 			b3.setBackground(Color.WHITE);
-			b3.setOpaque(true);
 			tabuleiro.add(b3);
 			b3.setEnabled(false);
 			ArrayList<String> l2 = new ArrayList<String>();
@@ -117,7 +115,6 @@ public class board extends JFrame {
 			size = b4.getPreferredSize();
 			b4.setBounds(625, 511, 25, 23);
 			b4.setBackground(Color.MAGENTA);
-			b4.setOpaque(true);
 			tabuleiro.add(b4);
 			b4.setEnabled(false);
 			ArrayList<String> l3 = new ArrayList<String>();
@@ -130,7 +127,6 @@ public class board extends JFrame {
 			size = b5.getPreferredSize();
 			b5.setBounds(625, 186, 25, 23);
 			b5.setBackground(Color.BLUE);
-			b5.setOpaque(true);
 			tabuleiro.add(b5);
 			b5.setEnabled(false);
 			ArrayList<String> l4 = new ArrayList<String>();
@@ -143,7 +139,6 @@ public class board extends JFrame {
 			size = b6.getPreferredSize();
 			b6.setBounds(50, 459, 25, 23);
 			b6.setBackground(Color.YELLOW);
-			b6.setOpaque(true);
 			tabuleiro.add(b6);
 			b6.setEnabled(false);
 			ArrayList<String> l5 = new ArrayList<String>();
@@ -156,7 +151,6 @@ public class board extends JFrame {
 			size = b7.getPreferredSize();
 			b7.setBounds(225, 634, 25, 23);
 			b7.setBackground(Color.RED);
-			b7.setOpaque(true);
 			tabuleiro.add(b7);
 			b7.setEnabled(false);
 			ArrayList<String> l6 = new ArrayList<String>();
@@ -231,8 +225,8 @@ public class board extends JFrame {
 		}
 		public void actionPerformed(ActionEvent e)
 		{
-			players[placeturn].startx = players[placeturn].posx; //atualizando a posiï¿½ao inicial da rodada do jogador,
-			players[placeturn].starty = players[placeturn].posy;// apï¿½s a finalizaï¿½ï¿½o do seu turno.
+			players[placeturn].startx = players[placeturn].posx; //atualizando a posiçao inicial da rodada do jogador,
+			players[placeturn].starty = players[placeturn].posy;// após a finalização do seu turno.
 			if(placeturn==numbplayers-1)
 			{
 				placeturn = 0;
@@ -249,9 +243,9 @@ public class board extends JFrame {
 		}
 	}
 	class Player{
-		public int startx;//posiï¿½ao no comeï¿½o da jogada
+		public int startx;//posiçao no começo da jogada
 		public int starty;
-		public int posx;//posiï¿½ao atual
+		public int posx;//posiçao atual
 		public int posy;
 		public JButton bb;
 		public Color collo;
@@ -320,7 +314,7 @@ public class board extends JFrame {
 			p.bb.setBackground(p.collo);
 			tabuleiro.remove(p.bb);
 			dados -= 1;
-			numpassos.setText("Nï¿½mero de passos: " + dados);
+			numpassos.setText("Número de passos: " + dados);
 			tabuleiro.add(p.bb);
 			tabuleiro.revalidate();
 			tabuleiro.repaint();
@@ -375,7 +369,7 @@ public class board extends JFrame {
 			players[placeturn].bb.setBounds(players[placeturn].posx, players[placeturn].posy, 25, 23);
 			players[placeturn].bb.setBackground(players[placeturn].collo);
 			tabuleiro.remove(players[placeturn].bb);
-			numpassos.setText("Nï¿½mero de passos: " + dados);
+			numpassos.setText("Número de passos: " + dados);
 			tabuleiro.add(players[placeturn].bb);
 			tabuleiro.revalidate();
 			tabuleiro.repaint();
@@ -428,9 +422,9 @@ class RollDice implements ActionListener {
 		int total = d1+d2;
 		dados = total;
 		dados_ini = total;
-		numpassos.setText("Nï¿½mero de passos: " + dados);
+		numpassos.setText("Número de passos: " + dados);
 		
-		//numpassos.setText("Nï¿½mero de passos: " + total);
+		//numpassos.setText("Número de passos: " + total);
 		//showdice l = new showdice("Dado", d1);
 		//showdice l2 = new showdice("Dado2", d2);
 		//Insets ins = l.getInsets();
