@@ -294,7 +294,7 @@ public class board extends JFrame {
 		}
 		public void actionPerformed(ActionEvent e)
 		{
-			System.out.println("Dado no move:" + dados);
+			System.out.println("dado no move:" + dados);
 			tabuleiro.revalidate();
 			tabuleiro.repaint();
 			if(dados > 0){
@@ -323,7 +323,7 @@ public class board extends JFrame {
 			p.bb.setBackground(p.collo);
 			tabuleiro.remove(p.bb);
 			dados -= 1;
-			numpassos.setText("Numero de passos: " + dados);
+			numpassos.setText("N�mero de passos: " + dados);
 			tabuleiro.add(p.bb);
 			tabuleiro.revalidate();
 			tabuleiro.repaint();
