@@ -291,6 +291,18 @@ public class board extends JFrame {
 			up = u;
 			down = d;
 			f = flag;
+			
+			// Limite do lado esquerdo do tabuleiro
+			if (p.posx-25 < 46) {
+				System.out.println("passou do limite2-1:");
+				left.setEnabled(false);
+			}
+						
+			// Limite do lado direito do tabuleiro
+			if (p.posx+25 > 660) {
+				System.out.println("passou do limite1-1:");
+				right.setEnabled(false);
+			}
 		}
 		public void actionPerformed(ActionEvent e)
 		{
@@ -298,25 +310,37 @@ public class board extends JFrame {
 			tabuleiro.revalidate();
 			tabuleiro.repaint();
 			if(dados > 0){
+				
+			// Limite do lado esquerdo do tabuleiro
+			if (p.posx-25 < 46) {
+				System.out.println("passou do limite2-2:");
+				left.setEnabled(false);
+			}
+			
+			// Limite do lado direito do tabuleiro
+			if (p.posx+25 > 660) {
+				System.out.println("passou do limite1-2:");
+				right.setEnabled(false);
+			}
+			
 			if(f == 1)
 			{
-				//if (p.posxx-25 == )
-				p.bb.setBounds(p.posx-25, p.posy, 25, 23);
-				p.posx = p.posx - 25;
+					left.setEnabled(true);
+					p.bb.setBounds(p.posx-25, p.posy, 25, 23);
+					p.posx = p.posx - 25;
 			}
 			if(f==2)
 			{
-				p.bb.setBounds(p.posx+25, p.posy, 25, 23);
-				p.posx = p.posx + 25;
-				
+					p.bb.setBounds(p.posx+25, p.posy, 25, 23);
+					p.posx = p.posx + 25;
 			}
 			if(f==3)
-			{
+			{	
 				p.bb.setBounds(p.posx, p.posy-25, 25, 23);
 				p.posy = p.posy-25;
 			}
 			if(f==4)
-			{
+			{	
 				p.bb.setBounds(p.posx, p.posy+25, 25, 23);
 				p.posy = p.posy+25;
 			}
@@ -379,7 +403,7 @@ public class board extends JFrame {
 			players[placeturn].bb.setBounds(players[placeturn].posx, players[placeturn].posy, 25, 23);
 			players[placeturn].bb.setBackground(players[placeturn].collo);
 			tabuleiro.remove(players[placeturn].bb);
-			numpassos.setText("N�mero de passos: " + dados);
+			numpassos.setText("Numero de passos: " + dados);
 			tabuleiro.add(players[placeturn].bb);
 			tabuleiro.revalidate();
 			tabuleiro.repaint();
@@ -432,7 +456,7 @@ class RollDice implements ActionListener {
 		int total = d1+d2;
 		dados = total;
 		dados_ini = total;
-		numpassos.setText("N�mero de passos: " + dados);
+		numpassos.setText("Numero de passos: " + dados);
 		
 		//numpassos.setText("N�mero de passos: " + total);
 		//showdice l = new showdice("Dado", d1);
