@@ -187,10 +187,10 @@ public class board extends JFrame {
 		public int ncasas = 6;
 		turn(Player act)
 		{
-			left = new JButton("←");
-			up = new JButton("↑");
-			down = new JButton("↓");
-			right = new JButton("→");			
+			left = new JButton("E");
+			up = new JButton("C");
+			down = new JButton("B");
+			right = new JButton("D");			
 			
 			left.setBounds(758, 559,  50,  50);
 			right.setBounds(858, 559,  50,  50);
