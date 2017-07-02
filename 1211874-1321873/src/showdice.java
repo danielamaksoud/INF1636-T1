@@ -48,7 +48,7 @@ public class showdice extends JFrame{
 			tela = new backgroundimage("dice.gif");
 		}
 		
-		getContentPane().add(tela);
+		//getContentPane().add(tela);
 
 	}
 	
