@@ -158,6 +158,8 @@ public class board extends JFrame {
 			//tabuleiro.add(players[ord].bb);
 			ord+=1;
 		}
+		dados = 0;
+		dados_ini = 0;
 		fimt.setEnabled(false);
 		RT.setEnabled(false);
 		new turn(players[0]);
@@ -192,7 +194,8 @@ public class board extends JFrame {
 			left.addActionListener(new move(act, dados, left, right, up, down, 1));
 			right.addActionListener(new move(act, dados, left, right, up, down, 2));
 			up.addActionListener(new move(act, dados, left, right, up, down, 3));
-			down.addActionListener(new move(act, dados, left, right, up, down, 4));
+			down.addActionListener(new move(act, dados, left, right, up, down, 4));			
+			
 			if(act.posx==400 && act.posy==36)
 			{
 				left.setVisible(false);
@@ -285,6 +288,7 @@ public class board extends JFrame {
 			System.out.println("dado no move:" + dados);
 			tabuleiro.revalidate();
 			tabuleiro.repaint();
+			if(dados>0){
 			if(f==1)
 			{
 				p.bb.setBounds(p.posx-25, p.posy, 25, 23);
@@ -325,6 +329,7 @@ public class board extends JFrame {
 				tabuleiro.repaint();
 				
 			}
+			}
 			
 		}
 	
@@ -333,11 +338,31 @@ public class board extends JFrame {
 		
 		public Reset()
 		{
-			
 		}
 		
 		public void actionPerformed(ActionEvent e)
 		{
+			if(dados == 0)
+			{
+				JButton left = new JButton("E");
+				JButton up = new JButton("C");
+				JButton down = new JButton("B");
+				JButton right = new JButton("D");			
+				
+				left.setBounds(758, 559,  50,  50);
+				right.setBounds(858, 559,  50,  50);
+				up.setBounds(808, 509,  50,  50);
+				down.setBounds(808, 559,  50,  50);
+				
+				left.addActionListener(new move(players[placeturn], dados, left, right, up, down, 1));
+				right.addActionListener(new move(players[placeturn], dados, left, right, up, down, 2));
+				up.addActionListener(new move(players[placeturn], dados, left, right, up, down, 3));
+				down.addActionListener(new move(players[placeturn], dados, left, right, up, down, 4));
+				tabuleiro.add(left);
+				tabuleiro.add(right);
+				tabuleiro.add(up);
+				tabuleiro.add(down);
+			}
 			players[placeturn].posx = players[placeturn].startx;
 			players[placeturn].posy = players[placeturn].starty;
 			dados = dados_ini;
@@ -348,6 +373,7 @@ public class board extends JFrame {
 			tabuleiro.add(players[placeturn].bb);
 			tabuleiro.revalidate();
 			tabuleiro.repaint();
+			
 		}
 
 	}
