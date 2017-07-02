@@ -1,4 +1,5 @@
 import javax.swing.*;
+
 import java.math.*;
 import java.awt.geom.*;
 import java.awt.*;
@@ -22,18 +23,20 @@ public class board extends JFrame {
 	final int numpas = 0;
 	final JButton b1 = new JButton("Jogar Dados");
 	final JButton fimt = new JButton("Finalizar Turno");
-	final JButton mm = new JButton("Mostrar m„o");
+	final JButton mm = new JButton("Mostrar mao");
 	final JButton bloco = new JButton("Bloco de Notas");
 	final JButton palp = new JButton("Dar Palpite");
 	final JButton JACUSE = new JButton("Acusar!");
 	final JButton RT = new JButton("Refazer Turno");
-	final JButton numpassos = new JButton("N˙mero de passos: " + numpas);
+	final JButton numpassos = new JButton("Numero de passos: " + numpas);
+	final JButton salvarJogo = new JButton("Salvar Jogo");
 	final JButton b2 = new JButton("");
 	final JButton b3 = new JButton("");
 	final JButton b4 = new JButton("");
 	final JButton b5 = new JButton("");
 	final JButton b6 = new JButton("");
 	final JButton b7 = new JButton("");
+	public int dados_ini; // numero tirado nos dados, utilizado para refazer a jogada.
 	public int dados;
 	int placeturn = 0;
 	private JLabel texto;
@@ -60,20 +63,21 @@ public class board extends JFrame {
 		b1.addActionListener(new RollDice(dados));
 		System.out.println("dados no turn" + dados);
 		size = b1.getPreferredSize();
-		b1.setBounds(758, 119, size.width + 50, size.height + 10);
-		fimt.setBounds(758,159, size.width+50, size.height + 10 );
-		mm.setBounds(758,199, size.width+50, size.height + 10 );
-		bloco.setBounds(758,239, size.width+50, size.height + 10 );
-		RT.setBounds(758,359, size.width+50, size.height + 10 );
-		palp.setBounds(758,319, size.width+50, size.height + 10 );
-		JACUSE.setBounds(758,279, size.width+50, size.height + 10 );
-		numpassos.setBounds(758, 409, size.width+50, size.height + 10 );
+		b1.setBounds(764, 119, size.width + 50, size.height + 10);
+		fimt.setBounds(764,159, size.width+50, size.height + 10 );
+		mm.setBounds(764,199, size.width+50, size.height + 10 );
+		bloco.setBounds(764,239, size.width+50, size.height + 10 );
+		RT.setBounds(764,359, size.width+50, size.height + 10 );
+		palp.setBounds(764,319, size.width+50, size.height + 10 );
+		JACUSE.setBounds(764,279, size.width+50, size.height + 10 );
+		numpassos.setBounds(764, 400, size.width+50, size.height + 10);
+		salvarJogo.setBounds(764, 440, size.width+50, size.height + 10);
 		
 		numpassos.setEnabled(false);
 		
 		
 		fimt.addActionListener(new PassTurn(this));
-		
+		RT.addActionListener(new Reset());
 		
 		tabuleiro.add(b1);
 		tabuleiro.add(fimt);
@@ -83,12 +87,14 @@ public class board extends JFrame {
 		tabuleiro.add(palp);
 		tabuleiro.add(JACUSE);
 		tabuleiro.add(numpassos);
+		tabuleiro.add(salvarJogo);
 		
 		if(i1 == 1)
 		{
 			size = b2.getPreferredSize();
 			b2.setBounds(400, 36, 25, 23); // Esta na posicao inicial
 			b2.setBackground(Color.GREEN);
+			b2.setOpaque(true);
 			tabuleiro.add(b2);
 			b2.setEnabled(false);
 			ArrayList<String> l1 = new ArrayList<String>();
@@ -101,6 +107,7 @@ public class board extends JFrame {
 			size = b3.getPreferredSize();
 			b3.setBounds(275, 36, 25, 23);
 			b3.setBackground(Color.WHITE);
+			b3.setOpaque(true);
 			tabuleiro.add(b3);
 			b3.setEnabled(false);
 			ArrayList<String> l2 = new ArrayList<String>();
@@ -113,6 +120,7 @@ public class board extends JFrame {
 			size = b4.getPreferredSize();
 			b4.setBounds(625, 511, 25, 23);
 			b4.setBackground(Color.MAGENTA);
+			b4.setOpaque(true);
 			tabuleiro.add(b4);
 			b4.setEnabled(false);
 			ArrayList<String> l3 = new ArrayList<String>();
@@ -125,6 +133,7 @@ public class board extends JFrame {
 			size = b5.getPreferredSize();
 			b5.setBounds(625, 186, 25, 23);
 			b5.setBackground(Color.BLUE);
+			b5.setOpaque(true);
 			tabuleiro.add(b5);
 			b5.setEnabled(false);
 			ArrayList<String> l4 = new ArrayList<String>();
@@ -137,6 +146,7 @@ public class board extends JFrame {
 			size = b6.getPreferredSize();
 			b6.setBounds(50, 459, 25, 23);
 			b6.setBackground(Color.YELLOW);
+			b6.setOpaque(true);
 			tabuleiro.add(b6);
 			b6.setEnabled(false);
 			ArrayList<String> l5 = new ArrayList<String>();
@@ -149,6 +159,7 @@ public class board extends JFrame {
 			size = b7.getPreferredSize();
 			b7.setBounds(225, 634, 25, 23);
 			b7.setBackground(Color.RED);
+			b7.setOpaque(true);
 			tabuleiro.add(b7);
 			b7.setEnabled(false);
 			ArrayList<String> l6 = new ArrayList<String>();
@@ -156,7 +167,10 @@ public class board extends JFrame {
 			//tabuleiro.add(players[ord].bb);
 			ord+=1;
 		}
+		dados = 0;
+		dados_ini = 0;
 		fimt.setEnabled(false);
+		RT.setEnabled(false);
 		new turn(players[0]);
 		
 		//altura do quadrado 25
@@ -176,20 +190,21 @@ public class board extends JFrame {
 		public int ncasas = 6;
 		turn(Player act)
 		{
-			left = new JButton("E");
-			up = new JButton("C");
-			down = new JButton("B");
-			right = new JButton("D");			
+			left = new JButton("‚Üê");
+			up = new JButton("‚Üë");
+			down = new JButton("‚Üì");
+			right = new JButton("‚Üí");			
 			
-			left.setBounds(758, 559,  50,  50);
-			right.setBounds(858, 559,  50,  50);
-			up.setBounds(808, 509,  50,  50);
-			down.setBounds(808, 559,  50,  50);
+			left.setBounds(773, 559,  50,  50);
+			right.setBounds(873, 559,  50,  50);
+			up.setBounds(823, 509,  50,  50);
+			down.setBounds(823, 559,  50,  50);
 			
 			left.addActionListener(new move(act, dados, left, right, up, down, 1));
 			right.addActionListener(new move(act, dados, left, right, up, down, 2));
 			up.addActionListener(new move(act, dados, left, right, up, down, 3));
-			down.addActionListener(new move(act, dados, left, right, up, down, 4));
+			down.addActionListener(new move(act, dados, left, right, up, down, 4));			
+			
 			if(act.posx==400 && act.posy==36)
 			{
 				left.setVisible(false);
@@ -219,6 +234,8 @@ public class board extends JFrame {
 		}
 		public void actionPerformed(ActionEvent e)
 		{
+			players[placeturn].startx = players[placeturn].posx; //atualizando a posicao inicial da rodada do jogador,
+			players[placeturn].starty = players[placeturn].posy;// apos a finalizacao do seu turno.
 			if(placeturn==numbplayers-1)
 			{
 				placeturn = 0;
@@ -229,21 +246,26 @@ public class board extends JFrame {
 			}		
 			b1.setEnabled(true);
 			fimt.setEnabled(false);
+			RT.setEnabled(false);
 			new turn(players[placeturn]);
 			
 		}
 	}
 	class Player{
-		public int posx;
+		public int startx;//posicao no comeco da jogada
+		public int starty;
+		public int posx;//posicao atual
 		public int posy;
 		public JButton bb;
 		public Color collo;
 		public ArrayList<String> mao;
 		
-		public Player(int startx, int starty, JButton ba, Color col, ArrayList<String> m)
+		public Player(int px, int py, JButton ba, Color col, ArrayList<String> m)
 		{
-			posx = startx;
-			posy = starty;
+			startx = px;
+			starty = py;
+			posx = px;
+			posy = py;
 			bb = ba;
 			collo = col;
 			mao = m;
@@ -272,9 +294,10 @@ public class board extends JFrame {
 		}
 		public void actionPerformed(ActionEvent e)
 		{
-			System.out.println("dado no move:" + dados);
+			System.out.println("Dado no move:" + dados);
 			tabuleiro.revalidate();
 			tabuleiro.repaint();
+			if(dados > 0){
 			if(f==1)
 			{
 				p.bb.setBounds(p.posx-25, p.posy, 25, 23);
@@ -296,10 +319,11 @@ public class board extends JFrame {
 				p.bb.setBounds(p.posx, p.posy+25, 25, 23);
 				p.posy = p.posy+25;
 			}
+			RT.setEnabled(true);
 			p.bb.setBackground(p.collo);
 			tabuleiro.remove(p.bb);
 			dados -= 1;
-			numpassos.setText("N˙mero de passos: " + dados);
+			numpassos.setText("Numero de passos: " + dados);
 			tabuleiro.add(p.bb);
 			tabuleiro.revalidate();
 			tabuleiro.repaint();
@@ -314,9 +338,53 @@ public class board extends JFrame {
 				tabuleiro.repaint();
 				
 			}
+			}
 			
 		}
 	
+	}
+	class Reset implements ActionListener {
+		
+		public Reset()
+		{
+		}
+		
+		public void actionPerformed(ActionEvent e)
+		{
+			if(dados == 0)
+			{
+				JButton left = new JButton("‚Üê");
+				JButton up = new JButton("‚Üë");
+				JButton down = new JButton("‚Üì");
+				JButton right = new JButton("‚Üí");			
+				
+				left.setBounds(758, 559,  50,  50);
+				right.setBounds(858, 559,  50,  50);
+				up.setBounds(808, 509,  50,  50);
+				down.setBounds(808, 559,  50,  50);
+				
+				left.addActionListener(new move(players[placeturn], dados, left, right, up, down, 1));
+				right.addActionListener(new move(players[placeturn], dados, left, right, up, down, 2));
+				up.addActionListener(new move(players[placeturn], dados, left, right, up, down, 3));
+				down.addActionListener(new move(players[placeturn], dados, left, right, up, down, 4));
+				tabuleiro.add(left);
+				tabuleiro.add(right);
+				tabuleiro.add(up);
+				tabuleiro.add(down);
+			}
+			players[placeturn].posx = players[placeturn].startx;
+			players[placeturn].posy = players[placeturn].starty;
+			dados = dados_ini;
+			players[placeturn].bb.setBounds(players[placeturn].posx, players[placeturn].posy, 25, 23);
+			players[placeturn].bb.setBackground(players[placeturn].collo);
+			tabuleiro.remove(players[placeturn].bb);
+			numpassos.setText("NÔøΩmero de passos: " + dados);
+			tabuleiro.add(players[placeturn].bb);
+			tabuleiro.revalidate();
+			tabuleiro.repaint();
+			
+		}
+
 	}
 	
 	
@@ -362,9 +430,10 @@ class RollDice implements ActionListener {
 		int d2 = r.nextInt(6 - 1 + 1) + 1;
 		int total = d1+d2;
 		dados = total;
-		numpassos.setText("N˙mero de passos: " + dados);
+		dados_ini = total;
+		numpassos.setText("NÔøΩmero de passos: " + dados);
 		
-		//numpassos.setText("N˙mero de passos: " + total);
+		//numpassos.setText("NÔøΩmero de passos: " + total);
 		//showdice l = new showdice("Dado", d1);
 		//showdice l2 = new showdice("Dado2", d2);
 		//Insets ins = l.getInsets();
@@ -456,5 +525,8 @@ class Dices extends JFrame{
 	}
 		
 }
+
+
+
 
 
