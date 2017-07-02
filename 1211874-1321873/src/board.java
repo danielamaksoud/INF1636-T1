@@ -1,4 +1,5 @@
 import javax.swing.*;
+
 import java.math.*;
 import java.awt.geom.*;
 import java.awt.*;
@@ -10,6 +11,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Random;
 
 import javax.imageio.ImageIO;
 
@@ -18,7 +20,7 @@ public class board extends JFrame {
 	
 	backgroundimage tabuleiro;
 
-	int numpas = 0;
+	final int numpas = 0;
 	final JButton b1 = new JButton("Jogar Dados");
 	final JButton fimt = new JButton("Finalizar Turno");
 	final JButton mm = new JButton("Mostrar mão");
@@ -33,6 +35,8 @@ public class board extends JFrame {
 	final JButton b5 = new JButton("");
 	final JButton b6 = new JButton("");
 	final JButton b7 = new JButton("");
+	public int dados_ini; // numero tirado nos dados, utilizado para refazer a jogada.
+	public int dados;
 	int placeturn = 0;
 	private JLabel texto;
 	int numbplayers;
@@ -55,8 +59,8 @@ public class board extends JFrame {
 		Dimension size;
 		// Pinos dos jogadores
 		
-		
-		b1.addActionListener(new RollDice(this));
+		b1.addActionListener(new RollDice(dados));
+		System.out.println("dados no turn" + dados);
 		size = b1.getPreferredSize();
 		b1.setBounds(758, 119, size.width + 50, size.height + 10);
 		fimt.setBounds(758,159, size.width+50, size.height + 10 );
@@ -71,7 +75,7 @@ public class board extends JFrame {
 		
 		
 		fimt.addActionListener(new PassTurn(this));
-		
+		RT.addActionListener(new Reset());
 		
 		tabuleiro.add(b1);
 		tabuleiro.add(fimt);
@@ -155,6 +159,7 @@ public class board extends JFrame {
 			ord+=1;
 		}
 		fimt.setEnabled(false);
+		RT.setEnabled(false);
 		new turn(players[0]);
 		
 		//altura do quadrado 25
@@ -165,13 +170,13 @@ public class board extends JFrame {
 		setVisible(true);
 	}
 	
-	class turn
+	public class turn
 	{
 		public JButton left;
 		public JButton up;
 		public JButton down;
 		public JButton right;
-		final int ncasas = 0;
+		public int ncasas = 6;
 		turn(Player act)
 		{
 			left = new JButton("E");
@@ -184,10 +189,10 @@ public class board extends JFrame {
 			up.setBounds(808, 509,  50,  50);
 			down.setBounds(808, 559,  50,  50);
 			
-			left.addActionListener(new move(act, ncasas, left, right, up, down, 1));
-			right.addActionListener(new move(act, ncasas, left, right, up, down, 2));
-			up.addActionListener(new move(act, ncasas, left, right, up, down, 3));
-			down.addActionListener(new move(act, ncasas, left, right, up, down, 4));
+			left.addActionListener(new move(act, dados, left, right, up, down, 1));
+			right.addActionListener(new move(act, dados, left, right, up, down, 2));
+			up.addActionListener(new move(act, dados, left, right, up, down, 3));
+			down.addActionListener(new move(act, dados, left, right, up, down, 4));
 			if(act.posx==400 && act.posy==36)
 			{
 				left.setVisible(false);
@@ -217,6 +222,8 @@ public class board extends JFrame {
 		}
 		public void actionPerformed(ActionEvent e)
 		{
+			players[placeturn].startx = players[placeturn].posx; //atualizando a posiçao inicial da rodada do jogador,
+			players[placeturn].starty = players[placeturn].posy;// após a finalização do seu turno.
 			if(placeturn==numbplayers-1)
 			{
 				placeturn = 0;
@@ -224,24 +231,29 @@ public class board extends JFrame {
 			else
 			{
 				placeturn +=1;
-			}			
+			}		
 			b1.setEnabled(true);
 			fimt.setEnabled(false);
-			System.out.println("turno: " + placeturn);
+			RT.setEnabled(false);
 			new turn(players[placeturn]);
+			
 		}
 	}
 	class Player{
-		public int posx;
+		public int startx;//posiçao no começo da jogada
+		public int starty;
+		public int posx;//posiçao atual
 		public int posy;
 		public JButton bb;
 		public Color collo;
 		public ArrayList<String> mao;
 		
-		public Player(int startx, int starty, JButton ba, Color col, ArrayList<String> m)
+		public Player(int px, int py, JButton ba, Color col, ArrayList<String> m)
 		{
-			posx = startx;
-			posy = starty;
+			startx = px;
+			starty = py;
+			posx = px;
+			posy = py;
 			bb = ba;
 			collo = col;
 			mao = m;
@@ -252,7 +264,6 @@ public class board extends JFrame {
 	class move implements ActionListener {
 
 		Player p;
-		int casas;
 		int f;
 		JButton left;
 		JButton right;
@@ -263,7 +274,6 @@ public class board extends JFrame {
 		public move( Player p1, int ncasas, JButton l,JButton r, JButton u, JButton d, int flag)
 		{
 			p = p1;
-			casas = ncasas;
 			left = l;
 			right = r;
 			up = u;
@@ -272,10 +282,9 @@ public class board extends JFrame {
 		}
 		public void actionPerformed(ActionEvent e)
 		{
-			JButton n = new JButton();
+			System.out.println("dado no move:" + dados);
 			tabuleiro.revalidate();
 			tabuleiro.repaint();
-			//n = p.bb;
 			if(f==1)
 			{
 				p.bb.setBounds(p.posx-25, p.posy, 25, 23);
@@ -285,6 +294,7 @@ public class board extends JFrame {
 			{
 				p.bb.setBounds(p.posx+25, p.posy, 25, 23);
 				p.posx = p.posx + 25;
+				
 			}
 			if(f==3)
 			{
@@ -296,13 +306,15 @@ public class board extends JFrame {
 				p.bb.setBounds(p.posx, p.posy+25, 25, 23);
 				p.posy = p.posy+25;
 			}
+			RT.setEnabled(true);
 			p.bb.setBackground(p.collo);
 			tabuleiro.remove(p.bb);
-			casas+=1;
+			dados -= 1;
+			numpassos.setText("Número de passos: " + dados);
 			tabuleiro.add(p.bb);
-			//p.bb = n;
-			System.out.println("numero de casas:" + casas);
-			if(casas>5)
+			tabuleiro.revalidate();
+			tabuleiro.repaint();
+			if(dados==0)
 			{
 				tabuleiro.remove(left);
 				tabuleiro.remove(up);
@@ -316,6 +328,28 @@ public class board extends JFrame {
 			
 		}
 	
+	}
+	class Reset implements ActionListener {
+		
+		public Reset()
+		{
+			
+		}
+		
+		public void actionPerformed(ActionEvent e)
+		{
+			players[placeturn].posx = players[placeturn].startx;
+			players[placeturn].posy = players[placeturn].starty;
+			dados = dados_ini;
+			players[placeturn].bb.setBounds(players[placeturn].posx, players[placeturn].posy, 25, 23);
+			players[placeturn].bb.setBackground(players[placeturn].collo);
+			tabuleiro.remove(players[placeturn].bb);
+			numpassos.setText("Número de passos: " + dados);
+			tabuleiro.add(players[placeturn].bb);
+			tabuleiro.revalidate();
+			tabuleiro.repaint();
+		}
+
 	}
 	
 	
@@ -348,18 +382,31 @@ public class board extends JFrame {
 
 class RollDice implements ActionListener {
 
-	Component c;
+	int dices;
 	
-	public RollDice(Component x)
+	public RollDice(int x)
 	{
-		c = x;
+		dices = x;
 	}
 	public void actionPerformed(ActionEvent e)
 	{
-		Dices l = new Dices("Dados");
-		Insets ins = l.getInsets();
-		l.setSize(320 + ins.left + ins.right, 260 + ins.top + ins.bottom);
-		l.setVisible(true);
+		Random r = new Random();
+		int d1 = r.nextInt(6 - 1 + 1) + 1;
+		int d2 = r.nextInt(6 - 1 + 1) + 1;
+		int total = d1+d2;
+		dados = total;
+		dados_ini = total;
+		numpassos.setText("Número de passos: " + dados);
+		
+		//numpassos.setText("Número de passos: " + total);
+		//showdice l = new showdice("Dado", d1);
+		//showdice l2 = new showdice("Dado2", d2);
+		//Insets ins = l.getInsets();
+		//l.setSize(95 + ins.left + ins.right, 106 + ins.top + ins.bottom);
+		//l.setVisible(true);
+		//l2.setVisible(true);
+		
+		
 		b1.setEnabled(false);
 	}
 }
@@ -372,9 +419,14 @@ class Dices extends JFrame{
 		super(nome);
 		JPanel p = new JPanel();
 		getContentPane().add(p);
+		int d1, d2;
+		Random r = new Random();
+		d1 = r.nextInt(6 - 1 + 1) + 1;
+		d2 = r.nextInt(6 - 1 + 1) + 1;
 		
 		JButton b2 = new JButton("2");
-		b2.addActionListener(new pressdice(this, 2));
+		b2.addActionListener(new pressdice(this, d1));
+		b2.addActionListener(new pressdice(this, d2));
 		
 		JButton b3 = new JButton("3");
 		b3.addActionListener(new pressdice(this, 3));
@@ -438,5 +490,8 @@ class Dices extends JFrame{
 	}
 		
 }
+
+
+
 
 
