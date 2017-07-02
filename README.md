@@ -50,6 +50,7 @@ Nome | Descrição
 - **[Java Orientado a Objetos - Aula 14 - Imagem responsiva no fundo](https://www.youtube.com/watch?v=qZ4CwM_JOso)**
 - **[Programação Orientada a Objetos (Notas de Aula)](http://www.inf.puc-rio.br/~ivan/INF1337/INF1636.html/)**
 - **Use a Cabeça! Java** — Kathy Sierra
+- **[How to Set the Background Color of a JButton on the Mac OS (Stack Overflow)](https://stackoverflow.com/questions/1065691/how-to-set-the-background-color-of-a-jbutton-on-the-mac-os)**
 
 ### Licença ###
 O trabalho é licenciado sob a **[Licença Pública Geral GNU Versão 3](http://www.gnu.org/licenses/gpl-3.0.html)**.
