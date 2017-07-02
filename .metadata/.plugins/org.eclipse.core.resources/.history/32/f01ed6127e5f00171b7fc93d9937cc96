@@ -202,10 +202,10 @@ public class board extends JFrame {
 			down = new JButton("↓");
 			right = new JButton("→");			
 			
-			left.setBounds(773, 579,  50,  50);
-			right.setBounds(873, 579,  50,  50);
-			up.setBounds(823, 529,  50,  50);
-			down.setBounds(823, 579,  50,  50);
+			left.setBounds(773, 569,  50,  50);
+			right.setBounds(873, 569,  50,  50);
+			up.setBounds(823, 519,  50,  50);
+			down.setBounds(823, 569,  50,  50);
 			
 			left.addActionListener(new move(act, dados, left, right, up, down, 1));
 			right.addActionListener(new move(act, dados, left, right, up, down, 2));
@@ -457,10 +457,10 @@ public class board extends JFrame {
 				JButton down = new JButton("↓");
 				JButton right = new JButton("→");			
 				
-				left.setBounds(773, 579,  50,  50);
-				right.setBounds(873, 579,  50,  50);
-				up.setBounds(823, 529,  50,  50);
-				down.setBounds(823, 579,  50,  50);
+				left.setBounds(773, 559,  50,  50);
+				right.setBounds(873, 559,  50,  50);
+				up.setBounds(823, 509,  50,  50);
+				down.setBounds(823, 559,  50,  50);
 				
 				left.addActionListener(new move(players[placeturn], dados, left, right, up, down, 1));
 				right.addActionListener(new move(players[placeturn], dados, left, right, up, down, 2));
