@@ -4,6 +4,7 @@ import java.awt.geom.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ComponentListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -67,6 +68,7 @@ public class board extends JFrame {
 		numpassos.setBounds(758, 409, size.width+50, size.height + 10 );
 		
 		numpassos.setEnabled(false);
+		
 		
 		fimt.addActionListener(new PassTurn(this));
 		
@@ -152,7 +154,8 @@ public class board extends JFrame {
 			//tabuleiro.add(players[ord].bb);
 			ord+=1;
 		}
-		new turn(players[placeturn]);
+		fimt.setEnabled(false);
+		new turn(players[0]);
 		
 		//altura do quadrado 25
 		//largura do quadrado 25
@@ -168,23 +171,23 @@ public class board extends JFrame {
 		public JButton up;
 		public JButton down;
 		public JButton right;
-		public int ncasas;
+		final int ncasas = 0;
 		turn(Player act)
 		{
 			left = new JButton("E");
 			up = new JButton("C");
 			down = new JButton("B");
-			right = new JButton("D");
+			right = new JButton("D");			
 			
 			left.setBounds(758, 559,  50,  50);
 			right.setBounds(858, 559,  50,  50);
 			up.setBounds(808, 509,  50,  50);
 			down.setBounds(808, 559,  50,  50);
 			
-			left.addActionListener(new mleft(act));
-			right.addActionListener(new mright(act));
-			up.addActionListener(new mup(act));
-			down.addActionListener(new mdown(act));
+			left.addActionListener(new move(act, ncasas, left, right, up, down, 1));
+			right.addActionListener(new move(act, ncasas, left, right, up, down, 2));
+			up.addActionListener(new move(act, ncasas, left, right, up, down, 3));
+			down.addActionListener(new move(act, ncasas, left, right, up, down, 4));
 			if(act.posx==400 && act.posy==36)
 			{
 				left.setVisible(false);
@@ -223,7 +226,8 @@ public class board extends JFrame {
 				placeturn +=1;
 			}			
 			b1.setEnabled(true);
-			
+			fimt.setEnabled(false);
+			System.out.println("turno: " + placeturn);
 			new turn(players[placeturn]);
 		}
 	}
@@ -245,14 +249,26 @@ public class board extends JFrame {
 		
 		
 	}
-	class mleft implements ActionListener {
+	class move implements ActionListener {
 
 		Player p;
+		int casas;
+		int f;
+		JButton left;
+		JButton right;
+		JButton up;
+		JButton down;
 		
 		
-		public mleft( Player p1)
+		public move( Player p1, int ncasas, JButton l,JButton r, JButton u, JButton d, int flag)
 		{
 			p = p1;
+			casas = ncasas;
+			left = l;
+			right = r;
+			up = u;
+			down = d;
+			f = flag;
 		}
 		public void actionPerformed(ActionEvent e)
 		{
@@ -260,91 +276,46 @@ public class board extends JFrame {
 			tabuleiro.revalidate();
 			tabuleiro.repaint();
 			//n = p.bb;
-			p.bb.setBounds(p.posx-25, p.posy, 25, 23);
-			p.posx = p.posx - 25;
+			if(f==1)
+			{
+				p.bb.setBounds(p.posx-25, p.posy, 25, 23);
+				p.posx = p.posx - 25;
+			}
+			if(f==2)
+			{
+				p.bb.setBounds(p.posx+25, p.posy, 25, 23);
+				p.posx = p.posx + 25;
+			}
+			if(f==3)
+			{
+				p.bb.setBounds(p.posx, p.posy-25, 25, 23);
+				p.posy = p.posy-25;
+			}
+			if(f==4)
+			{
+				p.bb.setBounds(p.posx, p.posy+25, 25, 23);
+				p.posy = p.posy+25;
+			}
 			p.bb.setBackground(p.collo);
 			tabuleiro.remove(p.bb);
+			casas+=1;
 			tabuleiro.add(p.bb);
 			//p.bb = n;
-		//	if(casas<5)
-			//{
-				//new turn(players[placeturn]);
-			//}
+			System.out.println("numero de casas:" + casas);
+			if(casas>5)
+			{
+				tabuleiro.remove(left);
+				tabuleiro.remove(up);
+				tabuleiro.remove(down);
+				tabuleiro.remove(right);
+				fimt.setEnabled(true);
+				tabuleiro.revalidate();
+				tabuleiro.repaint();
+				
+			}
 			
 		}
-	}
 	
-	class mup implements ActionListener {
-
-		Player p;
-		
-		public mup(Player p1)
-		{
-			p = p1;
-		}
-		public void actionPerformed(ActionEvent e)
-		{
-			
-			JButton n = new JButton();
-			//n = p.bb;
-			tabuleiro.revalidate();
-			tabuleiro.repaint();
-			p.bb.setBounds(p.posx, p.posy-25, 25, 23);
-			p.posy = p.posy-25;
-			p.bb.setBackground(p.collo);
-			tabuleiro.remove(p.bb);
-			tabuleiro.add(p.bb);
-			//p.bb = n;
-			
-		}
-	}
-	
-	class mdown implements ActionListener {
-
-		Player p;
-		
-		public mdown(Player p1)
-		{
-			p = p1;
-		}
-		public void actionPerformed(ActionEvent e)
-		{
-			JButton n = new JButton();
-			tabuleiro.revalidate();
-			tabuleiro.repaint();
-			//n = p.bb;
-			p.bb.setBounds(p.posx, p.posy+25, 25, 23);
-			p.posy = p.posy+25;
-			p.bb.setBackground(p.collo);
-			tabuleiro.remove(p.bb);
-			tabuleiro.add(p.bb);
-			//p.bb = n;
-			
-		}
-	}
-	
-	class mright implements ActionListener {
-
-		Player p;
-		
-		public mright(Player p1)
-		{
-			p = p1;
-		}
-		public void actionPerformed(ActionEvent e)
-		{
-			JButton n = new JButton();
-			tabuleiro.revalidate();
-			tabuleiro.repaint();
-			//n = p.bb;
-			p.bb.setBounds(p.posx+25, p.posy, 25, 23);
-			p.posx = p.posx +25;
-			p.bb.setBackground(p.collo);
-			tabuleiro.remove(p.bb);
-			tabuleiro.add(p.bb);
-			//p.bb = n;
-			
-		}
 	}
 	
 	
