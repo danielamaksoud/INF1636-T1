@@ -30,7 +30,7 @@ public class board extends JFrame {
 	final JButton RT = new JButton("Refazer Turno");
 	final JButton numpassos = new JButton("Numero de passos: " + numpas);
 	final JButton salvarJogo = new JButton("Salvar Jogo");
-	public JButton corJogador;
+	public JButton corJogador = new JButton("Jogador: ");
 	final JButton b2 = new JButton("");
 	final JButton b3 = new JButton("");
 	final JButton b4 = new JButton("");
@@ -175,7 +175,7 @@ public class board extends JFrame {
 		RT.setEnabled(false);
 		new turn(players[0]);
 		
-		corJogador = new JButton("Jogador: " + players[0].cor);
+		final JButton corJogador = new JButton("Jogador: " + players[0].cor);
 		tabuleiro.add(corJogador);
 		corJogador.setBounds(764, 400, size.width+50, size.height + 10);
 		
@@ -240,7 +240,17 @@ public class board extends JFrame {
 			c = x;
 		}
 		public void actionPerformed(ActionEvent e)
-		{						
+		{
+			tabuleiro.remove(corJogador);
+			
+			final JButton corJogador = new JButton("Jogador: " + players[placeturn].cor);
+			tabuleiro.add(corJogador);
+			corJogador.setBounds(764, 400, size.width+50, size.height + 10);
+			
+			final JButton corJogador = new JButton("Jogador: " + players[0].cor);
+			tabuleiro.add(corJogador);
+			corJogador.setBounds(764, 400, size.width+50, size.height + 10);
+			
 			players[placeturn].startx = players[placeturn].posx; //atualizando a posicao inicial da rodada do jogador,
 			players[placeturn].starty = players[placeturn].posy;// apos a finalizacao do seu turno.
 			if(placeturn==numbplayers-1)
@@ -251,11 +261,6 @@ public class board extends JFrame {
 			{
 				placeturn +=1;
 			}		
-			
-			corJogador.setText("Jogador: " + players[placeturn].cor);
-			tabuleiro.revalidate();
-			tabuleiro.repaint();
-			
 			b1.setEnabled(true);
 			fimt.setEnabled(false);
 			RT.setEnabled(false);

@@ -30,14 +30,12 @@ public class board extends JFrame {
 	final JButton RT = new JButton("Refazer Turno");
 	final JButton numpassos = new JButton("Numero de passos: " + numpas);
 	final JButton salvarJogo = new JButton("Salvar Jogo");
-	public JButton corJogador;
 	final JButton b2 = new JButton("");
 	final JButton b3 = new JButton("");
 	final JButton b4 = new JButton("");
 	final JButton b5 = new JButton("");
 	final JButton b6 = new JButton("");
 	final JButton b7 = new JButton("");
-	
 	public int dados_ini; // Numero tirado nos dados, utilizado para refazer a jogada.
 	public int dados;
 	int placeturn = 0;
@@ -72,8 +70,8 @@ public class board extends JFrame {
 		RT.setBounds(764,359, size.width+50, size.height + 10 );
 		palp.setBounds(764,319, size.width+50, size.height + 10 );
 		JACUSE.setBounds(764,279, size.width+50, size.height + 10 );
-		numpassos.setBounds(764, 440, size.width+50, size.height + 10);
-		salvarJogo.setBounds(764, 480, size.width+50, size.height + 10);
+		numpassos.setBounds(764, 400, size.width+50, size.height + 10);
+		salvarJogo.setBounds(764, 440, size.width+50, size.height + 10);
 		
 		numpassos.setEnabled(false);
 		
@@ -100,7 +98,7 @@ public class board extends JFrame {
 			tabuleiro.add(b2);
 			b2.setEnabled(false);
 			ArrayList<String> l1 = new ArrayList<String>();
-			players[ord] = new Player(400, 36, b2, Color.GREEN, l1, "Verde");
+			players[ord] = new Player(400, 36, b2, Color.GREEN, l1);
 			//tabuleiro.add(players[ord].bb);
 			ord+=1;
 		}
@@ -113,7 +111,7 @@ public class board extends JFrame {
 			tabuleiro.add(b3);
 			b3.setEnabled(false);
 			ArrayList<String> l2 = new ArrayList<String>();
-			players[ord] = new Player(275, 36, b3, Color.WHITE, l2, "Branco");
+			players[ord] = new Player(275, 36, b3, Color.WHITE, l2);
 			//tabuleiro.add(players[ord].bb);
 			ord+=1;
 		}
@@ -126,7 +124,7 @@ public class board extends JFrame {
 			tabuleiro.add(b4);
 			b4.setEnabled(false);
 			ArrayList<String> l3 = new ArrayList<String>();
-			players[ord] = new Player(625, 511, b4, Color.MAGENTA, l3, "Rosa");
+			players[ord] = new Player(625, 511, b4, Color.MAGENTA, l3);
 			//tabuleiro.add(players[ord].bb);
 			ord+=1;
 		}
@@ -139,7 +137,7 @@ public class board extends JFrame {
 			tabuleiro.add(b5);
 			b5.setEnabled(false);
 			ArrayList<String> l4 = new ArrayList<String>();
-			players[ord] = new Player(625, 186, b5, Color.BLUE, l4, "Azul");
+			players[ord] = new Player(625, 186, b5, Color.BLUE, l4);
 			//tabuleiro.add(players[ord].bb);
 			ord+=1;
 		}
@@ -152,7 +150,7 @@ public class board extends JFrame {
 			tabuleiro.add(b6);
 			b6.setEnabled(false);
 			ArrayList<String> l5 = new ArrayList<String>();
-			players[ord] = new Player(50, 459, b6, Color.YELLOW, l5, "Amarelo");
+			players[ord] = new Player(50, 459, b6, Color.YELLOW, l5);
 			//tabuleiro.add(players[ord].bb);
 			ord+=1;
 		}
@@ -165,7 +163,7 @@ public class board extends JFrame {
 			tabuleiro.add(b7);
 			b7.setEnabled(false);
 			ArrayList<String> l6 = new ArrayList<String>();
-			players[ord] = new Player(225, 634, b7, Color.RED, l6, "Vermelho");
+			players[ord] = new Player(225, 634, b7, Color.RED, l6);
 			//tabuleiro.add(players[ord].bb);
 			ord+=1;
 		}
@@ -175,9 +173,8 @@ public class board extends JFrame {
 		RT.setEnabled(false);
 		new turn(players[0]);
 		
-		corJogador = new JButton("Jogador: " + players[0].cor);
+		final JButton corJogador = new JButton("Jogador: " + players[0].collo);
 		tabuleiro.add(corJogador);
-		corJogador.setBounds(764, 400, size.width+50, size.height + 10);
 		
 		//altura do quadrado 25
 		//largura do quadrado 25
@@ -194,7 +191,6 @@ public class board extends JFrame {
 		public JButton down;
 		public JButton right;
 		public int ncasas = 6;
-		
 		turn(Player act)
 		{
 			left = new JButton("←");
@@ -240,7 +236,7 @@ public class board extends JFrame {
 			c = x;
 		}
 		public void actionPerformed(ActionEvent e)
-		{						
+		{
 			players[placeturn].startx = players[placeturn].posx; //atualizando a posicao inicial da rodada do jogador,
 			players[placeturn].starty = players[placeturn].posy;// apos a finalizacao do seu turno.
 			if(placeturn==numbplayers-1)
@@ -251,11 +247,6 @@ public class board extends JFrame {
 			{
 				placeturn +=1;
 			}		
-			
-			corJogador.setText("Jogador: " + players[placeturn].cor);
-			tabuleiro.revalidate();
-			tabuleiro.repaint();
-			
 			b1.setEnabled(true);
 			fimt.setEnabled(false);
 			RT.setEnabled(false);
@@ -271,9 +262,8 @@ public class board extends JFrame {
 		public JButton bb;
 		public Color collo;
 		public ArrayList<String> mao;
-		public String cor;
 		
-		public Player(int px, int py, JButton ba, Color col, ArrayList<String> m, String c)
+		public Player(int px, int py, JButton ba, Color col, ArrayList<String> m)
 		{
 			startx = px;
 			starty = py;
@@ -282,7 +272,6 @@ public class board extends JFrame {
 			bb = ba;
 			collo = col;
 			mao = m;
-			cor = c;
 		}
 		
 		

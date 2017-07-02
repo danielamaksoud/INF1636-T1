@@ -240,7 +240,13 @@ public class board extends JFrame {
 			c = x;
 		}
 		public void actionPerformed(ActionEvent e)
-		{						
+		{			
+			corJogador.setText("Jogador: " + players[placeturn].cor);
+			
+			final JButton corJogador = new JButton("Jogador: " + players[0].cor);
+			tabuleiro.add(corJogador);
+			corJogador.setBounds(764, 400, size.width+50, size.height + 10);
+			
 			players[placeturn].startx = players[placeturn].posx; //atualizando a posicao inicial da rodada do jogador,
 			players[placeturn].starty = players[placeturn].posy;// apos a finalizacao do seu turno.
 			if(placeturn==numbplayers-1)
@@ -251,11 +257,6 @@ public class board extends JFrame {
 			{
 				placeturn +=1;
 			}		
-			
-			corJogador.setText("Jogador: " + players[placeturn].cor);
-			tabuleiro.revalidate();
-			tabuleiro.repaint();
-			
 			b1.setEnabled(true);
 			fimt.setEnabled(false);
 			RT.setEnabled(false);
