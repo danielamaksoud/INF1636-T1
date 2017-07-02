@@ -44,6 +44,7 @@ public class board extends JFrame {
 	Player[] players;
 	
 	
+	
 	public board(String nome, int i1, int i2, int i3, int i4, int i5, int i6, int numplayers) {
 		super(nome);
 	
@@ -176,8 +177,24 @@ public class board extends JFrame {
 		//altura do quadrado 25
 		//largura do quadrado 25
 		
+		if(numbplayers==3)
+		{
+			assassin a = new assassin(numbplayers, players[0].mao, players[1].mao, players[2].mao);
+		}
+		if(numbplayers==4)
+		{
+			assassin a = new assassin(numbplayers, players[0].mao, players[1].mao, players[2].mao, players[3].mao);
+		}
+		if(numbplayers==5)
+		{
+			assassin a = new assassin(numbplayers, players[0].mao, players[1].mao, players[2].mao, players[3].mao, players[4].mao);
+		}
+		if(numbplayers==6)
+		{
+			assassin a = new assassin(numbplayers, players[0].mao, players[1].mao, players[2].mao, players[3].mao, players[4].mao, players[5].mao);
+		}
 		
-		
+		System.out.println("primeira carta" + players[0].mao.get(0));
 		setVisible(true);
 	}
 	
@@ -190,10 +207,10 @@ public class board extends JFrame {
 		public int ncasas = 6;
 		turn(Player act)
 		{
-			left = new JButton("←");
-			up = new JButton("↑");
-			down = new JButton("↓");
-			right = new JButton("→");			
+			left = new JButton("e");
+			up = new JButton("c");
+			down = new JButton("b");
+			right = new JButton("d");			
 			
 			left.setBounds(773, 559,  50,  50);
 			right.setBounds(873, 559,  50,  50);
@@ -283,7 +300,7 @@ public class board extends JFrame {
 		JButton down;
 		
 		
-		public move(Player p1, int ncasas, JButton l,JButton r, JButton u, JButton d, int flag)
+		public move( Player p1, int ncasas, JButton l,JButton r, JButton u, JButton d, int flag)
 		{
 			p = p1;
 			left = l;
@@ -298,9 +315,8 @@ public class board extends JFrame {
 			tabuleiro.revalidate();
 			tabuleiro.repaint();
 			if(dados > 0){
-			if(f == 1)
+			if(f==1)
 			{
-				//if (p.posxx-25 == )
 				p.bb.setBounds(p.posx-25, p.posy, 25, 23);
 				p.posx = p.posx - 25;
 			}
@@ -354,10 +370,10 @@ public class board extends JFrame {
 		{
 			if(dados == 0)
 			{
-				JButton left = new JButton("←");
-				JButton up = new JButton("↑");
-				JButton down = new JButton("↓");
-				JButton right = new JButton("→");			
+				JButton left = new JButton("l");
+				JButton up = new JButton("c");
+				JButton down = new JButton("b");
+				JButton right = new JButton("d");			
 				
 				left.setBounds(758, 559,  50,  50);
 				right.setBounds(858, 559,  50,  50);
