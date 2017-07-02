@@ -252,9 +252,9 @@ public class board extends JFrame {
 		}
 	}
 	class Player{
-		public int startx;//posicao no comeco da jogada
+		public int startx;//posi�ao no come�o da jogada
 		public int starty;
-		public int posx;//posicao atual
+		public int posx;//posi�ao atual
 		public int posy;
 		public JButton bb;
 		public Color collo;
