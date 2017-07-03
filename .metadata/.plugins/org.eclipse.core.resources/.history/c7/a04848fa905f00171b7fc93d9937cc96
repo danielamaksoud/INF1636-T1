@@ -56,7 +56,6 @@ public class board extends JFrame {
 		numbplayers = numplayers;
 		int ord = 0;
 		this.setResizable(false);
-		mm.addActionListener(new showhand());
 		
 		Dimension size;
 		// Pinos dos jogadores
