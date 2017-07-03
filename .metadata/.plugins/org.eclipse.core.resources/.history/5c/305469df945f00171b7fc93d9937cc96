@@ -488,9 +488,10 @@ public class board extends JFrame {
 			}
 			
 			/* Parede esquerda do escritorio */
-			if(p.posx == 450 && p.posy >= 561 && p.posy <= 611)
+			if(p.posx == 475 && p.posy == 536)
 			{
 				right.setEnabled(false);
+				down.setEnabled(false);
 			}
 			
 			// Limite superior do tabuleiro
@@ -682,12 +683,6 @@ public class board extends JFrame {
 				{
 					right.setEnabled(false);
 					down.setEnabled(false);
-				}
-				
-				/* Parede esquerda do escritorio */
-				if(p.posx == 450 && p.posy >= 561 && p.posy <= 611)
-				{
-					right.setEnabled(false);
 				}
 				
 				// Limite superior do tabuleiro
@@ -906,12 +901,6 @@ public class board extends JFrame {
 				{
 					right.setEnabled(false);
 					down.setEnabled(false);
-				}
-				
-				/* Parede esquerda do escritorio */
-				if(p.posx == 450 && p.posy >= 561 && p.posy <= 611)
-				{
-					right.setEnabled(false);
 				}
 				
 				// Limite superior do tabuleiro

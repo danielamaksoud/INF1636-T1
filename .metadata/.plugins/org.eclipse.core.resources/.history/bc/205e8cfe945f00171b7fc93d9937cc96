@@ -684,12 +684,6 @@ public class board extends JFrame {
 					down.setEnabled(false);
 				}
 				
-				/* Parede esquerda do escritorio */
-				if(p.posx == 450 && p.posy >= 561 && p.posy <= 611)
-				{
-					right.setEnabled(false);
-				}
-				
 				// Limite superior do tabuleiro
 				if (p.posy-25 < 36){
 					System.out.println("passou do limite3-2:");
@@ -906,12 +900,6 @@ public class board extends JFrame {
 				{
 					right.setEnabled(false);
 					down.setEnabled(false);
-				}
-				
-				/* Parede esquerda do escritorio */
-				if(p.posx == 450 && p.posy >= 561 && p.posy <= 611)
-				{
-					right.setEnabled(false);
 				}
 				
 				// Limite superior do tabuleiro
