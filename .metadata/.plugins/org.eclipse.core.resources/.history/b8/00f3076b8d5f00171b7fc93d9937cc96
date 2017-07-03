@@ -410,7 +410,7 @@ public class board extends JFrame {
 				right.setEnabled(false);
 			}
 			
-			/* Parede inferior do salao de jogos/ Parede superior da biblioteca */
+			/* Parede inferior do salao de jogos */
 			if(p.posx >= 500 && p.posx <= 575 && p.posy == 361)
 			{
 				up.setEnabled(false);
@@ -422,24 +422,6 @@ public class board extends JFrame {
 				right.setEnabled(false);
 				up.setEnabled(false);
 				down.setEnabled(false);
-			}
-			
-			if(p.posx == 475 && p.posy == 386)
-			{
-				right.setEnabled(false);
-				down.setEnabled(false);
-			}
-			
-			/* Parede esquerda da biblioteca */
-			if(p.posx == 450 && p.posy >= 411 && p.posy <= 461)
-			{
-				right.setEnabled(false);
-			}
-			
-			if(p.posx == 475 && p.posy == 486)
-			{
-				up.setEnabled(false);
-				right.setEnabled(false);
 			}
 			
 			// Limite superior do tabuleiro
@@ -577,36 +559,16 @@ public class board extends JFrame {
 					right.setEnabled(false);
 				}
 				
-				/* Parede inferior do salao de jogos/ Parede superior da biblioteca */
+				/* Parede inferior do salao de jogos */
 				if(p.posx >= 500 && p.posx <= 575 && p.posy == 361)
 				{
 					up.setEnabled(false);
-					down.setEnabled(false);
 				}
 				
 				if(p.posx == 600 && p.posy == 361)
 				{
 					right.setEnabled(false);
 					up.setEnabled(false);
-					down.setEnabled(false);
-				}
-				
-				if(p.posx == 475 && p.posy == 386)
-				{
-					right.setEnabled(false);
-					down.setEnabled(false);
-				}
-				
-				/* Parede esquerda da biblioteca */
-				if(p.posx == 450 && p.posy >= 411 && p.posy <= 461)
-				{
-					right.setEnabled(false);
-				}
-				
-				if(p.posx == 475 && p.posy == 486)
-				{
-					up.setEnabled(false);
-					right.setEnabled(false);
 				}
 				
 				// Limite superior do tabuleiro
@@ -771,36 +733,16 @@ public class board extends JFrame {
 					right.setEnabled(false);
 				}
 				
-				/* Parede inferior do salao de jogos/ Parede superior da biblioteca */
+				/* Parede inferior do salao de jogos */
 				if(p.posx >= 500 && p.posx <= 575 && p.posy == 361)
 				{
 					up.setEnabled(false);
-					down.setEnabled(false);
 				}
 				
 				if(p.posx == 600 && p.posy == 361)
 				{
 					right.setEnabled(false);
 					up.setEnabled(false);
-					down.setEnabled(false);
-				}
-				
-				if(p.posx == 475 && p.posy == 386)
-				{
-					right.setEnabled(false);
-					down.setEnabled(false);
-				}
-				
-				/* Parede esquerda da biblioteca */
-				if(p.posx == 450 && p.posy >= 411 && p.posy <= 461)
-				{
-					right.setEnabled(false);
-				}
-				
-				if(p.posx == 475 && p.posy == 486)
-				{
-					up.setEnabled(false);
-					right.setEnabled(false);
 				}
 				
 				// Limite superior do tabuleiro
