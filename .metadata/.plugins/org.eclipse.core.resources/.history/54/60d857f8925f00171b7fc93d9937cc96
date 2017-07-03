@@ -1018,7 +1018,7 @@ class showhand implements ActionListener {
 		int size = players[placeturn].mao.size();
 		while(i < size)
 		{
-			HandS h = new HandS("Cartas na manga do jogador " + (placeturn+1), players[placeturn].mao, i);
+			HandS h = new HandS("cartas na manga do jogador " + (placeturn+1), players[placeturn].mao, i);
 			Insets ins = h.getInsets();
 			h.setSize(400 + ins.left + ins.right, 386 + ins.top + ins.bottom);
 			h.setVisible(true);

@@ -168,26 +168,6 @@ public class board extends JFrame {
 			//tabuleiro.add(players[ord].bb);
 			ord+=1;
 		}
-		
-		if(numbplayers==3)
-		{
-			new assassin(3, players[0].mao, players[1].mao, players[2].mao);
-		}
-		if(numbplayers==4)
-		{
-			new assassin(4, players[0].mao, players[1].mao, players[2].mao, players[3].mao);
-		}
-		
-		if(numbplayers==5)
-		{
-			new assassin(5, players[0].mao, players[1].mao, players[2].mao, players[3].mao, players[4].mao);
-		}
-		
-		if(numbplayers==6)
-		{
-			new assassin(6, players[0].mao, players[1].mao, players[2].mao, players[3].mao, players[4].mao, players[5].mao);
-		}
-		
 		dados = 0;
 		dados_ini = 0;
 		fimt.setEnabled(false);
@@ -1014,18 +994,16 @@ class showhand implements ActionListener {
 	}
 	public void actionPerformed(ActionEvent e)
 	{
-		int i = 0;
+		int i =0;
 		int size = players[placeturn].mao.size();
-		while(i < size)
+		while(i< size)
 		{
-			HandS h = new HandS("Cartas na manga do jogador " + (placeturn+1), players[placeturn].mao, i);
+			HandS h = new HandS("cartas na manga do jogador " + (placeturn+1), players[placeturn].mao, i);
 			Insets ins = h.getInsets();
 			h.setSize(400 + ins.left + ins.right, 386 + ins.top + ins.bottom);
 			h.setVisible(true);
 			i++;
-			System.out.println("oi1");
 		}
-		System.out.println("oi2");
 	}
 }
 
