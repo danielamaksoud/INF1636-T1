@@ -992,18 +992,6 @@ public class board extends JFrame {
 					down.setEnabled(false);
 				}
 				
-				/* Parede esquerda da entrada */
-				if(p.posx == 275 && p.posy >= 486 && p.posy <= 586)
-				{
-					right.setEnabled(false);
-				}
-				
-				if(p.posx == 275 && p.posy == 611)
-				{
-					right.setEnabled(false);
-					down.setEnabled(false);
-				}
-				
 				// Limite superior do tabuleiro
 				if (p.posy-25 < 36){
 					System.out.println("passou do limite superior 3:");

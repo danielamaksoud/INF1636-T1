@@ -512,14 +512,8 @@ public class board extends JFrame {
 			}
 			
 			/* Parede esquerda da entrada */
-			if(p.posx == 275 && p.posy >= 486 && p.posy <= 586)
+			if(p.posx == 275 && p.posy >= 461 && p.posy <= 611)
 			{
-				right.setEnabled(false);
-			}
-			
-			if(p.posx == 275 && p.posy == 611)
-			{
-				right.setEnabled(false);
 				down.setEnabled(false);
 			}
 			
@@ -735,18 +729,6 @@ public class board extends JFrame {
 				/* Parede superior da entrada */
 				if(p.posx >= 275 && p.posx <= 425 && p.posy == 461)
 				{
-					down.setEnabled(false);
-				}
-				
-				/* Parede esquerda da entrada */
-				if(p.posx == 275 && p.posy >= 486 && p.posy <= 586)
-				{
-					right.setEnabled(false);
-				}
-				
-				if(p.posx == 275 && p.posy == 611)
-				{
-					right.setEnabled(false);
 					down.setEnabled(false);
 				}
 				
@@ -989,18 +971,6 @@ public class board extends JFrame {
 				/* Parede superior da entrada */
 				if(p.posx >= 275 && p.posx <= 425 && p.posy == 461)
 				{
-					down.setEnabled(false);
-				}
-				
-				/* Parede esquerda da entrada */
-				if(p.posx == 275 && p.posy >= 486 && p.posy <= 586)
-				{
-					right.setEnabled(false);
-				}
-				
-				if(p.posx == 275 && p.posy == 611)
-				{
-					right.setEnabled(false);
 					down.setEnabled(false);
 				}
 				
