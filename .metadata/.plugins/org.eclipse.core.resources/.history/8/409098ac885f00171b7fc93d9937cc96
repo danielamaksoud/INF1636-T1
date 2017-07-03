@@ -374,21 +374,10 @@ public class board extends JFrame {
 				right.setEnabled(false);
 			}
 			
-			if(p.posx == 500 && p.posy == 161)
+			if(p.posx == 450 && p.posy == 186)
 			{
 				up.setEnabled(false);
 				right.setEnabled(false);
-			}
-			
-			if(p.posx >= 525 && p.posx <= 575 && p.posy == 186)
-			{
-				up.setEnabled(false);
-			}
-			
-			if(p.posx == 600 && p.posy == 186)
-			{
-				right.setEnabled(false);
-				up.setEnabled(false);
 			}
 			
 			// Limite superior do tabuleiro
@@ -490,21 +479,10 @@ public class board extends JFrame {
 					right.setEnabled(false);
 				}
 				
-				if(p.posx == 500 && p.posy == 161)
+				if(p.posx == 450 && p.posy == 186)
 				{
 					up.setEnabled(false);
 					right.setEnabled(false);
-				}
-				
-				if(p.posx >= 525 && p.posx <= 575 && p.posy == 186)
-				{
-					up.setEnabled(false);
-				}
-				
-				if(p.posx == 600 && p.posy == 186)
-				{
-					right.setEnabled(false);
-					up.setEnabled(false);
 				}
 				
 				// Limite superior do tabuleiro
@@ -628,26 +606,15 @@ public class board extends JFrame {
 				}
 				
 				/* Parede esquerda do jardim de inverno */
-				if(p.posx == 475 && p.posy >= 111 && p.posy <= 136)
+				if(p.posx == 475 && p.posy >= 111 && p.posy <= 161)
 				{
 					right.setEnabled(false);
 				}
 				
-				if(p.posx == 500 && p.posy == 161)
+				if(p.posx == 450 && p.posy == 186)
 				{
 					up.setEnabled(false);
 					right.setEnabled(false);
-				}
-				
-				if(p.posx >= 525 && p.posx <= 575 && p.posy == 186)
-				{
-					up.setEnabled(false);
-				}
-				
-				if(p.posx == 600 && p.posy == 186)
-				{
-					right.setEnabled(false);
-					up.setEnabled(false);
 				}
 				
 				// Limite superior do tabuleiro
