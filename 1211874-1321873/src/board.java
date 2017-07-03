@@ -1,5 +1,4 @@
 import javax.swing.*;
-
 import java.math.*;
 import java.awt.geom.*;
 import java.awt.*;
@@ -12,7 +11,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Random;
-
 import javax.imageio.ImageIO;
 
 @SuppressWarnings("serial")
@@ -309,6 +307,61 @@ public class board extends JFrame {
 			p1.posx = p.posx;
 			p1.posy = p.posy;
 			
+			if(p.posx == 400 && p.posy == 61)
+			{
+				left.setEnabled(false);
+				down.setEnabled(false);
+			}
+			
+			if(p.posx == 425 && p.posy == 61)
+			{
+				up.setEnabled(false);
+				down.setEnabled(false);
+			}
+			
+			if(p.posx == 450 && p.posy == 61)
+			{
+				right.setEnabled(false);
+				up.setEnabled(false);
+			}
+			
+			/* Parede direita da sala de musica */
+			if(p.posx == 450 && p.posy >= 86 && p.posy <= 211)
+			{
+				left.setEnabled(false);
+			}
+			
+			/* Parede inferior da sala de musica */
+			if(p.posx >= 250 && p.posx <= 425 && p.posy == 236)
+			{
+				up.setEnabled(false);
+			}
+			
+			/* Parede esquerda da sala de musica */
+			if(p.posx == 225 && p.posy >= 86 && p.posy <= 211)
+			{
+				right.setEnabled(false);
+			}
+			
+			if(p.posx == 225 && p.posy == 61)
+			{
+				up.setEnabled(false);
+				left.setEnabled(false);
+			}
+			
+			if(p.posx == 250 && p.posy == 61)
+			{
+				up.setEnabled(false);
+				down.setEnabled(false);
+			}
+			
+			if(p.posx == 275 && p.posy == 61)
+			{
+				up.setEnabled(false);
+				right.setEnabled(false);
+				down.setEnabled(false);
+			}
+			
 			// Limite superior do tabuleiro
 			if (p.posy-25 < 36){
 				System.out.println("passou do limite3-2:");
@@ -340,6 +393,62 @@ public class board extends JFrame {
 			tabuleiro.revalidate();
 			tabuleiro.repaint();
 			if(dados > 0){
+				
+				if(p.posx == 400 && p.posy == 61)
+				{
+					left.setEnabled(false);
+					down.setEnabled(false);
+				}
+				
+				if(p.posx == 425 && p.posy == 61)
+				{
+					up.setEnabled(false);
+					down.setEnabled(false);
+				}
+				
+				if(p.posx == 450 && p.posy == 61)
+				{
+					right.setEnabled(false);
+					up.setEnabled(false);
+				}
+				
+				/* Parede direita da sala de musica */
+				if(p.posx == 450 && p.posy >= 86 && p.posy <= 211)
+				{
+					left.setEnabled(false);
+				}
+				
+				/* Parede inferior da sala de musica */
+				if(p.posx >= 250 && p.posx <= 425 && p.posy == 236)
+				{
+					up.setEnabled(false);
+				}
+				
+				/* Parede esquerda da sala de musica */
+				if(p.posx == 225 && p.posy >= 86 && p.posy <= 211)
+				{
+					right.setEnabled(false);
+				}
+				
+				if(p.posx == 225 && p.posy == 61)
+				{
+					up.setEnabled(false);
+					left.setEnabled(false);
+				}
+				
+				if(p.posx == 250 && p.posy == 61)
+				{
+					up.setEnabled(false);
+					down.setEnabled(false);
+				}
+				
+				if(p.posx == 275 && p.posy == 61)
+				{
+					up.setEnabled(false);
+					right.setEnabled(false);
+					down.setEnabled(false);
+				}
+				
 				// Limite superior do tabuleiro
 				if (p.posy-25 < 36){
 					System.out.println("passou do limite3-2:");
@@ -398,6 +507,61 @@ public class board extends JFrame {
 				right.setEnabled(true);
 				up.setEnabled(true);
 				down.setEnabled(true);
+				
+				if(p.posx == 400 && p.posy == 61)
+				{
+					left.setEnabled(false);
+					down.setEnabled(false);
+				}
+				
+				if(p.posx == 425 && p.posy == 61)
+				{
+					up.setEnabled(false);
+					down.setEnabled(false);
+				}
+				
+				if(p.posx == 450 && p.posy == 61)
+				{
+					right.setEnabled(false);
+					up.setEnabled(false);
+				}
+				
+				/* Parede direita da sala de musica */
+				if(p.posx == 450 && p.posy >= 86 && p.posy <= 211)
+				{
+					left.setEnabled(false);
+				}
+				
+				/* Parede inferior da sala de musica */
+				if(p.posx >= 250 && p.posx <= 425 && p.posy == 236)
+				{
+					up.setEnabled(false);
+				}
+				
+				/* Parede esquerda da sala de musica */
+				if(p.posx == 225 && p.posy >= 86 && p.posy <= 211)
+				{
+					right.setEnabled(false);
+				}
+				
+				if(p.posx == 225 && p.posy == 61)
+				{
+					up.setEnabled(false);
+					left.setEnabled(false);
+				}
+				
+				if(p.posx == 250 && p.posy == 61)
+				{
+					up.setEnabled(false);
+					down.setEnabled(false);
+				}
+				
+				if(p.posx == 275 && p.posy == 61)
+				{
+					up.setEnabled(false);
+					right.setEnabled(false);
+					down.setEnabled(false);
+				}
 				
 				// Limite superior do tabuleiro
 				if (p.posy-25 < 36){
