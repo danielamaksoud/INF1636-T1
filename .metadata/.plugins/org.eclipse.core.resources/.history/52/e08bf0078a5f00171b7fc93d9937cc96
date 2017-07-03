@@ -380,7 +380,6 @@ public class board extends JFrame {
 				right.setEnabled(false);
 			}
 			
-			/* Parede inferior do jardim de inverno */
 			if(p.posx >= 525 && p.posx <= 575 && p.posy == 186)
 			{
 				up.setEnabled(false);
@@ -497,7 +496,6 @@ public class board extends JFrame {
 					right.setEnabled(false);
 				}
 				
-				/* Parede inferior do jardim de inverno */
 				if(p.posx >= 525 && p.posx <= 575 && p.posy == 186)
 				{
 					up.setEnabled(false);
@@ -641,7 +639,6 @@ public class board extends JFrame {
 					right.setEnabled(false);
 				}
 				
-				/* Parede inferior do jardim de inverno */
 				if(p.posx >= 525 && p.posx <= 575 && p.posy == 186)
 				{
 					up.setEnabled(false);
