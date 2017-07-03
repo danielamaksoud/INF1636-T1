@@ -501,31 +501,30 @@ public class board extends JFrame {
 			
 			if(p.posx == 425 && p.posy == 636)
 			{
-				down.setEnabled(false);
 				left.setEnabled(false);
 			}
 			
 			// Limite superior do tabuleiro
 			if (p.posy-25 < 36){
-				System.out.println("passou do limite superior 1:");
+				System.out.println("passou do limite3-2:");
 				up.setEnabled(false);
 			}
 			
 			// Limite inferior do tabuleiro
-			if (p.posy+25 > 638) {
-				System.out.println("passou do limite inferior 1:");
+			if (p.posy+25 > 634) {
+				System.out.println("passou do limite:");
 				down.setEnabled(false);
 			}
-			
+						
 			// Limite do lado esquerdo do tabuleiro
-			if (p.posx-25 < 50) {
-				System.out.println("passou do limite esquerdo 1:");
+			if (p.posx-25 < 46) {
+				System.out.println("passou do limite2:");
 				left.setEnabled(false);
 			}
-			
+						
 			// Limite do lado direito do tabuleiro
-			if (p.posx+25 > 625) {
-				System.out.println("passou do limite direito 1:");
+			if (p.posx+25 > 640) {
+				System.out.println("passou do limite:");
 				right.setEnabled(false);
 			}
 		}
@@ -702,39 +701,27 @@ public class board extends JFrame {
 					right.setEnabled(false);
 				}
 				
-				/* Parede direita da entrada */
-				if(p.posx == 425 && p.posy >= 486 && p.posy <= 611)
-				{
-					left.setEnabled(false);
-				}
-				
-				if(p.posx == 425 && p.posy == 636)
-				{
-					down.setEnabled(false);
-					left.setEnabled(false);
-				}
-				
 				// Limite superior do tabuleiro
 				if (p.posy-25 < 36){
-					System.out.println("passou do limite superior 2:");
+					System.out.println("passou do limite3-2:");
 					up.setEnabled(false);
 				}
 				
 				// Limite inferior do tabuleiro
-				if (p.posy+25 > 638) {
-					System.out.println("passou do limite inferior 2:");
+				if (p.posy+25 > 634) {
+					System.out.println("passou do limite:");
 					down.setEnabled(false);
 				}
 				
 				// Limite do lado esquerdo do tabuleiro
 				if (p.posx-25 < 50) {
-					System.out.println("passou do limite esquerdo 2:");
+					System.out.println("passou do limite2:");
 					left.setEnabled(false);
 				}
 				
 				// Limite do lado direito do tabuleiro
 				if (p.posx+25 > 625) {
-					System.out.println("passou do limite direito 2:");
+					System.out.println("passou do limite:");
 					right.setEnabled(false);
 				}
 				
@@ -938,39 +925,27 @@ public class board extends JFrame {
 					right.setEnabled(false);
 				}
 				
-				/* Parede direita da entrada */
-				if(p.posx == 425 && p.posy >= 486 && p.posy <= 611)
-				{
-					left.setEnabled(false);
-				}
-				
-				if(p.posx == 425 && p.posy == 636)
-				{
-					down.setEnabled(false);
-					left.setEnabled(false);
-				}
-				
 				// Limite superior do tabuleiro
 				if (p.posy-25 < 36){
-					System.out.println("passou do limite superior 3:");
+					System.out.println("passou do limite3-2:");
 					up.setEnabled(false);
 				}
 				
 				// Limite inferior do tabuleiro
-				if (p.posy+25 > 638) {
-					System.out.println("passou do limite inferior 3:" + p.posy);
+				if (p.posy+25 > 634) {
+					System.out.println("passou do limite:");
 					down.setEnabled(false);
 				}
 				
 				// Limite do lado esquerdo do tabuleiro
 				if (p.posx-25 < 50) {
-					System.out.println("passou do limite esquerdo 3:");
+					System.out.println("passou do limite2:");
 					left.setEnabled(false);
 				}
 				
 				// Limite do lado direito do tabuleiro
 				if (p.posx+25 > 625) {
-					System.out.println("passou do limite direito 3:");
+					System.out.println("passou do limite:");
 					right.setEnabled(false);
 				}
 				
