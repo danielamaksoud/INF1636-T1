@@ -411,15 +411,9 @@ public class board extends JFrame {
 			}
 			
 			/* Parede inferior do salao de jogos */
-			if(p.posx >= 500 && p.posx <= 575 && p.posy == 361)
-			{
-				up.setEnabled(false);
-			}
-			
-			if(p.posx == 600 && p.posy == 361)
+			if(p.posx == 475 && p.posy >= 236 && p.posy <= 336)
 			{
 				right.setEnabled(false);
-				up.setEnabled(false);
 			}
 			
 			// Limite superior do tabuleiro
@@ -555,18 +549,6 @@ public class board extends JFrame {
 				if(p.posx == 475 && p.posy >= 236 && p.posy <= 336)
 				{
 					right.setEnabled(false);
-				}
-				
-				/* Parede inferior do salao de jogos */
-				if(p.posx >= 500 && p.posx <= 575 && p.posy == 361)
-				{
-					up.setEnabled(false);
-				}
-				
-				if(p.posx == 600 && p.posy == 361)
-				{
-					right.setEnabled(false);
-					up.setEnabled(false);
 				}
 				
 				// Limite superior do tabuleiro
@@ -729,18 +711,6 @@ public class board extends JFrame {
 				if(p.posx == 475 && p.posy >= 236 && p.posy <= 336)
 				{
 					right.setEnabled(false);
-				}
-				
-				/* Parede inferior do salao de jogos */
-				if(p.posx >= 500 && p.posx <= 575 && p.posy == 361)
-				{
-					up.setEnabled(false);
-				}
-				
-				if(p.posx == 600 && p.posy == 361)
-				{
-					right.setEnabled(false);
-					up.setEnabled(false);
 				}
 				
 				// Limite superior do tabuleiro

@@ -393,30 +393,7 @@ public class board extends JFrame {
 			}
 			
 			/* Parede superior do salao de jogos */
-			if(p.posx >= 500 && p.posx <= 575 && p.posy == 211)
-			{
-				down.setEnabled(false);
-			}
-			
-			if(p.posx == 600 && p.posy == 211)
-			{
-				right.setEnabled(false);
-				down.setEnabled(false);
-			}
-			
-			/* Parede esquerda do salao de jogos */
-			if(p.posx == 475 && p.posy >= 236 && p.posy <= 336)
-			{
-				right.setEnabled(false);
-			}
-			
-			/* Parede inferior do salao de jogos */
-			if(p.posx >= 500 && p.posx <= 575 && p.posy == 361)
-			{
-				up.setEnabled(false);
-			}
-			
-			if(p.posx == 600 && p.posy == 361)
+			if(p.posx == 600 && p.posy == 186)
 			{
 				right.setEnabled(false);
 				up.setEnabled(false);
@@ -534,36 +511,6 @@ public class board extends JFrame {
 				}
 				
 				if(p.posx == 600 && p.posy == 186)
-				{
-					right.setEnabled(false);
-					up.setEnabled(false);
-				}
-				
-				/* Parede superior do salao de jogos */
-				if(p.posx >= 500 && p.posx <= 575 && p.posy == 211)
-				{
-					down.setEnabled(false);
-				}
-				
-				if(p.posx == 600 && p.posy == 211)
-				{
-					right.setEnabled(false);
-					down.setEnabled(false);
-				}
-				
-				/* Parede esquerda do salao de jogos */
-				if(p.posx == 475 && p.posy >= 236 && p.posy <= 336)
-				{
-					right.setEnabled(false);
-				}
-				
-				/* Parede inferior do salao de jogos */
-				if(p.posx >= 500 && p.posx <= 575 && p.posy == 361)
-				{
-					up.setEnabled(false);
-				}
-				
-				if(p.posx == 600 && p.posy == 361)
 				{
 					right.setEnabled(false);
 					up.setEnabled(false);
@@ -708,36 +655,6 @@ public class board extends JFrame {
 				}
 				
 				if(p.posx == 600 && p.posy == 186)
-				{
-					right.setEnabled(false);
-					up.setEnabled(false);
-				}
-				
-				/* Parede superior do salao de jogos */
-				if(p.posx >= 500 && p.posx <= 575 && p.posy == 211)
-				{
-					down.setEnabled(false);
-				}
-				
-				if(p.posx == 600 && p.posy == 211)
-				{
-					right.setEnabled(false);
-					down.setEnabled(false);
-				}
-				
-				/* Parede esquerda do salao de jogos */
-				if(p.posx == 475 && p.posy >= 236 && p.posy <= 336)
-				{
-					right.setEnabled(false);
-				}
-				
-				/* Parede inferior do salao de jogos */
-				if(p.posx >= 500 && p.posx <= 575 && p.posy == 361)
-				{
-					up.setEnabled(false);
-				}
-				
-				if(p.posx == 600 && p.posy == 361)
 				{
 					right.setEnabled(false);
 					up.setEnabled(false);
