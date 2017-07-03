@@ -22,3 +22,22 @@ class showhand implements ActionListener {
 
 
 mm.addActionListener(new showhand());
+
+if(numbplayers==3)
+		{
+			new assassin(3, players[0].mao, players[1].mao, players[2].mao);
+		}
+		if(numbplayers==4)
+		{
+			new assassin(4, players[0].mao, players[1].mao, players[2].mao, players[3].mao);
+		}
+		
+		if(numbplayers==5)
+		{
+			new assassin(5, players[0].mao, players[1].mao, players[2].mao, players[3].mao, players[4].mao);
+		}
+		
+		if(numbplayers==6)
+		{
+			new assassin(6, players[0].mao, players[1].mao, players[2].mao, players[3].mao, players[4].mao, players[5].mao);
+		}
