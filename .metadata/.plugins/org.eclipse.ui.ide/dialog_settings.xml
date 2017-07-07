@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="/Users/claudiamaksoud/Downloads/INF1636-T1-master"/>
 		<item value="/Users/claudiamaksoud/INF1636-T1/1211874-1321873"/>
 		<item value="/Users/claudiamaksoud/INF1636-T1/1211874"/>
 	</list>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item value="322" key="DIALOG_X_ORIGIN"/>
+		<item value="137" key="DIALOG_Y_ORIGIN"/>
+	</section>
 </section>

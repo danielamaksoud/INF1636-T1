@@ -23,6 +23,8 @@ public class firstframe extends JFrame {
 		setLayout(new GridLayout(1,1));
 		tela = new backgroundimage("Fundo1.png");
 		getContentPane().add(tela);
+		Insets ins = tela.getInsets();
+		setSize(600 + ins.left, 400 + ins.top);
 		
 		/* BOTAO NOVO JOGO */
 		b1 = new JButton("Novo Jogo");
@@ -41,6 +43,8 @@ public class firstframe extends JFrame {
 		b2.setToolTipText("Reabrindo um caso antigo?");
 		
 		j.pack();
+		
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 	
 }
