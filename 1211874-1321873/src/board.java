@@ -437,7 +437,7 @@ public class board extends JFrame {
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
-					passagemSecreta.setEnabled(true);
+					passagemSecreta.setEnabled(false);
 					
 					actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
 					passagemSecreta.addActionListener(actionListener2);
@@ -509,7 +509,7 @@ public class board extends JFrame {
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
-					passagemSecreta.setEnabled(true);
+					passagemSecreta.setEnabled(false);
 					
 					actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
 					passagemSecreta.addActionListener(actionListener2);
@@ -555,7 +555,7 @@ public class board extends JFrame {
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
-					passagemSecreta.setEnabled(true);
+					passagemSecreta.setEnabled(false);
 					
 					actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
 					passagemSecreta.addActionListener(actionListener2);
@@ -604,7 +604,7 @@ public class board extends JFrame {
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
-					passagemSecreta.setEnabled(true);
+					passagemSecreta.setEnabled(false);
 					
 					actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
 					passagemSecreta.addActionListener(actionListener2);
@@ -659,7 +659,7 @@ public class board extends JFrame {
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
-					passagemSecreta.setEnabled(true);
+					passagemSecreta.setEnabled(false);
 					
 					actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
 					passagemSecreta.addActionListener(actionListener2);
@@ -723,7 +723,7 @@ public class board extends JFrame {
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
-					passagemSecreta.setEnabled(true);
+					passagemSecreta.setEnabled(false);
 					
 					actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
 					passagemSecreta.addActionListener(actionListener2);
@@ -781,7 +781,7 @@ public class board extends JFrame {
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
-					passagemSecreta.setEnabled(true);
+					passagemSecreta.setEnabled(false);
 					
 					actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
 					passagemSecreta.addActionListener(actionListener2);
@@ -828,7 +828,7 @@ public class board extends JFrame {
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
-					passagemSecreta.setEnabled(true);
+					passagemSecreta.setEnabled(false);
 					
 					actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
 					passagemSecreta.addActionListener(actionListener2);
@@ -1178,6 +1178,9 @@ class Reset implements ActionListener {
 			palpite.setEnabled(false);
 			passagemSecreta.setEnabled(false);
 			finalizarTurno.setEnabled(false);
+			
+			palpite.removeActionListener(actionListener);
+			passagemSecreta.removeActionListener(actionListener2);
 		}
 
 	}
