@@ -430,8 +430,7 @@ public class assassinSelect extends JFrame {
 		{
 			c.setVisible(false);
 			((Window) c).dispose();
-			
-			System.out.println("");
+
 			System.out.println("Suspeito = " + Assassino.get(2));
 			System.out.println("Arma = " + Assassino.get(0));
 			System.out.println("Comodo = " + Assassino.get(1));

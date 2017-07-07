@@ -44,11 +44,13 @@ public class assassin {
 		assassino.add(Assassino.get(0)); /* Arma */
 		assassino.add(Assassino.get(1)); /* Comodo */
 		assassino.add(Assassino.get(2)); /* Suspeito */
+		
 		System.out.println("");
 		System.out.println("Arma = " + assassino.get(0));
 		System.out.println("Comodo = " + assassino.get(1));
 		System.out.println("Suspeito = " + assassino.get(2));
 		System.out.println("");
+		
 		armas.remove(0);
 		comodos.remove(0);
 		suspeitos.remove(0);
