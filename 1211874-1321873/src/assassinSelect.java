@@ -449,8 +449,8 @@ public class assassinSelect extends JFrame {
 			}
 			else
 			{
-				JOptionPane.showMessageDialog(c,"Perdeu! Mais sorte na proxima vez.");
-				System.out.println("Perdeu o jogo.");
+				JOptionPane.showMessageDialog(c,"Errou! Mais sorte na proxima vez.");
+				System.out.println("Errou o palpite.");
 				System.out.println("");
 			}
 		}

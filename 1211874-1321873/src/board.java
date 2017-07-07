@@ -373,7 +373,7 @@ public class board extends JFrame {
 				
 				if(players[placeturn].entrouComodo == 0)
 				{
-					actionListener = new guess(assassino, comodo);
+					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta);
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
@@ -427,7 +427,7 @@ public class board extends JFrame {
 				
 				if(players[placeturn].entrouComodo == 0)
 				{
-					actionListener = new guess(assassino, comodo);
+					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta);
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
@@ -496,7 +496,7 @@ public class board extends JFrame {
 				
 				if(players[placeturn].entrouComodo == 0)
 				{
-					actionListener = new guess(assassino, comodo);
+					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta);
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
@@ -538,7 +538,7 @@ public class board extends JFrame {
 					
 				if(players[placeturn].entrouComodo == 0)
 				{
-					actionListener = new guess(assassino, comodo);
+					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta);
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
@@ -551,7 +551,7 @@ public class board extends JFrame {
 					numeroPassos.setText("Numero de passos: " + dados);
 					
 					players[placeturn].entrouComodo = 2;
-				}
+					}
 			}
 			if(posx == 447 && posy == 391 && players[placeturn].entrouComodo == 2) // Entrou na biblioteca
 			{
@@ -583,7 +583,7 @@ public class board extends JFrame {
 				
 				if(players[placeturn].entrouComodo == 0)
 				{
-					actionListener = new guess(assassino, comodo);
+					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta);
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
@@ -635,7 +635,7 @@ public class board extends JFrame {
 				
 				if(players[placeturn].entrouComodo == 0)
 				{
-					actionListener = new guess(assassino, comodo);
+					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta);
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
@@ -695,7 +695,7 @@ public class board extends JFrame {
 				
 				if(players[placeturn].entrouComodo == 0)
 				{
-					actionListener = new guess(assassino, comodo);
+					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta);
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
@@ -750,7 +750,7 @@ public class board extends JFrame {
 				
 				if(players[placeturn].entrouComodo == 0)
 				{
-					actionListener = new guess(assassino, comodo);
+					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta);
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
@@ -793,7 +793,7 @@ public class board extends JFrame {
 				
 				if(players[placeturn].entrouComodo == 0)
 				{
-					actionListener = new guess(assassino, comodo);
+					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta);
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
