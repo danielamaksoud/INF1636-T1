@@ -53,6 +53,7 @@ public class board extends JFrame {
 	Player[] players;
 	
 	ActionListener actionListener;
+	ActionListener actionListener2;
 	
 	Dimension size;
 	
@@ -276,8 +277,9 @@ public class board extends JFrame {
 			
 			passagemSecreta.setEnabled(false);
 			palpite.setEnabled(false);
-			palpite.removeActionListener(actionListener);
 			
+			palpite.removeActionListener(actionListener);
+			passagemSecreta.removeActionListener(actionListener2);
 		}
 
 	}
@@ -373,10 +375,14 @@ public class board extends JFrame {
 				
 				if(players[placeturn].entrouComodo == 0)
 				{
-					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta);
+					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno);
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
+					passagemSecreta.setEnabled(true);
+					
+					actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
+					passagemSecreta.addActionListener(actionListener2);
 					
 					players[placeturn].entrouComodo = 1;
 					
@@ -427,11 +433,14 @@ public class board extends JFrame {
 				
 				if(players[placeturn].entrouComodo == 0)
 				{
-					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta);
+					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno);
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
 					passagemSecreta.setEnabled(true);
+					
+					actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
+					passagemSecreta.addActionListener(actionListener2);
 					
 					players[placeturn].entrouComodo = 1;
 					
@@ -496,10 +505,14 @@ public class board extends JFrame {
 				
 				if(players[placeturn].entrouComodo == 0)
 				{
-					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta);
+					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno);
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
+					passagemSecreta.setEnabled(true);
+					
+					actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
+					passagemSecreta.addActionListener(actionListener2);
 					
 					players[placeturn].entrouComodo = 1;
 					
@@ -538,10 +551,14 @@ public class board extends JFrame {
 					
 				if(players[placeturn].entrouComodo == 0)
 				{
-					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta);
+					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno);
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
+					passagemSecreta.setEnabled(true);
+					
+					actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
+					passagemSecreta.addActionListener(actionListener2);
 					
 					players[placeturn].entrouComodo = 1;
 					
@@ -583,11 +600,14 @@ public class board extends JFrame {
 				
 				if(players[placeturn].entrouComodo == 0)
 				{
-					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta);
+					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno);
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
 					passagemSecreta.setEnabled(true);
+					
+					actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
+					passagemSecreta.addActionListener(actionListener2);
 					
 					players[placeturn].entrouComodo = 1;
 					
@@ -635,10 +655,14 @@ public class board extends JFrame {
 				
 				if(players[placeturn].entrouComodo == 0)
 				{
-					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta);
+					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno);
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
+					passagemSecreta.setEnabled(true);
+					
+					actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
+					passagemSecreta.addActionListener(actionListener2);
 					
 					players[placeturn].entrouComodo = 1;
 					
@@ -695,11 +719,14 @@ public class board extends JFrame {
 				
 				if(players[placeturn].entrouComodo == 0)
 				{
-					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta);
+					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno);
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
 					passagemSecreta.setEnabled(true);
+					
+					actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
+					passagemSecreta.addActionListener(actionListener2);
 					
 					players[placeturn].entrouComodo = 1;
 					
@@ -750,10 +777,14 @@ public class board extends JFrame {
 				
 				if(players[placeturn].entrouComodo == 0)
 				{
-					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta);
+					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno);
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
+					passagemSecreta.setEnabled(true);
+					
+					actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
+					passagemSecreta.addActionListener(actionListener2);
 					
 					players[placeturn].entrouComodo = 1;
 					
@@ -793,11 +824,14 @@ public class board extends JFrame {
 				
 				if(players[placeturn].entrouComodo == 0)
 				{
-					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta);
+					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno);
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
 					passagemSecreta.setEnabled(true);
+					
+					actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
+					passagemSecreta.addActionListener(actionListener2);
 					
 					players[placeturn].entrouComodo = 1;
 					
@@ -1143,7 +1177,7 @@ class Reset implements ActionListener {
 			
 			palpite.setEnabled(false);
 			passagemSecreta.setEnabled(false);
-			
+			finalizarTurno.setEnabled(false);
 		}
 
 	}
