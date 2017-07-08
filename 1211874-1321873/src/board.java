@@ -598,8 +598,9 @@ public class board extends JFrame {
 				left.setEnabled(false);
 				right.setEnabled(false);
 				
-				if(players[placeturn].entrouComodo == 0)
+				switch(players[placeturn].entrouComodo)
 				{
+				case 0:
 					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno);
 					palpite.addActionListener(actionListener);
 					
@@ -617,6 +618,10 @@ public class board extends JFrame {
 					numeroPassos.setText("Numero de passos: " + dados);
 					
 					players[placeturn].entrouComodo = 2;
+					break;
+				case 2:
+					passagemSecreta.setEnabled(true);
+					System.out.println("hey bitches");
 				}
 			}
 			if(posx == 495 && posy == 487 && players[placeturn].entrouComodo == 2) // Entrou no escritorio
@@ -1088,7 +1093,6 @@ public class board extends JFrame {
 					finalizarTurno.setEnabled(true);
 					tabuleiro.revalidate();
 					tabuleiro.repaint();
-					
 				}
 			}
 			
