@@ -1075,28 +1075,28 @@ public class board extends JFrame {
 					{
 						System.out.println("oioioi");
 						p.posx = 159;
-						p.posy = 487;
+						p.posy = 439;
 						p.bb.setBounds(p.posx, p.posy, 47, 47);
 					}
 					else if(p.posx == 159 && p.posy == 439)//Sala de Estar
 					{
 						System.out.println("oioioi");
-						p.posx = 543;
+						p.posx = 495;
 						p.posy = 151;
 						p.bb.setBounds(p.posx, p.posy, 47, 47);						
 					}
 					else if(p.posx == 159 && p.posy == 199)//cozinha
 					{
 						System.out.println("oioioi");
-						p.posx = 459;
-						p.posy = 535;
+						p.posx = 495;
+						p.posy = 487;
 						p.bb.setBounds(p.posx, p.posy, 47, 47);
 					}
 					else if(p.posx == 495 && p.posy == 487)//Escritorio
 					{
 						System.out.println("oioioi");
 						p.posx = 159;
-						p.posy = 151;
+						p.posy = 199;
 						p.bb.setBounds(p.posx, p.posy, 47, 47);
 					}
 				}
@@ -1122,6 +1122,7 @@ public class board extends JFrame {
 				
 				if(dados == 0)
 				{
+					tabuleiro.remove(passagemSecreta);
 					tabuleiro.remove(left);
 					tabuleiro.remove(up);
 					tabuleiro.remove(down);
