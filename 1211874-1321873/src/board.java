@@ -249,10 +249,10 @@ public class board extends JFrame {
 		
 		turn(Player act)
 		{
-			left = new JButton("←");
-			up = new JButton("↑");
-			down = new JButton("↓");
-			right = new JButton("→");
+			left = new JButton("e");
+			up = new JButton("c");
+			down = new JButton("b");
+			right = new JButton("d");
 			
 			Limites limites = new Limites();
 			
@@ -264,7 +264,8 @@ public class board extends JFrame {
 			left.addActionListener(new move(act, dados, left, right, up, down, 1));
 			right.addActionListener(new move(act, dados, left, right, up, down, 2));
 			up.addActionListener(new move(act, dados, left, right, up, down, 3));
-			down.addActionListener(new move(act, dados, left, right, up, down, 4));			
+			down.addActionListener(new move(act, dados, left, right, up, down, 4));	
+			passagemSecreta.addActionListener(new move(act, dados, left, right, up, down, 5));	
 			
 			refazerTurno.addActionListener(new Reset(left, right, up, down));
 			
@@ -1067,6 +1068,33 @@ public class board extends JFrame {
 					p.bb.setBounds(p.posx, p.posy+48, 47, 47);
 					p.posy = p.posy + 48;
 				}
+				if(f == 5)
+				{
+					if(p.posy == 82 && p.posx == 527)//jardim de inverno
+					{
+						p.posx = 90;
+						p.posy = 464;
+						p.bb.setBounds(p.posx, p.posy, 47, 47);
+					}
+					else if(p.posx == 90 && p.posy == 464)//Sala de Estar
+					{
+						p.posx = 527;
+						p.posy = 82;
+						p.bb.setBounds(p.posx, p.posy, 47, 47);						
+					}
+					else if(p.posx == 180 && p.posy == 82)//cozinha
+					{
+						p.posx = 564;
+						p.posy = 224;
+						p.bb.setBounds(p.posx, p.posy, 47, 47);
+					}
+					else if(p.posx == 564 && p.posy == 224)//Escritorio
+					{
+						p.posx = 180;
+						p.posy = 82;
+						p.bb.setBounds(p.posx, p.posy, 47, 47);
+					}
+				}
 				
 				refazerTurno.setEnabled(true);
 				p.bb.setBackground(p.collo);
@@ -1122,10 +1150,10 @@ class Reset implements ActionListener {
 
 			if(dados == 0)
 			{
-				JButton left = new JButton("←");
-				JButton up = new JButton("↑");
-				JButton down = new JButton("↓");
-				JButton right = new JButton("→");		
+				JButton left = new JButton("e");
+				JButton up = new JButton("c");
+				JButton down = new JButton("b");
+				JButton right = new JButton("d");		
 				
 				Limites limites = new Limites();
 				
