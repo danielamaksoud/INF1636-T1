@@ -280,7 +280,7 @@ public class board extends JFrame {
 			palpite.setEnabled(false);
 			
 			palpite.removeActionListener(actionListener);
-			passagemSecreta.removeActionListener(actionListener2);
+			//passagemSecreta.removeActionListener(actionListener2);
 		}
 
 	}
@@ -382,8 +382,8 @@ public class board extends JFrame {
 					palpite.setEnabled(true);
 					passagemSecreta.setEnabled(true);
 					
-					actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
-					passagemSecreta.addActionListener(actionListener2);
+					//actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
+					//passagemSecreta.addActionListener(actionListener2);
 					
 					players[placeturn].entrouComodo = 1;
 					
@@ -440,8 +440,8 @@ public class board extends JFrame {
 					palpite.setEnabled(true);
 					passagemSecreta.setEnabled(false);
 					
-					actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
-					passagemSecreta.addActionListener(actionListener2);
+					//actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
+					//passagemSecreta.addActionListener(actionListener2);
 					
 					players[placeturn].entrouComodo = 1;
 					
@@ -512,8 +512,8 @@ public class board extends JFrame {
 					palpite.setEnabled(true);
 					passagemSecreta.setEnabled(false);
 					
-					actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
-					passagemSecreta.addActionListener(actionListener2);
+					//actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
+					//passagemSecreta.addActionListener(actionListener2);
 					
 					players[placeturn].entrouComodo = 1;
 					
@@ -558,8 +558,8 @@ public class board extends JFrame {
 					palpite.setEnabled(true);
 					passagemSecreta.setEnabled(false);
 					
-					actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
-					passagemSecreta.addActionListener(actionListener2);
+					//actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
+					//passagemSecreta.addActionListener(actionListener2);
 					
 					players[placeturn].entrouComodo = 1;
 					
@@ -608,8 +608,8 @@ public class board extends JFrame {
 					palpite.setEnabled(true);
 					passagemSecreta.setEnabled(false);
 					
-					actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
-					passagemSecreta.addActionListener(actionListener2);
+					//actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
+					//passagemSecreta.addActionListener(actionListener2);
 					
 					players[placeturn].entrouComodo = 1;
 					
@@ -621,8 +621,8 @@ public class board extends JFrame {
 					players[placeturn].entrouComodo = 2;
 					break;
 				case 2:
-					actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
-					passagemSecreta.addActionListener(actionListener2);
+					//actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
+					//passagemSecreta.addActionListener(actionListener2);
 					
 					passagemSecreta.setEnabled(true);
 					System.out.println("hey bitches");
@@ -670,8 +670,8 @@ public class board extends JFrame {
 					palpite.setEnabled(true);
 					passagemSecreta.setEnabled(false);
 					
-					actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
-					passagemSecreta.addActionListener(actionListener2);
+					//actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
+					//passagemSecreta.addActionListener(actionListener2);
 					
 					players[placeturn].entrouComodo = 1;
 					
@@ -734,8 +734,8 @@ public class board extends JFrame {
 					palpite.setEnabled(true);
 					passagemSecreta.setEnabled(false);
 					
-					actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
-					passagemSecreta.addActionListener(actionListener2);
+					//actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
+					//passagemSecreta.addActionListener(actionListener2);
 					
 					players[placeturn].entrouComodo = 1;
 					
@@ -792,8 +792,8 @@ public class board extends JFrame {
 					palpite.setEnabled(true);
 					passagemSecreta.setEnabled(false);
 					
-					actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
-					passagemSecreta.addActionListener(actionListener2);
+					//actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
+					//passagemSecreta.addActionListener(actionListener2);
 					
 					players[placeturn].entrouComodo = 1;
 					
@@ -839,8 +839,8 @@ public class board extends JFrame {
 					palpite.setEnabled(true);
 					passagemSecreta.setEnabled(false);
 					
-					actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
-					passagemSecreta.addActionListener(actionListener2);
+					//actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
+					//passagemSecreta.addActionListener(actionListener2);
 					
 					players[placeturn].entrouComodo = 1;
 					
@@ -1044,7 +1044,8 @@ public class board extends JFrame {
 				limites.colocarLimites(left, right, up, down, p.posx, p.posy); // Estabelece os limites de movimentacao dos peoes
 				
 				//limites aqui
-				
+				System.out.println(p.posx);
+				System.out.println(p.posy);
 				if(f == 1)
 				{
 						p.bb.setBounds(p.posx-48, p.posy, 47, 47);
@@ -1070,28 +1071,32 @@ public class board extends JFrame {
 				}
 				if(f == 5)
 				{
-					if(p.posy == 82 && p.posx == 527)//jardim de inverno
+					if(p.posy == 151 && p.posx == 495)//jardim de inverno
 					{
-						p.posx = 90;
-						p.posy = 464;
+						System.out.println("oioioi");
+						p.posx = 159;
+						p.posy = 487;
 						p.bb.setBounds(p.posx, p.posy, 47, 47);
 					}
-					else if(p.posx == 90 && p.posy == 464)//Sala de Estar
+					else if(p.posx == 159 && p.posy == 439)//Sala de Estar
 					{
-						p.posx = 527;
-						p.posy = 82;
+						System.out.println("oioioi");
+						p.posx = 543;
+						p.posy = 151;
 						p.bb.setBounds(p.posx, p.posy, 47, 47);						
 					}
-					else if(p.posx == 180 && p.posy == 82)//cozinha
+					else if(p.posx == 159 && p.posy == 199)//cozinha
 					{
-						p.posx = 564;
-						p.posy = 224;
+						System.out.println("oioioi");
+						p.posx = 459;
+						p.posy = 535;
 						p.bb.setBounds(p.posx, p.posy, 47, 47);
 					}
-					else if(p.posx == 564 && p.posy == 224)//Escritorio
+					else if(p.posx == 495 && p.posy == 487)//Escritorio
 					{
-						p.posx = 180;
-						p.posy = 82;
+						System.out.println("oioioi");
+						p.posx = 159;
+						p.posy = 151;
 						p.bb.setBounds(p.posx, p.posy, 47, 47);
 					}
 				}
@@ -1215,7 +1220,7 @@ class Reset implements ActionListener {
 			finalizarTurno.setEnabled(false);
 			
 			palpite.removeActionListener(actionListener);
-			passagemSecreta.removeActionListener(actionListener2);
+			//passagemSecreta.removeActionListener(actionListener2);
 		}
 
 	}
