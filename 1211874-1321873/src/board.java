@@ -275,7 +275,7 @@ public class board extends JFrame {
 			tabuleiro.add(down);
 			tabuleiro.add(right);
 			
-			passagemSecreta.setEnabled(false);
+			//passagemSecreta.setEnabled(false);
 			palpite.setEnabled(false);
 			
 			palpite.removeActionListener(actionListener);
@@ -620,6 +620,9 @@ public class board extends JFrame {
 					players[placeturn].entrouComodo = 2;
 					break;
 				case 2:
+					actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
+					passagemSecreta.addActionListener(actionListener2);
+					
 					passagemSecreta.setEnabled(true);
 					System.out.println("hey bitches");
 				}

@@ -50,6 +50,8 @@ public class secretPassage implements ActionListener {
 		t.repaint();
 		ps.setEnabled(false);
 		rt.setEnabled(false);
+		
+		System.out.println("oie");
 	}
 	
 }
