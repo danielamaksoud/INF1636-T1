@@ -789,7 +789,6 @@ public class board extends JFrame {
 					//passagemSecreta.addActionListener(actionListener2);
 					
 					passagemSecreta.setEnabled(true);
-					System.out.println("hey bitches");
 				}
 			}
 			if(posx == 159 && posy == 439 && players[placeturn].entrouComodo == 2) // Entrou na sala de estar
@@ -902,7 +901,6 @@ public class board extends JFrame {
 					//passagemSecreta.addActionListener(actionListener2);
 					
 					passagemSecreta.setEnabled(true);
-					System.out.println("hey bitches");
 				}
 			}
 			if(posx == 159 && posy == 199 && players[placeturn].entrouComodo == 2) // Entrou na cozinha
@@ -992,6 +990,7 @@ public class board extends JFrame {
 			tabuleiro.revalidate();
 			tabuleiro.repaint();
 			
+			passagemSecreta.setEnabled(false);
 			jogarDados.setEnabled(true);
 			finalizarTurno.setEnabled(false);
 			refazerTurno.setEnabled(false);
@@ -1299,8 +1298,7 @@ class Reset implements ActionListener {
 				
 				Limites limites = new Limites();
 				
-				limites.colocarLimites(left, right, up, down, players[placeturn].startx, players[placeturn].starty); // Estabelece os limites de movimentacao dos peoes
-				
+				limites.colocarLimites(left, right, up, down, players[placeturn].startx, players[placeturn].starty); // Estabelece os limites de movimentacao dos peoes	
 			}
 			
 			players[placeturn].posx = players[placeturn].startx;
@@ -1316,7 +1314,6 @@ class Reset implements ActionListener {
 			tabuleiro.repaint();
 			
 			palpite.setEnabled(false);
-			passagemSecreta.setEnabled(false);
 			finalizarTurno.setEnabled(false);
 			
 			palpite.removeActionListener(actionListener);
