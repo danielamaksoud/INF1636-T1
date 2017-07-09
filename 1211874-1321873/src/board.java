@@ -1122,7 +1122,6 @@ public class board extends JFrame {
 				
 				if(dados == 0)
 				{
-					tabuleiro.remove(passagemSecreta);
 					tabuleiro.remove(left);
 					tabuleiro.remove(up);
 					tabuleiro.remove(down);
