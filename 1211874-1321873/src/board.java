@@ -99,7 +99,7 @@ public class board extends JFrame {
 		passagemSecreta.setEnabled(false);
 		//numeroPassos.setEnabled(true);
 		
-		bloco.addActionListener(Notes);
+		//bloco.addActionListener(Notes);
 		
 		salvarJogo.addActionListener(new SalvarJogo());
 		finalizarTurno.addActionListener(new PassTurn(this));
@@ -197,21 +197,21 @@ public class board extends JFrame {
 			ord+=1;
 		}
 		
-		if(numbplayers == 3)
+		if(numbplayers==3)
 		{
 			new assassin(3, players[0].mao, players[1].mao, players[2].mao, assassino);
 		}
-		if(numbplayers == 4)
+		if(numbplayers==4)
 		{
 			new assassin(4, players[0].mao, players[1].mao, players[2].mao, players[3].mao, assassino);
 		}
 		
-		if(numbplayers == 5)
+		if(numbplayers==5)
 		{
 			new assassin(5, players[0].mao, players[1].mao, players[2].mao, players[3].mao, players[4].mao, assassino);
 		}
 		
-		if(numbplayers == 6)
+		if(numbplayers==6)
 		{
 			new assassin(6, players[0].mao, players[1].mao, players[2].mao, players[3].mao, players[4].mao, players[5].mao, assassino);
 		}
@@ -222,6 +222,7 @@ public class board extends JFrame {
 		refazerTurno.setEnabled(false);
 		new turn(players[0]);
 		
+		bloco.addActionListener(Bnotas);
 		corJogador = new JButton("Jogador: " + players[0].cor);
 		tabuleiro.add(corJogador);
 		corJogador.setBounds(764, 370, size.width+95, size.height + 10);
@@ -234,6 +235,14 @@ public class board extends JFrame {
 		
 		setVisible(true);
 	}
+	
+	ActionListener Bnotas = new ActionListener()
+	{
+		public void actionPerformed(ActionEvent event) {
+			
+			new BlocoNotas("Bloco de notas", players[placeturn].suspeitos, players[placeturn].armas, players[placeturn].comodos);
+        }
+    };
 	
 	public static board getboard(String nome, int i1, int i2, int i3, int i4, int i5, int i6, int numplayers)
 	{
@@ -978,9 +987,9 @@ public class board extends JFrame {
 		public String cor;
 		public int entrouComodo;
 		
-		ArrayList<JCheckBox> suspeitos = new ArrayList<>();
-		ArrayList<JCheckBox> armas = new ArrayList<>();
-		ArrayList<JCheckBox> comodos = new ArrayList<>();
+		public ArrayList<JCheckBox> suspeitos = new ArrayList<>();
+		public ArrayList<JCheckBox> armas = new ArrayList<>();
+		public ArrayList<JCheckBox> comodos = new ArrayList<>();
 		
 		/* Suspeitos */
 		JCheckBox cb1 = new JCheckBox("Rev. Green (Verde)", false);
@@ -1020,6 +1029,53 @@ public class board extends JFrame {
 			mao = m;
 			cor = c;
 			entrouComodo = 0;
+			cb1.setBounds(67, 26, 188, 30);
+			cb2.setBounds(67, 56, 188, 30);
+			cb3.setBounds(67, 86, 188, 30);
+			cb4.setBounds(67, 116, 188, 30);
+			cb5.setBounds(67, 146, 188, 30);
+			cb6.setBounds(67, 176, 188, 30);
+			
+			cb7.setBounds(257, 26, 130, 30);
+			cb8.setBounds(257, 56, 130, 30);
+			cb9.setBounds(257, 86, 130, 30);
+			cb10.setBounds(257, 116, 130, 30);
+			cb11.setBounds(257, 146, 130, 30);
+			cb12.setBounds(257, 176, 130, 30);
+			
+			cb13.setBounds(387, 26, 143, 30);
+			cb14.setBounds(387, 56, 143, 30);
+			cb15.setBounds(387, 86, 143, 30);
+			cb16.setBounds(387, 116, 143, 30);
+			cb17.setBounds(387, 146, 143, 30);
+			cb18.setBounds(387, 176, 143, 30);
+			cb19.setBounds(387, 206, 143, 30);
+			cb20.setBounds(387, 236, 143, 30);
+			cb21.setBounds(387, 266, 143, 30);
+			
+			suspeitos.add(cb1);
+			suspeitos.add(cb2);
+			suspeitos.add(cb3);
+			suspeitos.add(cb4);
+			suspeitos.add(cb5);
+			suspeitos.add(cb6);
+			
+			armas.add(cb7);
+			armas.add(cb8);
+			armas.add(cb9);
+			armas.add(cb10);
+			armas.add(cb11);
+			armas.add(cb12);
+			
+			comodos.add(cb13);
+			comodos.add(cb14);
+			comodos.add(cb15);
+			comodos.add(cb16);
+			comodos.add(cb17);
+			comodos.add(cb18);
+			comodos.add(cb19);
+			comodos.add(cb20);
+			comodos.add(cb21);
 		}
 		
 		
