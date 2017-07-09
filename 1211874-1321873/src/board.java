@@ -615,6 +615,10 @@ public class board extends JFrame {
 				down.setEnabled(false);
 				right.setEnabled(false);
 			}
+			if(posx == 495 && posy == 487)
+			{
+				up.setEnabled(false);
+			}
 			if(posx == 495 && posy == 535) // Entrou no escritorio
 			{
 				comodo = "Escritorio";
