@@ -184,10 +184,8 @@ public class charselect extends JFrame {
 			
 			c.setVisible(false);
 			((Window) c).dispose();
-			board l = new board("Tabuleiro", i1, i2, i3, i4, i5, i6, contador);
-			Insets ins = l.getInsets();
-			l.setSize(1000 + ins.left, 686 + ins.top);
-			l.setVisible(true);
+			board.getboard("Tabuleiro", i1, i2, i3, i4, i5, i6, contador);
+			
 		}
 	}
 

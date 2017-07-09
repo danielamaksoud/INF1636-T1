@@ -16,6 +16,8 @@ import java.util.Random;
 @SuppressWarnings("serial")
 public class board extends JFrame {
 	
+	private static board b = null;
+	
 	backgroundimage tabuleiro;
 	
 	final int numpas = 0;
@@ -57,7 +59,8 @@ public class board extends JFrame {
 	
 	Dimension size;
 	
-	public board(String nome, int i1, int i2, int i3, int i4, int i5, int i6, int numplayers) {
+	private board(String nome, int i1, int i2, int i3, int i4, int i5, int i6, int numplayers) 
+	{
 		
 		super(nome);
 		
@@ -230,6 +233,21 @@ public class board extends JFrame {
 		// ============================
 		
 		setVisible(true);
+	}
+	
+	public static board getboard(String nome, int i1, int i2, int i3, int i4, int i5, int i6, int numplayers)
+	{
+		b = new board(nome, i1, i2, i3, i4, i5, i6, numplayers);
+		Insets ins = b.getInsets();
+		b.setSize(1000 + ins.left, 686 + ins.top);
+		b.setVisible(true);
+		return b;
+		
+	}
+	
+	public void endboard()
+	{
+		
 	}
 	
 	ActionListener Notes = new ActionListener() {
