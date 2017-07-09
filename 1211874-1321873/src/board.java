@@ -197,21 +197,21 @@ public class board extends JFrame {
 			ord+=1;
 		}
 		
-		if(numbplayers==3)
+		if(numbplayers == 3)
 		{
 			new assassin(3, players[0].mao, players[1].mao, players[2].mao, assassino);
 		}
-		if(numbplayers==4)
+		if(numbplayers == 4)
 		{
 			new assassin(4, players[0].mao, players[1].mao, players[2].mao, players[3].mao, assassino);
 		}
 		
-		if(numbplayers==5)
+		if(numbplayers == 5)
 		{
 			new assassin(5, players[0].mao, players[1].mao, players[2].mao, players[3].mao, players[4].mao, assassino);
 		}
 		
-		if(numbplayers==6)
+		if(numbplayers == 6)
 		{
 			new assassin(6, players[0].mao, players[1].mao, players[2].mao, players[3].mao, players[4].mao, players[5].mao, assassino);
 		}
