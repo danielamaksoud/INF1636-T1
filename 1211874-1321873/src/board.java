@@ -459,8 +459,9 @@ public class board extends JFrame {
 				up.setEnabled(false);
 				right.setEnabled(false);
 				
-				if(players[placeturn].entrouComodo == 0)
+				switch(players[placeturn].entrouComodo)
 				{
+				case 0:
 					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno);
 					palpite.addActionListener(actionListener);
 					
@@ -478,6 +479,12 @@ public class board extends JFrame {
 					numeroPassos.setText("Numero de passos: " + dados);
 					
 					players[placeturn].entrouComodo = 2;
+					break;
+				case 2:
+					//actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
+					//passagemSecreta.addActionListener(actionListener2);
+					
+					passagemSecreta.setEnabled(true);
 				}	
 			}
 			if(posx == 495 && posy == 151 && players[placeturn].entrouComodo == 2) // Entrou no jardim de inverno
@@ -656,7 +663,6 @@ public class board extends JFrame {
 					//passagemSecreta.addActionListener(actionListener2);
 					
 					passagemSecreta.setEnabled(true);
-					System.out.println("hey bitches");
 				}
 			}
 			if(posx == 495 && posy == 487 && players[placeturn].entrouComodo == 2) // Entrou no escritorio
@@ -757,8 +763,9 @@ public class board extends JFrame {
 				left.setEnabled(false);
 				right.setEnabled(false);
 				
-				if(players[placeturn].entrouComodo == 0)
+				switch(players[placeturn].entrouComodo)
 				{
+				case 0:
 					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno);
 					palpite.addActionListener(actionListener);
 					
@@ -776,6 +783,13 @@ public class board extends JFrame {
 					numeroPassos.setText("Numero de passos: " + dados);
 					
 					players[placeturn].entrouComodo = 2;
+					break;
+				case 2:
+					//actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
+					//passagemSecreta.addActionListener(actionListener2);
+					
+					passagemSecreta.setEnabled(true);
+					System.out.println("hey bitches");
 				}
 			}
 			if(posx == 159 && posy == 439 && players[placeturn].entrouComodo == 2) // Entrou na sala de estar
@@ -862,8 +876,9 @@ public class board extends JFrame {
 				right.setEnabled(false);
 				left.setEnabled(false);
 				
-				if(players[placeturn].entrouComodo == 0)
+				switch(players[placeturn].entrouComodo)
 				{
+				case 0:
 					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno);
 					palpite.addActionListener(actionListener);
 					
@@ -881,6 +896,13 @@ public class board extends JFrame {
 					numeroPassos.setText("Numero de passos: " + dados);
 					
 					players[placeturn].entrouComodo = 2;
+					break;
+				case 2:
+					//actionListener2 = new secretPassage(posx, posy, tabuleiro, passagemSecreta, refazerTurno);
+					//passagemSecreta.addActionListener(actionListener2);
+					
+					passagemSecreta.setEnabled(true);
+					System.out.println("hey bitches");
 				}
 			}
 			if(posx == 159 && posy == 199 && players[placeturn].entrouComodo == 2) // Entrou na cozinha
