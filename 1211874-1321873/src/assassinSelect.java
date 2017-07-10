@@ -42,15 +42,21 @@ public class assassinSelect extends JFrame {
 	
 	ArrayList<String> Assassino = new ArrayList<>();
 	
+	int j;
+	
+	ArrayList<ArrayList <String>> m = new ArrayList<ArrayList <String>>();
+	
 	backgroundimage tela;
 	
 	public char o;
 	
-	public assassinSelect(String nome, ArrayList<String> assassino, String comodo, char opcao) {
+	public assassinSelect(String nome, ArrayList<String> assassino, String comodo, char opcao, ArrayList<ArrayList <String>> maos, int jogador) {
 		
 		super(nome);
 		
 		o = opcao;
+		j = jogador;
+		m = maos;
 		
 		Assassino.add(assassino.get(0)); /* Arma */
 		Assassino.add(assassino.get(1)); /* Comodo */
