@@ -527,72 +527,75 @@ public class assassinSelect extends JFrame {
 									{
 										suspeitos3.get(5).setSelected(true);
 									}
+									return;
 								}
 								else if (chuteA.get(0) == m.get(contador).get(contador2))
 								{
 									if(cb7.isSelected() == true)
 									{
-										suspeitos3.get(6).setSelected(true);
+										armas3.get(0).setSelected(true);
 									}
 									else if(cb8.isSelected() == true)
 									{
-										suspeitos3.get(7).setSelected(true);
+										armas3.get(1).setSelected(true);
 									}
 									else if(cb9.isSelected() == true)
 									{
-										suspeitos3.get(8).setSelected(true);
+										armas3.get(2).setSelected(true);
 									}
 									else if(cb10.isSelected() == true)
 									{
-										suspeitos3.get(9).setSelected(true);
+										armas3.get(3).setSelected(true);
 									}
 									else if(cb11.isSelected() == true)
 									{
-										suspeitos3.get(10).setSelected(true);
+										armas3.get(4).setSelected(true);
 									}
 									else if(cb12.isSelected() == true)
 									{
-										suspeitos3.get(11).setSelected(true);
+										armas3.get(5).setSelected(true);
 									}
+									return;
 								}
 								else if (chuteC.get(0) == m.get(contador).get(contador2))
 								{
 									if(chuteC.get(0) == "Cozinha")
 									{
-										suspeitos3.get(12).setSelected(true);
+										comodos3.get(0).setSelected(true);
 									}
 									else if(chuteC.get(0) == "Entrada")
 									{
-										suspeitos3.get(13).setSelected(true);
+										comodos3.get(1).setSelected(true);
 									}
 									else if(chuteC.get(0) == "Escritorio")
 									{
-										suspeitos3.get(14).setSelected(true);
+										comodos3.get(2).setSelected(true);
 									}
 									else if(chuteC.get(0) == "JardimInverno")
 									{
-										suspeitos3.get(15).setSelected(true);
+										comodos3.get(3).setSelected(true);
 									}
 									else if(chuteC.get(0) == "SalaDeEstar")
 									{
-										suspeitos3.get(16).setSelected(true);
+										comodos3.get(4).setSelected(true);
 									}
 									else if(chuteC.get(0) == "SalaDeJantar")
 									{
-										suspeitos3.get(17).setSelected(true);
+										comodos3.get(5).setSelected(true);
 									}
 									else if(chuteC.get(0) == "SalaDeMusica")
 									{
-										suspeitos3.get(18).setSelected(true);
+										comodos3.get(6).setSelected(true);
 									}
 									else if(chuteC.get(0) == "SalaoDeJogos")
 									{
-										suspeitos3.get(19).setSelected(true);
+										comodos3.get(7).setSelected(true);
 									}
 									else if(chuteC.get(0) == "Bibloteca")
 									{
-										suspeitos3.get(20).setSelected(true);
+										comodos3.get(8).setSelected(true);
 									}
+									return;
 								}
 							}
 						}
