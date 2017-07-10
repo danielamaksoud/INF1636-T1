@@ -15,7 +15,7 @@ public class guess implements ActionListener {
 	backgroundimage t;
 	JButton ps;
 	JButton rt;
-	char o;
+	int o;
 	JButton ac;
 	ArrayList<ArrayList <String>> m = new ArrayList<ArrayList <String>>();
 	int j;
@@ -23,7 +23,7 @@ public class guess implements ActionListener {
 	ArrayList<JCheckBox> ar = new ArrayList<>();
 	ArrayList<JCheckBox> cmds = new ArrayList<>();
 	
-	public guess(ArrayList<String> assassino, String comodo, JButton palpite, backgroundimage tabuleiro, JButton passagemSecreta, JButton refazerTurno, char opcao, JButton acusar, ArrayList<ArrayList <String>> maos, int jogador, ArrayList<JCheckBox> suspeitos, ArrayList<JCheckBox> armas, ArrayList<JCheckBox> comodos)
+	public guess(ArrayList<String> assassino, String comodo, JButton palpite, backgroundimage tabuleiro, JButton passagemSecreta, JButton refazerTurno, int opcao, JButton acusar, ArrayList<ArrayList <String>> maos, int jogador, ArrayList<JCheckBox> suspeitos, ArrayList<JCheckBox> armas, ArrayList<JCheckBox> comodos)
 	{
 		a.add(assassino.get(0)); /* Arma */
 		a.add(assassino.get(1)); /* Comodo */

@@ -53,9 +53,9 @@ public class assassinSelect extends JFrame {
 	
 	backgroundimage tela;
 	
-	public char o;
+	public int o;
 	
-	public assassinSelect(String nome, ArrayList<String> assassino, String comodo, char opcao, ArrayList<ArrayList <String>> maos, int jogador, ArrayList<JCheckBox> suspeitos2, ArrayList<JCheckBox> armas2, ArrayList<JCheckBox> comodos2) {
+	public assassinSelect(String nome, ArrayList<String> assassino, String comodo, int opcao, ArrayList<ArrayList <String>> maos, int jogador, ArrayList<JCheckBox> suspeitos2, ArrayList<JCheckBox> armas2, ArrayList<JCheckBox> comodos2) {
 		
 		super(nome);
 		
@@ -470,7 +470,7 @@ public class assassinSelect extends JFrame {
 			System.out.println("");
 			
 			/* Opcao de acusar */
-			if (o == 'a')
+			if (o != -1)
 			{
 				if((chuteS.get(0) == Assassino.get(2)) && (chuteA.get(0) == Assassino.get(0)) && (chuteC.get(0) == Assassino.get(1)))
 				{
@@ -487,7 +487,7 @@ public class assassinSelect extends JFrame {
 			}
 			
 			/* Opcao de dar palpite */
-			else if (o == 'p')
+			else if (o == -1)
 			{
 				int contador, contador2;
 				
