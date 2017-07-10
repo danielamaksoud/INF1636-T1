@@ -1047,6 +1047,11 @@ public class board extends JFrame {
 				placeturn +=1;
 			}
 			
+			if(flag.size()==numbplayers)
+			{
+				JOptionPane.showMessageDialog(tabuleiro, "O assassino saiu impune! O crime permanece um misterio.");
+				System.exit(0);
+			}
 			int i, k, aux = -1;
 			
 			for(k = 0; k < numbplayers; k++)
@@ -1072,12 +1077,6 @@ public class board extends JFrame {
 				if(aux == placeturn){
 					break;
 				}
-			}
-			
-			if(k == numbplayers - 1 && aux != placeturn)
-			{
-				JOptionPane.showMessageDialog(tabuleiro, "O assassino saiu impune! O crime permanece um misterio.");
-				System.exit(0);
 			}
 			
 			corJogador.setText("Jogador: " + players[placeturn].cor);
