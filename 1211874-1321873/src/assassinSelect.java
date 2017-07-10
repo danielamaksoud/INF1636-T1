@@ -29,9 +29,9 @@ public class assassinSelect extends JFrame {
 	final ArrayList<JCheckBox> armas = new ArrayList<>();
 	final ArrayList<JCheckBox> comodos = new ArrayList<>();
 	
-	final ArrayList<JCheckBox> suspeitos2 = new ArrayList<>();
-	final ArrayList<JCheckBox> armas2 = new ArrayList<>();
-	final ArrayList<JCheckBox> comodos2 = new ArrayList<>();
+	final ArrayList<JCheckBox> suspeitos3 = new ArrayList<>();
+	final ArrayList<JCheckBox> armas3 = new ArrayList<>();
+	final ArrayList<JCheckBox> comodos3 = new ArrayList<>();
 	
 	final JButton b1 = new JButton("Adivinhar");
 	
@@ -62,6 +62,19 @@ public class assassinSelect extends JFrame {
 		o = opcao;
 		j = jogador;
 		m = maos;
+		
+		int i;
+		
+		for(i = 0; i < 6; i++)
+		{
+			armas3.add(armas2.get(i));
+			suspeitos3.add(suspeitos2.get(i));
+			comodos3.add(comodos2.get(i));
+		}
+		
+		comodos3.add(comodos2.get(6));
+		comodos3.add(comodos2.get(7));
+		comodos3.add(comodos2.get(8));
 		
 		Assassino.add(assassino.get(0)); /* Arma */
 		Assassino.add(assassino.get(1)); /* Comodo */
@@ -492,36 +505,94 @@ public class assassinSelect extends JFrame {
 								{
 									if(cb1.isSelected() == true)
 									{
-										suspeitos2.get(0).setSelected(true);
+										suspeitos3.get(0).setSelected(true);
 									}
 									else if(cb2.isSelected() == true)
 									{
-										suspeitos2.get(1).setSelected(true);
+										suspeitos3.get(1).setSelected(true);
 									}
 									else if(cb3.isSelected() == true)
 									{
-										suspeitos2.get(2).setSelected(true);
+										suspeitos3.get(2).setSelected(true);
 									}
 									else if(cb4.isSelected() == true)
 									{
-										suspeitos2.get(3).setSelected(true);
+										suspeitos3.get(3).setSelected(true);
 									}
 									else if(cb5.isSelected() == true)
 									{
-										suspeitos2.get(4).setSelected(true);
+										suspeitos3.get(4).setSelected(true);
 									}
 									else if(cb6.isSelected() == true)
 									{
-										suspeitos2.get(5).setSelected(true);
+										suspeitos3.get(5).setSelected(true);
 									}
 								}
 								else if (chuteA.get(0) == m.get(contador).get(contador2))
 								{
-									
+									if(cb7.isSelected() == true)
+									{
+										suspeitos3.get(6).setSelected(true);
+									}
+									else if(cb8.isSelected() == true)
+									{
+										suspeitos3.get(7).setSelected(true);
+									}
+									else if(cb9.isSelected() == true)
+									{
+										suspeitos3.get(8).setSelected(true);
+									}
+									else if(cb10.isSelected() == true)
+									{
+										suspeitos3.get(9).setSelected(true);
+									}
+									else if(cb11.isSelected() == true)
+									{
+										suspeitos3.get(10).setSelected(true);
+									}
+									else if(cb12.isSelected() == true)
+									{
+										suspeitos3.get(11).setSelected(true);
+									}
 								}
 								else if (chuteC.get(0) == m.get(contador).get(contador2))
 								{
-									
+									if(chuteC.get(0) == "Cozinha")
+									{
+										suspeitos3.get(12).setSelected(true);
+									}
+									else if(chuteC.get(0) == "Entrada")
+									{
+										suspeitos3.get(13).setSelected(true);
+									}
+									else if(chuteC.get(0) == "Escritorio")
+									{
+										suspeitos3.get(14).setSelected(true);
+									}
+									else if(chuteC.get(0) == "JardimInverno")
+									{
+										suspeitos3.get(15).setSelected(true);
+									}
+									else if(chuteC.get(0) == "SalaDeEstar")
+									{
+										suspeitos3.get(16).setSelected(true);
+									}
+									else if(chuteC.get(0) == "SalaDeJantar")
+									{
+										suspeitos3.get(17).setSelected(true);
+									}
+									else if(chuteC.get(0) == "SalaDeMusica")
+									{
+										suspeitos3.get(18).setSelected(true);
+									}
+									else if(chuteC.get(0) == "SalaoDeJogos")
+									{
+										suspeitos3.get(19).setSelected(true);
+									}
+									else if(chuteC.get(0) == "Bibloteca")
+									{
+										suspeitos3.get(20).setSelected(true);
+									}
 								}
 							}
 						}
