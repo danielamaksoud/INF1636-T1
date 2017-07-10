@@ -450,19 +450,30 @@ public class assassinSelect extends JFrame {
 			{
 				if((chuteS.get(0) == Assassino.get(2)) && (chuteA.get(0) == Assassino.get(0)) && (chuteC.get(0) == Assassino.get(1)))
 				{
-					JOptionPane.showMessageDialog(c,"Venceu! Parabens! Voce e um otimo detetive!");
-					System.out.println("Ganhou o jogo.");
-					System.out.println("");
+					JOptionPane.showMessageDialog(c, "Venceu! Parabens! Voce e um otimo detetive!");
+					System.out.println("Ganhou o jogo.\n");
+					System.exit(0);
 				}
 				else
 				{
-					JOptionPane.showMessageDialog(c,"Errou! Mais sorte na proxima vez.");
-					System.out.println("Errou o palpite.");
-					System.out.println("");
+					JOptionPane.showMessageDialog(c, "Errou! Mais sorte na proxima vez.");
+					System.out.println("Perdeu o jogo.\n");
+					System.exit(0);	
 				}
 			}
 			
 			/* Opcao de dar palpite */
+			else if (o == 'p')
+			{
+				if((chuteS.get(0) == Assassino.get(2)) && (chuteA.get(0) == Assassino.get(0)) && (chuteC.get(0) == Assassino.get(1)))
+				{
+					JOptionPane.showMessageDialog(c, "Nenhuma dessas cartas foi encontrada nas maos dos outros jogadores.");
+				}
+				else
+				{
+					
+				}
+			}
 		}
 	}
 
