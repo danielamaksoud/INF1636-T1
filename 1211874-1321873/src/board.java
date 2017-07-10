@@ -317,7 +317,7 @@ public class board extends JFrame {
 			palpite.setEnabled(false);
 			
 			palpite.removeActionListener(actionListener);
-			//passagemSecreta.removeActionListener(actionListener2);
+			acusar.removeActionListener(actionListener2);
 		}
 
 	}
