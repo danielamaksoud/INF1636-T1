@@ -44,9 +44,13 @@ public class assassinSelect extends JFrame {
 	
 	backgroundimage tela;
 	
+	public char o;
+	
 	public assassinSelect(String nome, ArrayList<String> assassino, String comodo, char opcao) {
 		
 		super(nome);
+		
+		o = opcao;
 		
 		Assassino.add(assassino.get(0)); /* Arma */
 		Assassino.add(assassino.get(1)); /* Comodo */
@@ -441,17 +445,21 @@ public class assassinSelect extends JFrame {
 			System.out.println("Comodo do Palpite = " + chuteC.get(0));
 			System.out.println("");
 			
-			if((chuteS.get(0) == Assassino.get(2)) && (chuteA.get(0) == Assassino.get(0)) && (chuteC.get(0) == Assassino.get(1)))
+			/* Opcao de acusar */
+			if (o == 'a')
 			{
-				JOptionPane.showMessageDialog(c,"Venceu! Parabens! Voce e um otimo detetive!");
-				System.out.println("Ganhou o jogo.");
-				System.out.println("");
-			}
-			else
-			{
-				JOptionPane.showMessageDialog(c,"Errou! Mais sorte na proxima vez.");
-				System.out.println("Errou o palpite.");
-				System.out.println("");
+				if((chuteS.get(0) == Assassino.get(2)) && (chuteA.get(0) == Assassino.get(0)) && (chuteC.get(0) == Assassino.get(1)))
+				{
+					JOptionPane.showMessageDialog(c,"Venceu! Parabens! Voce e um otimo detetive!");
+					System.out.println("Ganhou o jogo.");
+					System.out.println("");
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(c,"Errou! Mais sorte na proxima vez.");
+					System.out.println("Errou o palpite.");
+					System.out.println("");
+				}
 			}
 		}
 	}
