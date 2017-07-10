@@ -1,12 +1,10 @@
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
-
 import javax.swing.JButton;
-
 //import board.move;
 
-public class guess implements ActionListener {
+public class accuse implements ActionListener {
 
 	ArrayList<String> a = new ArrayList<String>();
 	String cmd;
@@ -14,9 +12,8 @@ public class guess implements ActionListener {
 	backgroundimage t;
 	JButton ps;
 	JButton rt;
-	char o;
 	
-	public guess(ArrayList<String> assassino, String comodo, JButton palpite, backgroundimage tabuleiro, JButton passagemSecreta, JButton refazerTurno, char opcao)
+	public accuse(ArrayList<String> assassino, String comodo, JButton palpite, backgroundimage tabuleiro, JButton passagemSecreta, JButton refazerTurno)
 	{
 		a.add(assassino.get(0)); /* Arma */
 		a.add(assassino.get(1)); /* Comodo */
@@ -26,12 +23,11 @@ public class guess implements ActionListener {
 		t = tabuleiro;
 		ps = passagemSecreta;
 		rt = refazerTurno;
-		o = opcao;
 	}
 	
 	public void actionPerformed(ActionEvent e)
 	{
-		new assassinSelect("Lista de Suspeitos, comodos e armas", a, cmd, o);
+		new assassinSelect("Lista de Suspeitos, comodos e armas", a, cmd);
 		t.revalidate();
 		t.repaint();
 		p.setEnabled(false);

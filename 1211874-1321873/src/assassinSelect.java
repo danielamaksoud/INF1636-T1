@@ -44,7 +44,7 @@ public class assassinSelect extends JFrame {
 	
 	backgroundimage tela;
 	
-	public assassinSelect(String nome, ArrayList<String> assassino, String comodo) {
+	public assassinSelect(String nome, ArrayList<String> assassino, String comodo, char opcao) {
 		
 		super(nome);
 		

@@ -81,6 +81,7 @@ public class board extends JFrame {
 		
 		mostrarMao.addActionListener(new showhand());
 		jogarDados.addActionListener(new RollDice(dados));
+		acusar.addActionListener(new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, 'a'));
 		System.out.println("Dados no turn " + dados);
 		
 		size = jogarDados.getPreferredSize();
@@ -403,7 +404,7 @@ public class board extends JFrame {
 				
 				if(players[placeturn].entrouComodo == 0)
 				{
-					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno);
+					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, 'p');
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
@@ -462,7 +463,7 @@ public class board extends JFrame {
 				switch(players[placeturn].entrouComodo)
 				{
 				case 0:
-					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno);
+					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, 'p');
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
@@ -540,7 +541,7 @@ public class board extends JFrame {
 				
 				if(players[placeturn].entrouComodo == 0)
 				{
-					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno);
+					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, 'p');
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
@@ -586,7 +587,7 @@ public class board extends JFrame {
 					
 				if(players[placeturn].entrouComodo == 0)
 				{
-					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno);
+					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, 'p');
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
@@ -640,7 +641,7 @@ public class board extends JFrame {
 				switch(players[placeturn].entrouComodo)
 				{
 				case 0:
-					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno);
+					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, 'p');
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
@@ -701,7 +702,7 @@ public class board extends JFrame {
 				
 				if(players[placeturn].entrouComodo == 0)
 				{
-					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno);
+					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, 'p');
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
@@ -766,7 +767,7 @@ public class board extends JFrame {
 				switch(players[placeturn].entrouComodo)
 				{
 				case 0:
-					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno);
+					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, 'p');
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
@@ -830,7 +831,7 @@ public class board extends JFrame {
 				
 				if(players[placeturn].entrouComodo == 0)
 				{
-					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno);
+					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, 'p');
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
@@ -878,7 +879,7 @@ public class board extends JFrame {
 				switch(players[placeturn].entrouComodo)
 				{
 				case 0:
-					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno);
+					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, 'p');
 					palpite.addActionListener(actionListener);
 					
 					palpite.setEnabled(true);
