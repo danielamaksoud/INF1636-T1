@@ -50,7 +50,7 @@ public class assassinSelect extends JFrame {
 	
 	public char o;
 	
-	public assassinSelect(String nome, ArrayList<String> assassino, String comodo, char opcao, ArrayList<ArrayList <String>> maos, int jogador) {
+	public assassinSelect(String nome, ArrayList<String> assassino, String comodo, char opcao, ArrayList<ArrayList <String>> maos, int jogador, ArrayList<JCheckBox> suspeitos, ArrayList<JCheckBox> armas, ArrayList<JCheckBox> comodos) {
 		
 		super(nome);
 		
@@ -471,13 +471,56 @@ public class assassinSelect extends JFrame {
 			/* Opcao de dar palpite */
 			else if (o == 'p')
 			{
+				int contador, contador2;
+				
 				if((chuteS.get(0) == Assassino.get(2)) && (chuteA.get(0) == Assassino.get(0)) && (chuteC.get(0) == Assassino.get(1)))
 				{
 					JOptionPane.showMessageDialog(c, "Nenhuma dessas cartas foi encontrada nas maos dos outros jogadores.");
 				}
 				else
 				{
-					
+					for(contador = 0; contador < m.size(); contador++) {
+						if(contador != j){
+							for(contador2 = 0; contador2 < m.get(contador).size(); contador2++)
+							{
+								if(chuteS.get(0) == m.get(contador).get(contador2))
+								{
+									if(cb1.isSelected() == true)
+									{
+										suspeitos.get(0).setSelected(true);
+									}
+									else if(cb2.isSelected() == true)
+									{
+										suspeitos.get(1).setSelected(true);
+									}
+									else if(cb3.isSelected() == true)
+									{
+										suspeitos.get(2).setSelected(true);
+									}
+									else if(cb4.isSelected() == true)
+									{
+										suspeitos.get(3).setSelected(true);
+									}
+									else if(cb5.isSelected() == true)
+									{
+										suspeitos.get(4).setSelected(true);
+									}
+									else if(cb6.isSelected() == true)
+									{
+										suspeitos.get(5).setSelected(true);
+									}
+								}
+								else if (chuteA.get(0) == m.get(contador).get(contador2))
+								{
+									
+								}
+								else if (chuteC.get(0) == m.get(contador).get(contador2))
+								{
+									
+								}
+							}
+						}
+					}
 				}
 			}
 		}

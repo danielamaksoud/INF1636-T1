@@ -3,6 +3,7 @@ import java.awt.event.*;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 
 //import board.move;
 
@@ -18,8 +19,11 @@ public class guess implements ActionListener {
 	JButton ac;
 	ArrayList<ArrayList <String>> m = new ArrayList<ArrayList <String>>();
 	int j;
+	ArrayList<JCheckBox> s = new ArrayList<>();
+	ArrayList<JCheckBox> ar = new ArrayList<>();
+	ArrayList<JCheckBox> cmds = new ArrayList<>();
 	
-	public guess(ArrayList<String> assassino, String comodo, JButton palpite, backgroundimage tabuleiro, JButton passagemSecreta, JButton refazerTurno, char opcao, JButton acusar, ArrayList<ArrayList <String>> maos, int jogador)
+	public guess(ArrayList<String> assassino, String comodo, JButton palpite, backgroundimage tabuleiro, JButton passagemSecreta, JButton refazerTurno, char opcao, JButton acusar, ArrayList<ArrayList <String>> maos, int jogador, ArrayList<JCheckBox> suspeitos, ArrayList<JCheckBox> armas, ArrayList<JCheckBox> comodos)
 	{
 		a.add(assassino.get(0)); /* Arma */
 		a.add(assassino.get(1)); /* Comodo */
@@ -33,11 +37,14 @@ public class guess implements ActionListener {
 		ac = acusar;
 		m = maos;
 		j = jogador;
+		ar = armas;
+		s = suspeitos;
+		cmds = comodos;
 	}
 	
 	public void actionPerformed(ActionEvent e)
 	{
-		new assassinSelect("Lista de Suspeitos, comodos e armas", a, cmd, o, m, j);
+		new assassinSelect("Lista de Suspeitos, comodos e armas", a, cmd, o, m, j, s, ar, cmds);
 		t.revalidate();
 		t.repaint();
 		p.setEnabled(false);
