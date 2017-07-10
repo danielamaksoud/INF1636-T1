@@ -28,6 +28,11 @@ public class assassinSelect extends JFrame {
 	final ArrayList<JCheckBox> suspeitos = new ArrayList<>();
 	final ArrayList<JCheckBox> armas = new ArrayList<>();
 	final ArrayList<JCheckBox> comodos = new ArrayList<>();
+	
+	final ArrayList<JCheckBox> suspeitos2 = new ArrayList<>();
+	final ArrayList<JCheckBox> armas2 = new ArrayList<>();
+	final ArrayList<JCheckBox> comodos2 = new ArrayList<>();
+	
 	final JButton b1 = new JButton("Adivinhar");
 	
 	int count = 0;
@@ -50,7 +55,7 @@ public class assassinSelect extends JFrame {
 	
 	public char o;
 	
-	public assassinSelect(String nome, ArrayList<String> assassino, String comodo, char opcao, ArrayList<ArrayList <String>> maos, int jogador, ArrayList<JCheckBox> suspeitos, ArrayList<JCheckBox> armas, ArrayList<JCheckBox> comodos) {
+	public assassinSelect(String nome, ArrayList<String> assassino, String comodo, char opcao, ArrayList<ArrayList <String>> maos, int jogador, ArrayList<JCheckBox> suspeitos2, ArrayList<JCheckBox> armas2, ArrayList<JCheckBox> comodos2) {
 		
 		super(nome);
 		
@@ -487,27 +492,27 @@ public class assassinSelect extends JFrame {
 								{
 									if(cb1.isSelected() == true)
 									{
-										suspeitos.get(0).setSelected(true);
+										suspeitos2.get(0).setSelected(true);
 									}
 									else if(cb2.isSelected() == true)
 									{
-										suspeitos.get(1).setSelected(true);
+										suspeitos2.get(1).setSelected(true);
 									}
 									else if(cb3.isSelected() == true)
 									{
-										suspeitos.get(2).setSelected(true);
+										suspeitos2.get(2).setSelected(true);
 									}
 									else if(cb4.isSelected() == true)
 									{
-										suspeitos.get(3).setSelected(true);
+										suspeitos2.get(3).setSelected(true);
 									}
 									else if(cb5.isSelected() == true)
 									{
-										suspeitos.get(4).setSelected(true);
+										suspeitos2.get(4).setSelected(true);
 									}
 									else if(cb6.isSelected() == true)
 									{
-										suspeitos.get(5).setSelected(true);
+										suspeitos2.get(5).setSelected(true);
 									}
 								}
 								else if (chuteA.get(0) == m.get(contador).get(contador2))
