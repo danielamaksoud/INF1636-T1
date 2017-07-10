@@ -461,6 +461,8 @@ public class assassinSelect extends JFrame {
 					System.out.println("");
 				}
 			}
+			
+			/* Opcao de dar palpite */
 		}
 	}
 

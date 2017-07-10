@@ -15,8 +15,9 @@ public class guess implements ActionListener {
 	JButton ps;
 	JButton rt;
 	char o;
+	JButton ac;
 	
-	public guess(ArrayList<String> assassino, String comodo, JButton palpite, backgroundimage tabuleiro, JButton passagemSecreta, JButton refazerTurno, char opcao)
+	public guess(ArrayList<String> assassino, String comodo, JButton palpite, backgroundimage tabuleiro, JButton passagemSecreta, JButton refazerTurno, char opcao, JButton acusar)
 	{
 		a.add(assassino.get(0)); /* Arma */
 		a.add(assassino.get(1)); /* Comodo */
@@ -27,6 +28,7 @@ public class guess implements ActionListener {
 		ps = passagemSecreta;
 		rt = refazerTurno;
 		o = opcao;
+		ac = acusar;
 	}
 	
 	public void actionPerformed(ActionEvent e)
@@ -37,6 +39,7 @@ public class guess implements ActionListener {
 		p.setEnabled(false);
 		ps.setEnabled(false);
 		rt.setEnabled(false);
+		ac.setEnabled(false);
 	}
 	
 }
