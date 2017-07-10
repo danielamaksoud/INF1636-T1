@@ -411,13 +411,14 @@ public class board extends JFrame {
 				left.setEnabled(false);
 				right.setEnabled(false);
 				
-				actionListener2 = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, flag, acusar, maos, placeturn, players[placeturn].suspeitos, players[placeturn].armas, players[placeturn].comodos, 'a');
-				acusar.addActionListener(actionListener2);
+				
 			
 				acusar.setEnabled(true);
 				
 				if(players[placeturn].entrouComodo == 0)
 				{
+					actionListener2 = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, flag, acusar, maos, placeturn, players[placeturn].suspeitos, players[placeturn].armas, players[placeturn].comodos, 'a');
+					acusar.addActionListener(actionListener2);
 					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, flag, acusar, maos, placeturn, players[placeturn].suspeitos, players[placeturn].armas, players[placeturn].comodos, 'p');
 					palpite.addActionListener(actionListener);
 					
@@ -474,14 +475,15 @@ public class board extends JFrame {
 				up.setEnabled(false);
 				right.setEnabled(false);
 				
-				actionListener2 = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, flag, acusar, maos, placeturn, players[placeturn].suspeitos, players[placeturn].armas, players[placeturn].comodos, 'a');
-				acusar.addActionListener(actionListener2);
+				
 				
 				acusar.setEnabled(true);
 				
 				switch(players[placeturn].entrouComodo)
 				{
 				case 0:
+					actionListener2 = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, flag, acusar, maos, placeturn, players[placeturn].suspeitos, players[placeturn].armas, players[placeturn].comodos, 'a');
+					acusar.addActionListener(actionListener2);
 					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, flag, acusar, maos, placeturn, players[placeturn].suspeitos, players[placeturn].armas, players[placeturn].comodos, 'p');
 					palpite.addActionListener(actionListener);
 					
@@ -558,13 +560,14 @@ public class board extends JFrame {
 				left.setEnabled(false);
 				right.setEnabled(false);
 				
-				actionListener2 = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, flag, acusar, maos, placeturn, players[placeturn].suspeitos, players[placeturn].armas, players[placeturn].comodos, 'a');
-				acusar.addActionListener(actionListener2);
+				
 				
 				acusar.setEnabled(true);
 				
 				if(players[placeturn].entrouComodo == 0)
 				{
+					actionListener2 = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, flag, acusar, maos, placeturn, players[placeturn].suspeitos, players[placeturn].armas, players[placeturn].comodos, 'a');
+					acusar.addActionListener(actionListener2);
 					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, flag, acusar, maos, placeturn, players[placeturn].suspeitos, players[placeturn].armas, players[placeturn].comodos, 'p');
 					palpite.addActionListener(actionListener);
 					
@@ -609,13 +612,14 @@ public class board extends JFrame {
 				up.setEnabled(false);
 				right.setEnabled(false);
 				
-				actionListener2 = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, flag, acusar, maos, placeturn, players[placeturn].suspeitos, players[placeturn].armas, players[placeturn].comodos, 'a');
-				acusar.addActionListener(actionListener2);
+				
 				
 				acusar.setEnabled(true);
 				
 				if(players[placeturn].entrouComodo == 0)
 				{
+					actionListener2 = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, flag, acusar, maos, placeturn, players[placeturn].suspeitos, players[placeturn].armas, players[placeturn].comodos, 'a');
+					acusar.addActionListener(actionListener2);
 					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, flag, acusar, maos, placeturn, players[placeturn].suspeitos, players[placeturn].armas, players[placeturn].comodos, 'p');
 					palpite.addActionListener(actionListener);
 					
@@ -667,14 +671,15 @@ public class board extends JFrame {
 				left.setEnabled(false);
 				right.setEnabled(false);
 				
-				actionListener2 = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, flag, acusar, maos, placeturn, players[placeturn].suspeitos, players[placeturn].armas, players[placeturn].comodos, 'a');
-				acusar.addActionListener(actionListener2);
 				
 				acusar.setEnabled(true);
 				
 				switch(players[placeturn].entrouComodo)
 				{
 				case 0:
+					actionListener2 = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, flag, acusar, maos, placeturn, players[placeturn].suspeitos, players[placeturn].armas, players[placeturn].comodos, 'a');
+					acusar.addActionListener(actionListener2);
+					
 					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, flag, acusar, maos, placeturn, players[placeturn].suspeitos, players[placeturn].armas, players[placeturn].comodos, 'p');
 					palpite.addActionListener(actionListener);
 					
@@ -734,13 +739,14 @@ public class board extends JFrame {
 				left.setEnabled(false);
 				right.setEnabled(false);
 				
-				actionListener2 = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, flag, acusar, maos, placeturn, players[placeturn].suspeitos, players[placeturn].armas, players[placeturn].comodos, 'a');
-				acusar.addActionListener(actionListener2);
+				
 				
 				acusar.setEnabled(true);
 				
 				if(players[placeturn].entrouComodo == 0)
 				{
+					actionListener2 = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, flag, acusar, maos, placeturn, players[placeturn].suspeitos, players[placeturn].armas, players[placeturn].comodos, 'a');
+					acusar.addActionListener(actionListener2);
 					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, flag, acusar, maos, placeturn, players[placeturn].suspeitos, players[placeturn].armas, players[placeturn].comodos, 'p');
 					palpite.addActionListener(actionListener);
 					
@@ -803,14 +809,15 @@ public class board extends JFrame {
 				left.setEnabled(false);
 				right.setEnabled(false);
 				
-				actionListener2 = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, flag, acusar, maos, placeturn, players[placeturn].suspeitos, players[placeturn].armas, players[placeturn].comodos, 'a');
-				acusar.addActionListener(actionListener2);
+				
 				
 				acusar.setEnabled(true);
 				
 				switch(players[placeturn].entrouComodo)
 				{
 				case 0:
+					actionListener2 = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, flag, acusar, maos, placeturn, players[placeturn].suspeitos, players[placeturn].armas, players[placeturn].comodos, 'a');
+					acusar.addActionListener(actionListener2);
 					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, flag, acusar, maos, placeturn, players[placeturn].suspeitos, players[placeturn].armas, players[placeturn].comodos, 'p');
 					palpite.addActionListener(actionListener);
 					
@@ -873,13 +880,14 @@ public class board extends JFrame {
 				left.setEnabled(false);
 				down.setEnabled(false);
 				
-				actionListener2 = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, flag, acusar, maos, placeturn, players[placeturn].suspeitos, players[placeturn].armas, players[placeturn].comodos, 'a');
-				acusar.addActionListener(actionListener2);
+				
 				
 				acusar.setEnabled(true);
 				
 				if(players[placeturn].entrouComodo == 0)
 				{
+					actionListener2 = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, flag, acusar, maos, placeturn, players[placeturn].suspeitos, players[placeturn].armas, players[placeturn].comodos, 'a');
+					acusar.addActionListener(actionListener2);
 					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, flag, acusar, maos, placeturn, players[placeturn].suspeitos, players[placeturn].armas, players[placeturn].comodos, 'p');
 					palpite.addActionListener(actionListener);
 					
@@ -925,14 +933,15 @@ public class board extends JFrame {
 				right.setEnabled(false);
 				left.setEnabled(false);
 				
-				actionListener2 = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, flag, acusar, maos, placeturn, players[placeturn].suspeitos, players[placeturn].armas, players[placeturn].comodos, 'a');
-				acusar.addActionListener(actionListener2);
+				
 				
 				acusar.setEnabled(true);
 				
 				switch(players[placeturn].entrouComodo)
 				{
 				case 0:
+					actionListener2 = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, flag, acusar, maos, placeturn, players[placeturn].suspeitos, players[placeturn].armas, players[placeturn].comodos, 'a');
+					acusar.addActionListener(actionListener2);
 					actionListener = new guess(assassino, comodo, palpite, tabuleiro, passagemSecreta, refazerTurno, flag, acusar, maos, placeturn, players[placeturn].suspeitos, players[placeturn].armas, players[placeturn].comodos, 'p');
 					palpite.addActionListener(actionListener);
 					
