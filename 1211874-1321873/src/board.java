@@ -107,7 +107,8 @@ public class board extends JFrame {
 		
 		//bloco.addActionListener(Notes);
 		
-		salvarJogo.addActionListener(new SalvarJogo());
+		salvarJogo.addActionListener(Save);
+		
 		finalizarTurno.addActionListener(new PassTurn());
 		//refazerTurno.addActionListener(new Reset());
 		
@@ -233,6 +234,7 @@ public class board extends JFrame {
 		new turn(players[0]);
 		
 		bloco.addActionListener(Bnotas);
+		passagemSecreta.addActionListener(Segredo);
 		corJogador = new JButton("Jogador: " + players[0].cor);
 		tabuleiro.add(corJogador);
 		corJogador.setBounds(764, 370, size.width+95, size.height + 10);
@@ -253,6 +255,62 @@ public class board extends JFrame {
 			new BlocoNotas("Bloco de notas", players[placeturn].suspeitos, players[placeturn].armas, players[placeturn].comodos);
         }
     };
+    
+    ActionListener Save = new ActionListener()
+	{
+		public void actionPerformed(ActionEvent event) {
+			
+			run(new FileChooserTest(players, numbplayers), 250, 110);
+        }
+    };
+    
+    ActionListener Segredo = new ActionListener()
+	{
+		public void actionPerformed(ActionEvent event) {
+			
+			System.out.println("entrou no segredo");
+			System.out.println("posx =" + players[placeturn].posx);
+			System.out.println("posy =" + players[placeturn].posy);
+				if(players[placeturn].posy == 151 && players[placeturn].posx == 543)//jardim de inverno
+				{
+					System.out.println("oioioi");
+					players[placeturn].posx = 159;
+					players[placeturn].posy = 487;
+					players[placeturn].bb.setBounds(players[placeturn].posx, players[placeturn].posy, 47, 47);
+				}
+				else if(players[placeturn].posx == 159 && players[placeturn].posy == 487)//Sala de Estar
+				{
+					System.out.println("oioioi");
+					players[placeturn].posx = 543;
+					players[placeturn].posy = 151;
+					players[placeturn].bb.setBounds(players[placeturn].posx, players[placeturn].posy, 47, 47);						
+				}
+				else if(players[placeturn].posx == 159 && players[placeturn].posy == 151)//cozinha
+				{
+					System.out.println("oioioi");
+					players[placeturn].posx = 495;
+					players[placeturn].posy = 535;
+					players[placeturn].bb.setBounds(players[placeturn].posx, players[placeturn].posy, 47, 47);
+				}
+				else if(players[placeturn].posx == 495 && players[placeturn].posy == 535)//Escritorio
+				{
+					System.out.println("oioioi");
+					players[placeturn].posx = 159;
+					players[placeturn].posy = 151;
+					players[placeturn].bb.setBounds(players[placeturn].posx, players[placeturn].posy, 47, 47);
+				}
+				tabuleiro.revalidate();
+				tabuleiro.repaint();
+				System.out.println("posx apos =" + players[placeturn].posx);
+				System.out.println("posy apos =" + players[placeturn].posy);
+        }
+    };
+   
+    private static void run(JFrame frame, int width, int height) {
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(width, height);
+        frame.setVisible(true);
+      }
 	
 	public static board getboard(String nome, int i1, int i2, int i3, int i4, int i5, int i6, int numplayers)
 	{
@@ -301,8 +359,7 @@ public class board extends JFrame {
 			left.addActionListener(new move(act, dados, left, right, up, down, 1));
 			right.addActionListener(new move(act, dados, left, right, up, down, 2));
 			up.addActionListener(new move(act, dados, left, right, up, down, 3));
-			down.addActionListener(new move(act, dados, left, right, up, down, 4));	
-			passagemSecreta.addActionListener(new move(act, dados, left, right, up, down, 5));	
+			down.addActionListener(new move(act, dados, left, right, up, down, 4));		
 			
 			refazerTurno.addActionListener(new Reset(left, right, up, down));
 			
@@ -1261,37 +1318,7 @@ public class board extends JFrame {
 					p.bb.setBounds(p.posx, p.posy+48, 47, 47);
 					p.posy = p.posy + 48;
 				}
-				if(f == 5)
-				{
-					if(p.posy == 151 && p.posx == 495)//jardim de inverno
-					{
-						System.out.println("oioioi");
-						p.posx = 159;
-						p.posy = 439;
-						p.bb.setBounds(p.posx, p.posy, 47, 47);
-					}
-					else if(p.posx == 159 && p.posy == 439)//Sala de Estar
-					{
-						System.out.println("oioioi");
-						p.posx = 495;
-						p.posy = 151;
-						p.bb.setBounds(p.posx, p.posy, 47, 47);						
-					}
-					else if(p.posx == 159 && p.posy == 199)//cozinha
-					{
-						System.out.println("oioioi");
-						p.posx = 495;
-						p.posy = 487;
-						p.bb.setBounds(p.posx, p.posy, 47, 47);
-					}
-					else if(p.posx == 495 && p.posy == 487)//Escritorio
-					{
-						System.out.println("oioioi");
-						p.posx = 159;
-						p.posy = 199;
-						p.bb.setBounds(p.posx, p.posy, 47, 47);
-					}
-				}
+				
 				
 				refazerTurno.setEnabled(true);
 				p.bb.setBackground(p.collo);
